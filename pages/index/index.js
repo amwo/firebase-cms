@@ -4,6 +4,7 @@ import fn from '../../states/fn';
 import Router from 'next/router'
 
 import Default from '../../layouts/default'
+import H1 from '../../components/h1'
 
 const mapToProps = ({ s , d}) => ({ s, d });
 
@@ -22,7 +23,7 @@ class Home extends Component {
         if(this.props.s.login) {
             return (
                 <Default>
-                    <h1>Home</h1>
+                    <H1 title="Dashboard" />
                 </Default>
             )
         } else {

@@ -93,6 +93,30 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
+/***/ "./conf/firebase.js":
+/*!**************************!*\
+  !*** ./conf/firebase.js ***!
+  \**************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! firebase/app */ "firebase/app");
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_0__);
+
+var conf = {
+  apiKey: "AIzaSyAyQI-VFBf2kO9cI53Z-AMt9K_p3Q5keqw",
+  authDomain: "tokyoislands-2f2e6.firebaseapp.com",
+  databaseURL: "https://tokyoislands-2f2e6.firebaseio.com",
+  projectId: "tokyoislands-2f2e6",
+  storageBucket: "tokyoislands-2f2e6.appspot.com",
+  messagingSenderId: "720287797198"
+};
+/* harmony default export */ __webpack_exports__["default"] = (!firebase_app__WEBPACK_IMPORTED_MODULE_0___default.a.apps.length ? firebase_app__WEBPACK_IMPORTED_MODULE_0___default.a.initializeApp(conf) : firebase_app__WEBPACK_IMPORTED_MODULE_0___default.a.app());
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs2/core-js/object/assign.js":
 /*!**********************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/core-js/object/assign.js ***!
@@ -1027,6 +1051,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux_zero_react__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! redux-zero/react */ "redux-zero/react");
 /* harmony import */ var redux_zero_react__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(redux_zero_react__WEBPACK_IMPORTED_MODULE_11__);
 /* harmony import */ var _states_store__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../states/store */ "./states/store.js");
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! firebase/app */ "firebase/app");
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var firebase_auth__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! firebase/auth */ "firebase/auth");
+/* harmony import */ var firebase_auth__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(firebase_auth__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var _conf_firebase__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../conf/firebase */ "./conf/firebase.js");
 
 
 
@@ -1042,15 +1071,18 @@ var _jsxFileName = "/Users/am/Projects/firebase-cms/pages/_app.js";
 
 
 
+
+
+
 var Default =
 /*#__PURE__*/
 function (_App) {
   Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_7__["default"])(Default, _App);
 
-  function Default() {
+  function Default(props) {
     Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_3__["default"])(this, Default);
 
-    return Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_5__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_6__["default"])(Default).apply(this, arguments));
+    return Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_5__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_6__["default"])(Default).call(this, props));
   }
 
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_4__["default"])(Default, [{
@@ -1059,23 +1091,25 @@ function (_App) {
       var _this$props = this.props,
           Component = _this$props.Component,
           pageProps = _this$props.pageProps;
+      var user = firebase_app__WEBPACK_IMPORTED_MODULE_13___default.a.auth().currentUser;
+      console.log(user);
       return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(redux_zero_react__WEBPACK_IMPORTED_MODULE_11__["Provider"], {
         store: _states_store__WEBPACK_IMPORTED_MODULE_12__["default"],
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 23
+          lineNumber: 31
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(next_app__WEBPACK_IMPORTED_MODULE_9__["Container"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 24
+          lineNumber: 32
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, pageProps, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 25
+          lineNumber: 33
         },
         __self: this
       }))));
@@ -1160,7 +1194,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var i = {
   s: {
-    login: false,
+    login: true,
     current: {
       user: ''
     }
@@ -1269,6 +1303,28 @@ module.exports = require("core-js/library/fn/symbol");
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/library/fn/symbol/iterator");
+
+/***/ }),
+
+/***/ "firebase/app":
+/*!*******************************!*\
+  !*** external "firebase/app" ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("firebase/app");
+
+/***/ }),
+
+/***/ "firebase/auth":
+/*!********************************!*\
+  !*** external "firebase/auth" ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("firebase/auth");
 
 /***/ }),
 

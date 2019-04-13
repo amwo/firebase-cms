@@ -2,7 +2,7 @@ import createStore from 'redux-zero'
 
 const i = {
     s: {
-        login: false,
+        login: true,
         current: {
             user: ''
         }

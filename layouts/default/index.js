@@ -1,6 +1,7 @@
 import {Component} from 'react'
 import Header from '../../widgets/header'
 import style from './style.css'
+import Navigations from '../../widgets/navigations'
 
 class Default extends Component {
     constructor(props) {
@@ -13,7 +14,12 @@ class Default extends Component {
                 <Header />
                 <section className={style.container}>
                     <div className={style.in}>
-                        {this.props.children}
+                        <aside>
+                            <Navigations />
+                        </aside>
+                        <main>
+                            {this.props.children}
+                        </main>
                     </div>
                 </section>
             </div>

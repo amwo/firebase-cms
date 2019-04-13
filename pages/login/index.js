@@ -61,7 +61,7 @@ class Login extends Component {
                         <h1><strong>Welcome</strong>,<br/>Log in to continue to<br/>Tokyo Islands.</h1>
                         <div className={this.state.signUp ? style.none : ''}>
                             <form name="login">
-                                <Input type="email" placeholder="Username or E-mail"/>
+                                <Input type="email" placeholder="Username or E-mail" onChange={this.handleEmailInput} value={this.state.email}/>
                             </form>
                             <p style={{fontSize: 11}}>Did you forget your password? <span className={style.signup}>Reset password</span></p>
                         </div>
