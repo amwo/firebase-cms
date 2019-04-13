@@ -7,18 +7,36 @@ import ICON_SETTINGS from '../../assets/icons/icon-settings.svg'
 import ICON_MEMBERS from '../../assets/icons/icon-members.svg'
 import ICON_BRANDS from '../../assets/icons/icon-brands.svg'
 import ICON_DASHBOARD from '../../assets/icons/icon-dashboard.svg'
+import ICON_BACK from '../../assets/icons/icon-back.svg'
+import Article from '../../components/article'
 
 class Navigations extends Component {
     constructor(props) {
         super(props)
         this.open = this.open.bind(this)
+        this.toSecond = this.toSecond.bind(this)
+        this.toFirst = this.toFirst.bind(this)
         this.state = {
-            header: false
+            header: false,
+            second: false
         }
     }
+
     open = () => {
         this.setState({
             header: !this.state.header
+        })
+    }
+
+    toFirst = () => {
+        this.setState({
+            second: false
+        })
+    }
+
+    toSecond = () => {
+        this.setState({
+            second: true
         })
     }
 
@@ -43,7 +61,7 @@ class Navigations extends Component {
                 </div>
                 <div className={style.navs}>
                     <div className="in">
-                        <div className={style.nav}>
+                        <div className={style.nav} style={this.state.second ? {left: '-240px'} : {left: 0}}>
                             <nav className={style.firstNav}>
                                 <ul>
                                     <li className={style.current}><a href="#"><i><img src={ICON_DASHBOARD} width="" height="15" alt="" /></i>Dashboard</a></li>
@@ -52,7 +70,7 @@ class Navigations extends Component {
                                     <span>Posts</span>
                                 </section>
                                 <ul>
-                                    <li><a href="#"><i><img src={ICON_SETTINGS} width="" height="15" alt="" /></i>News</a></li>
+                                    <li onClick={this.toSecond}><a href="#"><i><img src={ICON_SETTINGS} width="" height="15" alt="" /></i>News</a></li>
                                     <li><a href="#"><i><img src={ICON_SETTINGS} width="" height="15" alt="" /></i>Blog</a></li>
                                 </ul>
                                 <section className={style.hr}>
@@ -74,8 +92,15 @@ class Navigations extends Component {
                                 </ul>
                             </nav>
                         </div>
-                        <div className={style.nav}>
+                        <div className={style.nav} style={this.state.second ? {left: 0} : {left: '240px'}}>
                             <nav className={style.secondNav}>
+                                <section>
+                                <button onClick={this.toFirst} ><i><img src={ICON_BACK} width="" height="15" alt="" /></i>Back</button>
+                                </section>
+                                <div className={style.articleItems}>
+                                    <Article />
+                                    <Article />
+                                </div>
                             </nav>
                         </div>
                     </div>

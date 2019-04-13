@@ -1,0 +1,40 @@
+.s {
+    display: block;
+    padding: 0 0 0 10px;
+    cursor: pointer;
+}
+.s:hover {
+    background: #f1f1f1;
+}
+.s .thumb {
+    background: #ddd;
+    min-width: 80px;
+    width: 80px;
+    height: 49px;
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+}
+.s .wrap {
+    padding: 6px 0;
+    border-bottom: 1px solid #ebebeb;
+    display: flex
+}
+
+.s h2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    font-size: 13px;
+    line-height: 1.3;
+}
+.s .cnt {
+    padding: 0 7px;
+    width: 100%;
+}
+.s .date {
+    font-size: 10px;
+    color: #999;
+    margin: 3px 0 0 0;
+}

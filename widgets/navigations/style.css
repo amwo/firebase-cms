@@ -76,6 +76,7 @@
     background: #f1f1f1;
 }
 .navs {
+    overflow: hidden;
     height: calc(100% - 148px);
     position: absolute;
     bottom: 0;
@@ -110,7 +111,7 @@
 }
 
 .firstNav ul li.current a img {
-  filter: brightness(0) invert(1);
+    filter: brightness(0) invert(1);
 }
 .firstNav ul li.current:hover a {
     background: #e6142c
@@ -155,4 +156,13 @@
     left: 0;
     height: 100%;
     z-index: 3;
+}
+.nav {
+    position: absolute;
+    height: 100%;
+    width: 240px;
+    transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+    -webkit-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
 }
