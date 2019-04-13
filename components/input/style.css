@@ -1,0 +1,30 @@
+/* Light Themes */
+.textLight {
+    color: #fff;
+    background: #fff;
+    width: calc(100% - 32px);
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    font-size: 14px;
+    padding: 13px 16px;
+    width: 100%;
+    outline: 0;
+    border: 2px solid rgb(214, 214, 214);
+}
+
+.textLight::-webkit-input-placeholder {
+    color: #ccc;
+    letter-spacing: 2px;
+    font-weight: 100;
+}
+.textLight:-ms-input-placeholder {
+    color: #ccc;
+    letter-spacing: 2px;
+    font-weight: 100;
+}
+.textLignt::-moz-placeholder {
+    color: #ccc;
+    letter-spacing: 2px;
+    font-weight: 100;
+}

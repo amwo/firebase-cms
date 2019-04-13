@@ -1,0 +1,8 @@
+.r {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 64px;
+    height: 100%;
+    background: #f1f1f1;
+}

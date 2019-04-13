@@ -1,0 +1,12 @@
+.container {
+    position: fixed;
+    left: 64px;
+    background: #fff;
+    width: calc(100% - 64px);
+    height: 100%;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0,0,0,.08);
+}
+.in {
+    position: relative;
+}

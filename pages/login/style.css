@@ -1,0 +1,96 @@
+.i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.i section {
+    width: 100%;
+    max-width: 300px;
+}
+
+.i h1 {
+    margin: 30px 0 20px 0;
+    display: block;
+    font-size: 28px;
+    text-align: left;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    color: #888;
+    font-weight: 100
+}
+
+.i h1 strong {
+    color: #000;
+    font-size: 28px;
+    text-align: left;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    font-weight: 100
+}
+
+.i img {
+    display: block;
+    margin-left: 2px;
+}
+.none {
+    display: none
+}
+
+.i button {
+    border: 0;
+    background: transparent;
+    color: #080000;
+    padding: 20px 20px 20px 0;
+    font-size: 20px;
+    text-align: left;
+    margin: 22px 0 0 0;
+    letter-spacing: 1px;
+}
+.i button:hover {
+    cursor: pointer;
+}
+.i button:focus {
+    outline: 0;
+}
+.i p {
+    margin: 90px 0 0 0;
+    letter-spacing: 1px;
+}
+.i p a {
+    margin-left: 5px;
+}
+.signup {
+    font-size: 12px;
+    cursor: pointer;
+    margin-left: 5px;
+    color: #3AA0D9;
+    border-bottom: 1px solid #3AA0D9
+}
+.i section {
+    display: flex
+}
+
+.loginSec {
+    width: 100%;
+}
+
+@keyframes spinner {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.errorMassage {
+    color: #D9414B;
+    line-height: 1.4;
+    font-size: 12px;
+}
+@keyframes spinner {
+    from { transform: rotate(0deg) }
+    to { transform: rotate(360deg) }
+}
+
+.logo {
+    animation: spinner infinite 2s linear;
+}
