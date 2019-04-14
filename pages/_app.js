@@ -21,12 +21,9 @@ export default class Default extends App {
         return { pageProps }
     }
 
+
     render () {
         const { Component, pageProps } = this.props
-
-        let user = firebase.auth().currentUser;
-        console.log(user)
-
         return (
             <Provider store={store}>
                 <Container>

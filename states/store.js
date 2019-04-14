@@ -2,8 +2,10 @@ import createStore from 'redux-zero'
 
 const i = {
     s: {
-        login: true,
+        login: false,
+        page: {},
         current: {
+            project: '',
             user: ''
         }
     },

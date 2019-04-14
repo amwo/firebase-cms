@@ -1,3 +1,4 @@
+.r, .cap, .lid {position: relative;}
 /* Light Themes */
 .textLight {
     color: #333;
@@ -8,9 +9,14 @@
     -moz-border-radius: 6px;
     font-size: 14px;
     padding: 13px 16px;
-    width: 100%;
+    width: calc(100% - 32px);
     outline: 0;
     border: 2px solid rgb(214, 214, 214);
+}
+.textLight:disabled {
+    background:#f1f1f1;
+    color: #ccc;
+    cursor: default
 }
 
 .textLight::-webkit-input-placeholder {
@@ -27,4 +33,76 @@
     color: #ccc;
     letter-spacing: 2px;
     font-weight: 100;
+}
+.lastIcon {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 28px;
+    background: #f1f1f1!important;
+    border: 1px solid #ccc!important;
+    position: absolute;
+    right: 8px;
+    top: 9px;
+    padding: 0!important;
+    margin: 0!important;
+}
+
+.btSpinner {
+    position: absolute;
+    right: 8px;
+    top: 9px;
+    padding: 0!important;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid #ddd;
+    border-top: 2px solid #000;
+    animation: spin infinite 1s linear;
+    -webkit-animation: spin infinite 1s linear;
+}
+
+@-webkit-keyframes spin {
+    from {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    from {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+.cap .textLight {
+    border-top-left-radius: 0!important;
+    -webkit-border-top-left-radius: 0!important;
+    -moz-border-top-left-radius: 0!important;
+    border-top-right-radius: 0!important;
+    -webkit-border-top-right-radius: 0!important;
+    -moz-border-top-right-radius: 0!important;
+    border-top: 0!important;
+}
+
+.lid .textLight {
+    border-bottom-left-radius: 0!important;
+    -webkit-border-bottom-left-radius: 0!important;
+    -moz-border-bottom-left-radius: 0!important;
+    border-bottom-right-radius: 0!important;
+    -webkit-border-bottom-right-radius: 0!important;
+    -moz-border-bottom-right-radius: 0!important;
 }

@@ -16425,25 +16425,23 @@ function (_App) {
       var _this$props = this.props,
           Component = _this$props.Component,
           pageProps = _this$props.pageProps;
-      var user = firebase_app__WEBPACK_IMPORTED_MODULE_13___default.a.auth().currentUser;
-      console.log(user);
       return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(redux_zero_react__WEBPACK_IMPORTED_MODULE_11__["Provider"], {
         store: _states_store__WEBPACK_IMPORTED_MODULE_12__["default"],
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 31
+          lineNumber: 28
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(next_app__WEBPACK_IMPORTED_MODULE_9__["Container"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 32
+          lineNumber: 29
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, pageProps, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 33
+          lineNumber: 30
         },
         __self: this
       }))));
@@ -16515,8 +16513,10 @@ __webpack_require__.r(__webpack_exports__);
 
 var i = {
   s: {
-    login: true,
+    login: false,
+    page: {},
     current: {
+      project: '',
       user: ''
     }
   },

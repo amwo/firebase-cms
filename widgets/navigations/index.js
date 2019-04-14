@@ -1,6 +1,8 @@
 import {Component} from 'react'
 import LOGO from '../../assets/logo.png'
 import style from './style.css'
+import Link from 'next/link'
+import Router from 'next/router';
 
 import ICON_DOWN_ARROW from '../../assets/icons/icon-down-arrow.svg'
 import ICON_SETTINGS from '../../assets/icons/icon-settings.svg'
@@ -32,12 +34,14 @@ class Navigations extends Component {
         this.setState({
             second: false
         })
+            Router.push('/')
     }
 
-    toSecond = () => {
+    toSecond = href => {
         this.setState({
             second: true
         })
+        Router.push(href)
     }
 
     render() {
@@ -64,13 +68,13 @@ class Navigations extends Component {
                         <div className={style.nav} style={this.state.second ? {left: '-240px'} : {left: 0}}>
                             <nav className={style.firstNav}>
                                 <ul>
-                                    <li className={style.current}><a href="#"><i><img src={ICON_DASHBOARD} width="" height="15" alt="" /></i>Dashboard</a></li>
+                                    <li className={style.current}><Link href="/"><a><i><img src={ICON_DASHBOARD} width="" height="15" alt="" /></i>Dashboard</a></Link></li>
                                 </ul>
                                 <section className={style.hr}>
                                     <span>Posts</span>
                                 </section>
                                 <ul>
-                                    <li onClick={this.toSecond}><a href="#"><i><img src={ICON_SETTINGS} width="" height="15" alt="" /></i>News</a></li>
+                                    <li onClick={() => this.toSecond('/news')}><a><i><img src={ICON_SETTINGS} width="" height="15" alt="" /></i>News</a></li>
                                     <li><a href="#"><i><img src={ICON_SETTINGS} width="" height="15" alt="" /></i>Blog</a></li>
                                 </ul>
                                 <section className={style.hr}>

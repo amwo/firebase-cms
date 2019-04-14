@@ -4,9 +4,13 @@ import fn from '../../states/fn';
 import Router from 'next/router'
 
 import Default from '../../layouts/default'
+import Loading from '../../widgets/loading'
 import H1 from '../../components/h1'
 
 const mapToProps = ({ s , d}) => ({ s, d });
+
+import firebase from 'firebase/app'
+import 'firebase/auth'
 
 class Home extends Component {
     constructor(props) {
@@ -14,9 +18,13 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        if(!this.props.s.login) {
-            Router.push('/login')
-        }
+        firebase.auth().onAuthStateChanged((user) => {
+            if (user) {
+                this.props.login()
+            }else{
+                Router.push('/login')
+            }
+        })
     }
 
     render() {
@@ -27,7 +35,7 @@ class Home extends Component {
                 </Default>
             )
         } else {
-            return null
+            return <Loading />
         }
     }
 }

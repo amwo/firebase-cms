@@ -8,51 +8,56 @@ import LOGO from '../../assets/logo.png'
 import Default from '../../layouts/default'
 import Input from '../../components/input'
 
+import ICON_RIGHT_ARROW from '../../assets/icons/icon-right-arrow.svg'
+import ICON_CHECK from '../../assets/icons/icon-check.svg'
+
 const mapToProps = ({ s , d}) => ({ s, d });
 
 class Login extends Component {
     constructor(props) {
         super(props)
-        this.handleEmailInput = this.handleEmailInput.bind(this)
-        this.handlePasswordInput = this.handlePasswordInput.bind(this)
+        this.handleEmailInputChange = this.handleEmailInputChange.bind(this)
+        this.handleEmailKeyDown = this.handleEmailInputKeyDown.bind(this)
+        this.handlePasswordInputChange = this.handlePasswordInputChange.bind(this)
+        this.handlePasswordInputKeyDown = this.handlePasswordInputKeyDown.bind(this)
         this.state = {
             email: '',
             password: ''
         }
     }
 
-    handleEmailInput = e => {
+    handleEmailInputChange = e => {
+        this.setState({
+            email: e.target.value
+        })
+    }
+
+    handleEmailInputKeyDown = e => {
         if(e.keyCode === 13) {
             e.preventDefault()
             e.stopPropagation()
-            this.setState({
-                email: e.target.value
-            })
-            this.props.checkAuthEmail(e.target.value)
-        } else {
-            this.setState({
-                email: e.target.value
-            })
+            this.props.isUserEmail(this.state.email, '')
         }
     }
 
-    handlePasswordInput = e => {
+    handlePasswordInputChange = e => {
+        this.setState({
+            password: e.target.value
+        })
+    }
+
+    handlePasswordInputKeyDown = e => {
         if(e.keyCode === 13) {
             e.preventDefault()
             e.stopPropagation()
-            this.setState({
-                password: e.target.value
-            })
-            this.props.checkAuthEmailPassword(this.state.email, e.target.value)
-            e.target.focus()
-        } else {
-            this.setState({
-                password: e.target.value
-            })
+            this.props.auth(this.props.s.page.email, this.state.password)
         }
     }
 
     render() {
+        if(this.props.s.login) {
+            Router.push({ pathname: '/'})
+        }
         return (
             <div className={style.i}>
                 <section>
@@ -60,9 +65,8 @@ class Login extends Component {
                         <img src={LOGO} width="120" height="" alt="" />
                         <h1><strong>Welcome</strong>,<br/>Log in to continue to<br/>Tokyo Islands.</h1>
                         <div className={this.state.signUp ? style.none : ''}>
-                            <form name="login">
-                                <Input type="email" placeholder="Username or E-mail" onChange={this.handleEmailInput} value={this.state.email}/>
-                            </form>
+                            <Input form={this.props.s.page.email ? 'lid' : null}type="email" placeholder="Username or E-mail" onChange={this.handleEmailInputChange} onKeyDown={this.handleEmailInputKeyDown} value={this.state.email} lastIcon={this.props.s.page.email ? ICON_CHECK : ICON_RIGHT_ARROW} loading={this.props.s.page.emailLoading ? true : false} autoFocus disabled={this.props.s.page.email ? true : false} />
+                            {this.props.s.page.email ? <Input type="password" placeholder="Password" onChange={this.handlePasswordInputChange} onKeyDown={this.handlePasswordInputKeyDown} value={this.state.password} form="cap" lastIcon={ICON_RIGHT_ARROW} loading={this.props.s.page.passwordLoading ? true : false} autoFocus/> : null }
                             <p style={{fontSize: 11}}>Did you forget your password? <span className={style.signup}>Reset password</span></p>
                         </div>
                     </div>

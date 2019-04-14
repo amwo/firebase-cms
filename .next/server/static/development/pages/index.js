@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -565,6 +565,17 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/json/stringify */ "core-js/library/fn/json/stringify");
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs2/core-js/object/create.js":
 /*!**********************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/core-js/object/create.js ***!
@@ -587,6 +598,28 @@ module.exports = __webpack_require__(/*! core-js/library/fn/object/define-proper
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptor.js":
+/*!*******************************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptor.js ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/object/get-own-property-descriptor */ "core-js/library/fn/object/get-own-property-descriptor");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-symbols.js":
+/*!****************************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-symbols.js ***!
+  \****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/object/get-own-property-symbols */ "core-js/library/fn/object/get-own-property-symbols");
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs2/core-js/object/get-prototype-of.js":
 /*!********************************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/core-js/object/get-prototype-of.js ***!
@@ -595,6 +628,17 @@ module.exports = __webpack_require__(/*! core-js/library/fn/object/define-proper
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! core-js/library/fn/object/get-prototype-of */ "core-js/library/fn/object/get-prototype-of");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/core-js/object/keys.js ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! core-js/library/fn/object/keys */ "core-js/library/fn/object/keys");
 
 /***/ }),
 
@@ -628,6 +672,72 @@ module.exports = __webpack_require__(/*! core-js/library/fn/symbol */ "core-js/l
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! core-js/library/fn/symbol/iterator */ "core-js/library/fn/symbol/iterator");
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/assertThisInitialized.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/assertThisInitialized.js ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+
+module.exports = _assertThisInitialized;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/classCallCheck.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/classCallCheck.js ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+module.exports = _classCallCheck;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/createClass.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/createClass.js ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var _Object$defineProperty = __webpack_require__(/*! ../core-js/object/define-property */ "./node_modules/@babel/runtime-corejs2/core-js/object/define-property.js");
+
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+
+    _Object$defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
+module.exports = _createClass;
 
 /***/ }),
 
@@ -789,6 +899,49 @@ function _inherits(subClass, superClass) {
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js ***!
+  \*************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _objectSpread; });
+/* harmony import */ var _core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../core-js/object/get-own-property-descriptor */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-descriptor.js");
+/* harmony import */ var _core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../core-js/object/get-own-property-symbols */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-own-property-symbols.js");
+/* harmony import */ var _core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _core_js_object_keys__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../core-js/object/keys */ "./node_modules/@babel/runtime-corejs2/core-js/object/keys.js");
+/* harmony import */ var _core_js_object_keys__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_core_js_object_keys__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _defineProperty__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
+
+
+
+
+function _objectSpread(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+
+    var ownKeys = _core_js_object_keys__WEBPACK_IMPORTED_MODULE_2___default()(source);
+
+    if (typeof _core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_1___default.a === 'function') {
+      ownKeys = ownKeys.concat(_core_js_object_get_own_property_symbols__WEBPACK_IMPORTED_MODULE_1___default()(source).filter(function (sym) {
+        return _core_js_object_get_own_property_descriptor__WEBPACK_IMPORTED_MODULE_0___default()(source, sym).enumerable;
+      }));
+    }
+
+    ownKeys.forEach(function (key) {
+      Object(_defineProperty__WEBPACK_IMPORTED_MODULE_3__["default"])(target, key, source[key]);
+    });
+  }
+
+  return target;
+}
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js":
 /*!**************************************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js ***!
@@ -872,6 +1025,416 @@ function _typeof(obj) {
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/getPrototypeOf.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/getPrototypeOf.js ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var _Object$getPrototypeOf = __webpack_require__(/*! ../core-js/object/get-prototype-of */ "./node_modules/@babel/runtime-corejs2/core-js/object/get-prototype-of.js");
+
+var _Object$setPrototypeOf = __webpack_require__(/*! ../core-js/object/set-prototype-of */ "./node_modules/@babel/runtime-corejs2/core-js/object/set-prototype-of.js");
+
+function _getPrototypeOf(o) {
+  module.exports = _getPrototypeOf = _Object$setPrototypeOf ? _Object$getPrototypeOf : function _getPrototypeOf(o) {
+    return o.__proto__ || _Object$getPrototypeOf(o);
+  };
+  return _getPrototypeOf(o);
+}
+
+module.exports = _getPrototypeOf;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/inherits.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/inherits.js ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var _Object$create = __webpack_require__(/*! ../core-js/object/create */ "./node_modules/@babel/runtime-corejs2/core-js/object/create.js");
+
+var setPrototypeOf = __webpack_require__(/*! ./setPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/setPrototypeOf.js");
+
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function");
+  }
+
+  subClass.prototype = _Object$create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) setPrototypeOf(subClass, superClass);
+}
+
+module.exports = _inherits;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    default: obj
+  };
+}
+
+module.exports = _interopRequireDefault;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/possibleConstructorReturn.js":
+/*!**********************************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/possibleConstructorReturn.js ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var _typeof = __webpack_require__(/*! ../helpers/typeof */ "./node_modules/@babel/runtime-corejs2/helpers/typeof.js");
+
+var assertThisInitialized = __webpack_require__(/*! ./assertThisInitialized */ "./node_modules/@babel/runtime-corejs2/helpers/assertThisInitialized.js");
+
+function _possibleConstructorReturn(self, call) {
+  if (call && (_typeof(call) === "object" || typeof call === "function")) {
+    return call;
+  }
+
+  return assertThisInitialized(self);
+}
+
+module.exports = _possibleConstructorReturn;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/setPrototypeOf.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/setPrototypeOf.js ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var _Object$setPrototypeOf = __webpack_require__(/*! ../core-js/object/set-prototype-of */ "./node_modules/@babel/runtime-corejs2/core-js/object/set-prototype-of.js");
+
+function _setPrototypeOf(o, p) {
+  module.exports = _setPrototypeOf = _Object$setPrototypeOf || function _setPrototypeOf(o, p) {
+    o.__proto__ = p;
+    return o;
+  };
+
+  return _setPrototypeOf(o, p);
+}
+
+module.exports = _setPrototypeOf;
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime-corejs2/helpers/typeof.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@babel/runtime-corejs2/helpers/typeof.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var _Symbol$iterator = __webpack_require__(/*! ../core-js/symbol/iterator */ "./node_modules/@babel/runtime-corejs2/core-js/symbol/iterator.js");
+
+var _Symbol = __webpack_require__(/*! ../core-js/symbol */ "./node_modules/@babel/runtime-corejs2/core-js/symbol.js");
+
+function _typeof2(obj) { if (typeof _Symbol === "function" && typeof _Symbol$iterator === "symbol") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof _Symbol === "function" && obj.constructor === _Symbol && obj !== _Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof2(obj); }
+
+function _typeof(obj) {
+  if (typeof _Symbol === "function" && _typeof2(_Symbol$iterator) === "symbol") {
+    module.exports = _typeof = function _typeof(obj) {
+      return _typeof2(obj);
+    };
+  } else {
+    module.exports = _typeof = function _typeof(obj) {
+      return obj && typeof _Symbol === "function" && obj.constructor === _Symbol && obj !== _Symbol.prototype ? "symbol" : _typeof2(obj);
+    };
+  }
+
+  return _typeof(obj);
+}
+
+module.exports = _typeof;
+
+/***/ }),
+
+/***/ "./node_modules/next/dist/client/link.js":
+/*!***********************************************!*\
+  !*** ./node_modules/next/dist/client/link.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+/* global __NEXT_DATA__ */
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime-corejs2/helpers/interopRequireDefault */ "./node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault.js");
+
+var _stringify = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/json/stringify */ "./node_modules/@babel/runtime-corejs2/core-js/json/stringify.js"));
+
+var _classCallCheck2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/classCallCheck.js"));
+
+var _createClass2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/createClass.js"));
+
+var _possibleConstructorReturn2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/possibleConstructorReturn.js"));
+
+var _getPrototypeOf2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/getPrototypeOf.js"));
+
+var _inherits2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/helpers/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/inherits.js"));
+
+var __importStar = void 0 && (void 0).__importStar || function (mod) {
+  if (mod && mod.__esModule) return mod;
+  var result = {};
+  if (mod != null) for (var k in mod) {
+    if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+  }
+  result["default"] = mod;
+  return result;
+};
+
+var __importDefault = void 0 && (void 0).__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var url_1 = __webpack_require__(/*! url */ "url");
+
+var react_1 = __importStar(__webpack_require__(/*! react */ "react"));
+
+var prop_types_1 = __importDefault(__webpack_require__(/*! prop-types */ "prop-types"));
+
+var router_1 = __importStar(__webpack_require__(/*! next/router */ "next/router"));
+
+var utils_1 = __webpack_require__(/*! next-server/dist/lib/utils */ "next-server/dist/lib/utils");
+
+function isLocal(href) {
+  var url = url_1.parse(href, false, true);
+  var origin = url_1.parse(utils_1.getLocationOrigin(), false, true);
+  return !url.host || url.protocol === origin.protocol && url.host === origin.host;
+}
+
+function memoizedFormatUrl(formatFunc) {
+  var lastHref = null;
+  var lastAs = null;
+  var lastResult = null;
+  return function (href, as) {
+    if (href === lastHref && as === lastAs) {
+      return lastResult;
+    }
+
+    var result = formatFunc(href, as);
+    lastHref = href;
+    lastAs = as;
+    lastResult = result;
+    return result;
+  };
+}
+
+function formatUrl(url) {
+  return url && typeof url === 'object' ? utils_1.formatWithValidation(url) : url;
+}
+
+var Link =
+/*#__PURE__*/
+function (_react_1$Component) {
+  (0, _inherits2.default)(Link, _react_1$Component);
+
+  function Link() {
+    var _this;
+
+    (0, _classCallCheck2.default)(this, Link);
+    _this = (0, _possibleConstructorReturn2.default)(this, (0, _getPrototypeOf2.default)(Link).apply(this, arguments)); // The function is memoized so that no extra lifecycles are needed
+    // as per https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html
+
+    _this.formatUrls = memoizedFormatUrl(function (href, asHref) {
+      return {
+        href: formatUrl(href),
+        as: formatUrl(asHref, true)
+      };
+    });
+
+    _this.linkClicked = function (e) {
+      var _e$currentTarget = e.currentTarget,
+          nodeName = _e$currentTarget.nodeName,
+          target = _e$currentTarget.target;
+
+      if (nodeName === 'A' && (target && target !== '_self' || e.metaKey || e.ctrlKey || e.shiftKey || e.nativeEvent && e.nativeEvent.which === 2)) {
+        // ignore click for new tab / new window behavior
+        return;
+      }
+
+      var _this$formatUrls = _this.formatUrls(_this.props.href, _this.props.as),
+          href = _this$formatUrls.href,
+          as = _this$formatUrls.as;
+
+      if (!isLocal(href)) {
+        // ignore click if it's outside our scope
+        return;
+      }
+
+      var pathname = window.location.pathname;
+      href = url_1.resolve(pathname, href);
+      as = as ? url_1.resolve(pathname, as) : href;
+      e.preventDefault(); //  avoid scroll for urls with anchor refs
+
+      var scroll = _this.props.scroll;
+
+      if (scroll == null) {
+        scroll = as.indexOf('#') < 0;
+      } // replace state instead of push if prop is present
+
+
+      router_1.default[_this.props.replace ? 'replace' : 'push'](href, as, {
+        shallow: _this.props.shallow
+      }).then(function (success) {
+        if (!success) return;
+
+        if (scroll) {
+          window.scrollTo(0, 0);
+          document.body.focus();
+        }
+      }).catch(function (err) {
+        if (_this.props.onError) _this.props.onError(err);
+      });
+    };
+
+    return _this;
+  }
+
+  (0, _createClass2.default)(Link, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.prefetch();
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps) {
+      if ((0, _stringify.default)(this.props.href) !== (0, _stringify.default)(prevProps.href)) {
+        this.prefetch();
+      }
+    }
+  }, {
+    key: "prefetch",
+    value: function prefetch() {
+      if (!this.props.prefetch) return;
+      if (typeof window === 'undefined') return; // Prefetch the JSON page if asked (only in the client)
+
+      var pathname = window.location.pathname;
+
+      var _this$formatUrls2 = this.formatUrls(this.props.href, this.props.as),
+          parsedHref = _this$formatUrls2.href;
+
+      var href = url_1.resolve(pathname, parsedHref);
+      router_1.default.prefetch(href);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      var children = this.props.children;
+
+      var _this$formatUrls3 = this.formatUrls(this.props.href, this.props.as),
+          href = _this$formatUrls3.href,
+          as = _this$formatUrls3.as; // Deprecated. Warning shown by propType check. If the childen provided is a string (<Link>example</Link>) we wrap it in an <a> tag
+
+
+      if (typeof children === 'string') {
+        children = react_1.default.createElement("a", null, children);
+      } // This will return the first child, if multiple are provided it will throw an error
+
+
+      var child = react_1.Children.only(children);
+      var props = {
+        onClick: function onClick(e) {
+          if (child.props && typeof child.props.onClick === 'function') {
+            child.props.onClick(e);
+          }
+
+          if (!e.defaultPrevented) {
+            _this2.linkClicked(e);
+          }
+        }
+      }; // If child is an <a> tag and doesn't have a href attribute, or if the 'passHref' property is
+      // defined, we specify the current 'href', so that repetition is not needed by the user
+
+      if (this.props.passHref || child.type === 'a' && !('href' in child.props)) {
+        props.href = as || href;
+      } // Add the ending slash to the paths. So, we can serve the
+      // "<page>/index.html" directly.
+
+
+      if (true) {
+        if (props.href && typeof __NEXT_DATA__ !== 'undefined' && __NEXT_DATA__.nextExport) {
+          props.href = router_1.Router._rewriteUrlForNextExport(props.href);
+        }
+      }
+
+      return react_1.default.cloneElement(child, props);
+    }
+  }]);
+  return Link;
+}(react_1.Component);
+
+if (true) {
+  var warn = utils_1.execOnce(console.error); // This module gets removed by webpack.IgnorePlugin
+
+  var exact = __webpack_require__(/*! prop-types-exact */ "prop-types-exact");
+
+  Link.propTypes = exact({
+    href: prop_types_1.default.oneOfType([prop_types_1.default.string, prop_types_1.default.object]).isRequired,
+    as: prop_types_1.default.oneOfType([prop_types_1.default.string, prop_types_1.default.object]),
+    prefetch: prop_types_1.default.bool,
+    replace: prop_types_1.default.bool,
+    shallow: prop_types_1.default.bool,
+    passHref: prop_types_1.default.bool,
+    scroll: prop_types_1.default.bool,
+    children: prop_types_1.default.oneOfType([prop_types_1.default.element, function (props, propName) {
+      var value = props[propName];
+
+      if (typeof value === 'string') {
+        warn("Warning: You're using a string directly inside <Link>. This usage has been deprecated. Please add an <a> tag as child of <Link>");
+      }
+
+      return null;
+    }]).isRequired
+  });
+}
+
+exports.default = Link;
+
+/***/ }),
+
+/***/ "./node_modules/next/link.js":
+/*!***********************************!*\
+  !*** ./node_modules/next/link.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/next/dist/client/link.js")
+
+
+/***/ }),
+
 /***/ "./pages/index/index.js":
 /*!******************************!*\
   !*** ./pages/index/index.js ***!
@@ -894,13 +1457,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! next/router */ "next/router");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var _layouts_default__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../layouts/default */ "./layouts/default/index.js");
-/* harmony import */ var _components_h1__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../components/h1 */ "./components/h1/index.js");
+/* harmony import */ var _widgets_loading__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../widgets/loading */ "./widgets/loading/index.js");
+/* harmony import */ var _components_h1__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../components/h1 */ "./components/h1/index.js");
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! firebase/app */ "firebase/app");
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var firebase_auth__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! firebase/auth */ "firebase/auth");
+/* harmony import */ var firebase_auth__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(firebase_auth__WEBPACK_IMPORTED_MODULE_13__);
 
 
 
 
 
 var _jsxFileName = "/Users/am/Projects/firebase-cms/pages/index/index.js";
+
 
 
 
@@ -918,6 +1487,9 @@ var mapToProps = function mapToProps(_ref) {
   };
 };
 
+
+
+
 var Home =
 /*#__PURE__*/
 function (_Component) {
@@ -932,9 +1504,15 @@ function (_Component) {
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Home, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      if (!this.props.s.login) {
-        next_router__WEBPACK_IMPORTED_MODULE_8___default.a.push('/login');
-      }
+      var _this = this;
+
+      firebase_app__WEBPACK_IMPORTED_MODULE_12___default.a.auth().onAuthStateChanged(function (user) {
+        if (user) {
+          _this.props.login();
+        } else {
+          next_router__WEBPACK_IMPORTED_MODULE_8___default.a.push('/login');
+        }
+      });
     }
   }, {
     key: "render",
@@ -943,19 +1521,25 @@ function (_Component) {
         return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_layouts_default__WEBPACK_IMPORTED_MODULE_9__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 25
+            lineNumber: 33
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_components_h1__WEBPACK_IMPORTED_MODULE_10__["default"], {
+        }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_components_h1__WEBPACK_IMPORTED_MODULE_11__["default"], {
           title: "Dashboard",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 26
+            lineNumber: 34
           },
           __self: this
         }));
       } else {
-        return null;
+        return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_widgets_loading__WEBPACK_IMPORTED_MODULE_10__["default"], {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 38
+          },
+          __self: this
+        });
       }
     }
   }]);
@@ -976,6 +1560,18 @@ function (_Component) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "./node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! firebase/app */ "firebase/app");
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var firebase_auth__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! firebase/auth */ "firebase/auth");
+/* harmony import */ var firebase_auth__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(firebase_auth__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var firebase_firestore__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! firebase/firestore */ "firebase/firestore");
+/* harmony import */ var firebase_firestore__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(firebase_firestore__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+
 var fn = function fn(store) {
   return {
     increment: function increment(state) {
@@ -988,8 +1584,87 @@ var fn = function fn(store) {
         count: state.count - 1
       };
     },
-    auth: function auth(state) {
-      return {};
+    isUserEmail: function isUserEmail(states, email) {
+      var db = firebase_app__WEBPACK_IMPORTED_MODULE_1___default.a.firestore();
+      store.setState(function (states) {
+        return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states, {
+          s: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states.s, {
+            page: {
+              emailLoading: true,
+              PasswordLoading: false,
+              email: '',
+              password: ''
+            }
+          })
+        });
+      });
+      db.collection('tokyoislands').doc('people').collection('users').where('email', '==', email).get().then(function (query) {
+        store.setState(function (states) {
+          return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states, {
+            s: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states.s, {
+              page: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states.s.page, {
+                emailLoading: false,
+                email: query.docs[0].data().email,
+                password: ''
+              })
+            })
+          });
+        });
+      }).catch(function (err) {
+        store.setState(function (states) {
+          return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states, {
+            s: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states.s, {
+              page: {}
+            })
+          });
+        });
+        console.log(err);
+      });
+    },
+    login: function login() {
+      store.setState(function (states) {
+        return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states, {
+          s: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states.s, {
+            login: true
+          })
+        });
+      });
+    },
+    auth: function auth(states, email, password) {
+      store.setState(function (states) {
+        return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states, {
+          s: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states.s, {
+            page: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states.s.page, {
+              passwordLoading: true
+            })
+          })
+        });
+      });
+      firebase_app__WEBPACK_IMPORTED_MODULE_1___default.a.auth().signInWithEmailAndPassword(email, password).catch(function (err) {
+        if (err.code) {
+          store.setState(function (states) {
+            return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states, {
+              s: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states.s, {
+                page: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states.s.page, {
+                  PasswordLoading: false
+                })
+              })
+            });
+          });
+          return;
+        } else {
+          store.setState(function (states) {
+            return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states, {
+              s: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states.s, {
+                login: true,
+                page: {}
+              })
+            });
+          });
+        }
+      });
+      var user = firebase_app__WEBPACK_IMPORTED_MODULE_1___default.a.auth().currentUser;
+      console.log(user.uid);
     }
   };
 };
@@ -1080,6 +1755,105 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./widgets/loading/index.js":
+/*!**********************************!*\
+  !*** ./widgets/loading/index.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./style.css */ "./widgets/loading/style.css");
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_style_css__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _assets_logo_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../assets/logo.png */ "./assets/logo.png");
+/* harmony import */ var _assets_logo_png__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_assets_logo_png__WEBPACK_IMPORTED_MODULE_7__);
+
+
+
+
+
+var _jsxFileName = "/Users/am/Projects/firebase-cms/widgets/loading/index.js";
+
+
+
+
+
+var Loading =
+/*#__PURE__*/
+function (_Component) {
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(Loading, _Component);
+
+  function Loading(props) {
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, Loading);
+
+    return Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(Loading).call(this, props));
+  }
+
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Loading, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        className: _style_css__WEBPACK_IMPORTED_MODULE_6___default.a.r,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 12
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 13
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("img", {
+        src: _assets_logo_png__WEBPACK_IMPORTED_MODULE_7___default.a,
+        width: "120",
+        height: "",
+        alt: "",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 14
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 15
+        },
+        __self: this
+      }, "Loading ...")));
+    }
+  }]);
+
+  return Loading;
+}(react__WEBPACK_IMPORTED_MODULE_5__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (Loading);
+
+/***/ }),
+
+/***/ "./widgets/loading/style.css":
+/*!***********************************!*\
+  !*** ./widgets/loading/style.css ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = {
+	"r": "_2qFWVNKxMMvU4oV3IxewYS",
+	"kodou": "_31cM_M-v81aFZrre5kiLOS"
+};
+
+/***/ }),
+
 /***/ "./widgets/navigations/index.js":
 /*!**************************************!*\
   !*** ./widgets/navigations/index.js ***!
@@ -1102,19 +1876,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_logo_png__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_assets_logo_png__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./style.css */ "./widgets/navigations/style.css");
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_style_css__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _assets_icons_icon_down_arrow_svg__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../assets/icons/icon-down-arrow.svg */ "./assets/icons/icon-down-arrow.svg");
-/* harmony import */ var _assets_icons_icon_down_arrow_svg__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_assets_icons_icon_down_arrow_svg__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _assets_icons_icon_settings_svg__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../assets/icons/icon-settings.svg */ "./assets/icons/icon-settings.svg");
-/* harmony import */ var _assets_icons_icon_settings_svg__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_assets_icons_icon_settings_svg__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var _assets_icons_icon_members_svg__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../assets/icons/icon-members.svg */ "./assets/icons/icon-members.svg");
-/* harmony import */ var _assets_icons_icon_members_svg__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_assets_icons_icon_members_svg__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var _assets_icons_icon_brands_svg__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../assets/icons/icon-brands.svg */ "./assets/icons/icon-brands.svg");
-/* harmony import */ var _assets_icons_icon_brands_svg__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_assets_icons_icon_brands_svg__WEBPACK_IMPORTED_MODULE_13__);
-/* harmony import */ var _assets_icons_icon_dashboard_svg__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../assets/icons/icon-dashboard.svg */ "./assets/icons/icon-dashboard.svg");
-/* harmony import */ var _assets_icons_icon_dashboard_svg__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_assets_icons_icon_dashboard_svg__WEBPACK_IMPORTED_MODULE_14__);
-/* harmony import */ var _assets_icons_icon_back_svg__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../../assets/icons/icon-back.svg */ "./assets/icons/icon-back.svg");
-/* harmony import */ var _assets_icons_icon_back_svg__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_assets_icons_icon_back_svg__WEBPACK_IMPORTED_MODULE_15__);
-/* harmony import */ var _components_article__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../../components/article */ "./components/article/index.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _assets_icons_icon_down_arrow_svg__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../assets/icons/icon-down-arrow.svg */ "./assets/icons/icon-down-arrow.svg");
+/* harmony import */ var _assets_icons_icon_down_arrow_svg__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_assets_icons_icon_down_arrow_svg__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _assets_icons_icon_settings_svg__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../assets/icons/icon-settings.svg */ "./assets/icons/icon-settings.svg");
+/* harmony import */ var _assets_icons_icon_settings_svg__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_assets_icons_icon_settings_svg__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var _assets_icons_icon_members_svg__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../assets/icons/icon-members.svg */ "./assets/icons/icon-members.svg");
+/* harmony import */ var _assets_icons_icon_members_svg__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_assets_icons_icon_members_svg__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var _assets_icons_icon_brands_svg__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../../assets/icons/icon-brands.svg */ "./assets/icons/icon-brands.svg");
+/* harmony import */ var _assets_icons_icon_brands_svg__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_assets_icons_icon_brands_svg__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var _assets_icons_icon_dashboard_svg__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../../assets/icons/icon-dashboard.svg */ "./assets/icons/icon-dashboard.svg");
+/* harmony import */ var _assets_icons_icon_dashboard_svg__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(_assets_icons_icon_dashboard_svg__WEBPACK_IMPORTED_MODULE_16__);
+/* harmony import */ var _assets_icons_icon_back_svg__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../../assets/icons/icon-back.svg */ "./assets/icons/icon-back.svg");
+/* harmony import */ var _assets_icons_icon_back_svg__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(_assets_icons_icon_back_svg__WEBPACK_IMPORTED_MODULE_17__);
+/* harmony import */ var _components_article__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../../components/article */ "./components/article/index.js");
 
 
 
@@ -1123,6 +1901,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _jsxFileName = "/Users/am/Projects/firebase-cms/widgets/navigations/index.js";
+
+
 
 
 
@@ -1157,12 +1937,16 @@ function (_Component) {
       _this.setState({
         second: false
       });
+
+      next_router__WEBPACK_IMPORTED_MODULE_11___default.a.push('/');
     });
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "toSecond", function () {
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "toSecond", function (href) {
       _this.setState({
         second: true
       });
+
+      next_router__WEBPACK_IMPORTED_MODULE_11___default.a.push(href);
     });
 
     _this.open = _this.open.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
@@ -1178,11 +1962,13 @@ function (_Component) {
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Navigations, [{
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("section", {
         className: _style_css__WEBPACK_IMPORTED_MODULE_9___default.a.r,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 45
+          lineNumber: 49
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
@@ -1196,7 +1982,7 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 46
+          lineNumber: 50
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
@@ -1208,7 +1994,7 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 47
+          lineNumber: 51
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("button", {
@@ -1219,7 +2005,7 @@ function (_Component) {
         } : null,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 48
+          lineNumber: 52
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("img", {
@@ -1228,13 +2014,13 @@ function (_Component) {
         } : {
           transform: 'rotate(0)'
         },
-        src: _assets_icons_icon_down_arrow_svg__WEBPACK_IMPORTED_MODULE_10___default.a,
+        src: _assets_icons_icon_down_arrow_svg__WEBPACK_IMPORTED_MODULE_12___default.a,
         width: "10",
         height: "",
         alt: "Down Arrow",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 49
+          lineNumber: 53
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("img", {
@@ -1244,140 +2030,140 @@ function (_Component) {
         alt: "",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 51
+          lineNumber: 55
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("h2", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 52
+          lineNumber: 56
         },
         __self: this
       }, "Tokyo Islands"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
         className: _style_css__WEBPACK_IMPORTED_MODULE_9___default.a.url,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 53
+          lineNumber: 57
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
         href: "",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 53
+          lineNumber: 57
         },
         __self: this
       }, "https://www.tokyoislands.jp")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("nav", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 54
+          lineNumber: 58
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("ul", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 55
+          lineNumber: 59
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("li", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 56
+          lineNumber: 60
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
         href: "#",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 56
+          lineNumber: 60
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("i", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 56
+          lineNumber: 60
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("img", {
-        src: _assets_icons_icon_settings_svg__WEBPACK_IMPORTED_MODULE_11___default.a,
+        src: _assets_icons_icon_settings_svg__WEBPACK_IMPORTED_MODULE_13___default.a,
         width: "",
         height: "15",
         alt: "",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 56
+          lineNumber: 60
         },
         __self: this
       })), "Settings")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("li", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 57
+          lineNumber: 61
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
         href: "#",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 57
+          lineNumber: 61
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("i", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 57
+          lineNumber: 61
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("img", {
-        src: _assets_icons_icon_brands_svg__WEBPACK_IMPORTED_MODULE_13___default.a,
+        src: _assets_icons_icon_brands_svg__WEBPACK_IMPORTED_MODULE_15___default.a,
         width: "",
         height: "15",
         alt: "",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 57
+          lineNumber: 61
         },
         __self: this
       })), "Brand Assets")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("li", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 58
+          lineNumber: 62
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
         href: "#",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 58
+          lineNumber: 62
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("i", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 58
+          lineNumber: 62
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("img", {
-        src: _assets_icons_icon_members_svg__WEBPACK_IMPORTED_MODULE_12___default.a,
+        src: _assets_icons_icon_members_svg__WEBPACK_IMPORTED_MODULE_14___default.a,
         width: "",
         height: "15",
         alt: "",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 58
+          lineNumber: 62
         },
         __self: this
       })), "Members"))))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: _style_css__WEBPACK_IMPORTED_MODULE_9___default.a.navs,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 62
+          lineNumber: 66
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: "in",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 63
+          lineNumber: 67
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
@@ -1389,369 +2175,376 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 64
+          lineNumber: 68
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("nav", {
         className: _style_css__WEBPACK_IMPORTED_MODULE_9___default.a.firstNav,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 65
+          lineNumber: 69
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("ul", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 66
+          lineNumber: 70
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("li", {
         className: _style_css__WEBPACK_IMPORTED_MODULE_9___default.a.current,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 67
+          lineNumber: 71
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_10___default.a, {
+        href: "/",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 71
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
-        href: "#",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 67
+          lineNumber: 71
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("i", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 67
+          lineNumber: 71
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("img", {
-        src: _assets_icons_icon_dashboard_svg__WEBPACK_IMPORTED_MODULE_14___default.a,
+        src: _assets_icons_icon_dashboard_svg__WEBPACK_IMPORTED_MODULE_16___default.a,
         width: "",
         height: "15",
         alt: "",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 67
+          lineNumber: 71
         },
         __self: this
-      })), "Dashboard"))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("section", {
+      })), "Dashboard")))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("section", {
         className: _style_css__WEBPACK_IMPORTED_MODULE_9___default.a.hr,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 69
+          lineNumber: 73
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("span", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 70
+          lineNumber: 74
         },
         __self: this
       }, "Posts")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("ul", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 72
+          lineNumber: 76
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("li", {
-        onClick: this.toSecond,
+        onClick: function onClick() {
+          return _this2.toSecond('/news');
+        },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 73
+          lineNumber: 77
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
-        href: "#",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 73
+          lineNumber: 77
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("i", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 73
+          lineNumber: 77
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("img", {
-        src: _assets_icons_icon_settings_svg__WEBPACK_IMPORTED_MODULE_11___default.a,
+        src: _assets_icons_icon_settings_svg__WEBPACK_IMPORTED_MODULE_13___default.a,
         width: "",
         height: "15",
         alt: "",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 73
+          lineNumber: 77
         },
         __self: this
       })), "News")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("li", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 74
+          lineNumber: 78
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
         href: "#",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 74
+          lineNumber: 78
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("i", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 74
+          lineNumber: 78
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("img", {
-        src: _assets_icons_icon_settings_svg__WEBPACK_IMPORTED_MODULE_11___default.a,
+        src: _assets_icons_icon_settings_svg__WEBPACK_IMPORTED_MODULE_13___default.a,
         width: "",
         height: "15",
         alt: "",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 74
+          lineNumber: 78
         },
         __self: this
       })), "Blog"))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("section", {
         className: _style_css__WEBPACK_IMPORTED_MODULE_9___default.a.hr,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 76
+          lineNumber: 80
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("span", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 77
+          lineNumber: 81
         },
         __self: this
       }, "Statics")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("ul", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 79
+          lineNumber: 83
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("li", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 80
+          lineNumber: 84
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
         href: "#",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 80
+          lineNumber: 84
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("i", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 80
+          lineNumber: 84
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("img", {
-        src: _assets_icons_icon_settings_svg__WEBPACK_IMPORTED_MODULE_11___default.a,
+        src: _assets_icons_icon_settings_svg__WEBPACK_IMPORTED_MODULE_13___default.a,
         width: "",
         height: "15",
         alt: "",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 80
+          lineNumber: 84
         },
         __self: this
       })), "Islands")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("li", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 81
+          lineNumber: 85
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
         href: "#",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 81
+          lineNumber: 85
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("i", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 81
+          lineNumber: 85
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("img", {
-        src: _assets_icons_icon_settings_svg__WEBPACK_IMPORTED_MODULE_11___default.a,
+        src: _assets_icons_icon_settings_svg__WEBPACK_IMPORTED_MODULE_13___default.a,
         width: "",
         height: "15",
         alt: "",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 81
+          lineNumber: 85
         },
         __self: this
       })), "Activities")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("li", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 82
+          lineNumber: 86
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
         href: "#",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 82
+          lineNumber: 86
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("i", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 82
+          lineNumber: 86
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("img", {
-        src: _assets_icons_icon_settings_svg__WEBPACK_IMPORTED_MODULE_11___default.a,
+        src: _assets_icons_icon_settings_svg__WEBPACK_IMPORTED_MODULE_13___default.a,
         width: "",
         height: "15",
         alt: "",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 82
+          lineNumber: 86
         },
         __self: this
       })), "Accommodations")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("li", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 83
+          lineNumber: 87
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
         href: "#",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 83
+          lineNumber: 87
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("i", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 83
+          lineNumber: 87
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("img", {
-        src: _assets_icons_icon_settings_svg__WEBPACK_IMPORTED_MODULE_11___default.a,
+        src: _assets_icons_icon_settings_svg__WEBPACK_IMPORTED_MODULE_13___default.a,
         width: "",
         height: "15",
         alt: "",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 83
+          lineNumber: 87
         },
         __self: this
       })), "Restaurants")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("li", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 84
+          lineNumber: 88
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
         href: "#",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 84
+          lineNumber: 88
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("i", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 84
+          lineNumber: 88
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("img", {
-        src: _assets_icons_icon_settings_svg__WEBPACK_IMPORTED_MODULE_11___default.a,
+        src: _assets_icons_icon_settings_svg__WEBPACK_IMPORTED_MODULE_13___default.a,
         width: "",
         height: "15",
         alt: "",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 84
+          lineNumber: 88
         },
         __self: this
       })), "Pages"))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("section", {
         className: _style_css__WEBPACK_IMPORTED_MODULE_9___default.a.hr,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 86
+          lineNumber: 90
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("span", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 87
+          lineNumber: 91
         },
         __self: this
       }, "Management")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("ul", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 89
+          lineNumber: 93
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("li", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 90
+          lineNumber: 94
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
         href: "#",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 90
+          lineNumber: 94
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("i", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 90
+          lineNumber: 94
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("img", {
-        src: _assets_icons_icon_settings_svg__WEBPACK_IMPORTED_MODULE_11___default.a,
+        src: _assets_icons_icon_settings_svg__WEBPACK_IMPORTED_MODULE_13___default.a,
         width: "",
         height: "15",
         alt: "",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 90
+          lineNumber: 94
         },
         __self: this
       })), "Contact")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("li", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 91
+          lineNumber: 95
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
         href: "#",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 91
+          lineNumber: 95
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("i", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 91
+          lineNumber: 95
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("img", {
-        src: _assets_icons_icon_settings_svg__WEBPACK_IMPORTED_MODULE_11___default.a,
+        src: _assets_icons_icon_settings_svg__WEBPACK_IMPORTED_MODULE_13___default.a,
         width: "",
         height: "15",
         alt: "",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 91
+          lineNumber: 95
         },
         __self: this
       })), "Ship Booking"))))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
@@ -1763,62 +2556,62 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 95
+          lineNumber: 99
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("nav", {
         className: _style_css__WEBPACK_IMPORTED_MODULE_9___default.a.secondNav,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 96
+          lineNumber: 100
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("section", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 97
+          lineNumber: 101
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("button", {
         onClick: this.toFirst,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 98
+          lineNumber: 102
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("i", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 98
+          lineNumber: 102
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("img", {
-        src: _assets_icons_icon_back_svg__WEBPACK_IMPORTED_MODULE_15___default.a,
+        src: _assets_icons_icon_back_svg__WEBPACK_IMPORTED_MODULE_17___default.a,
         width: "",
         height: "15",
         alt: "",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 98
+          lineNumber: 102
         },
         __self: this
       })), "Back")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: _style_css__WEBPACK_IMPORTED_MODULE_9___default.a.articleItems,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 100
+          lineNumber: 104
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_16__["default"], {
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_18__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 101
+          lineNumber: 105
         },
         __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_16__["default"], {
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_18__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 102
+          lineNumber: 106
         },
         __self: this
       })))))));
@@ -1853,7 +2646,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 5:
+/***/ 4:
 /*!************************************!*\
   !*** multi ./pages/index/index.js ***!
   \************************************/
@@ -1862,6 +2655,17 @@ module.exports = {
 
 module.exports = __webpack_require__(/*! /Users/am/Projects/firebase-cms/pages/index/index.js */"./pages/index/index.js");
 
+
+/***/ }),
+
+/***/ "core-js/library/fn/json/stringify":
+/*!****************************************************!*\
+  !*** external "core-js/library/fn/json/stringify" ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/library/fn/json/stringify");
 
 /***/ }),
 
@@ -1887,6 +2691,28 @@ module.exports = require("core-js/library/fn/object/define-property");
 
 /***/ }),
 
+/***/ "core-js/library/fn/object/get-own-property-descriptor":
+/*!************************************************************************!*\
+  !*** external "core-js/library/fn/object/get-own-property-descriptor" ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/library/fn/object/get-own-property-descriptor");
+
+/***/ }),
+
+/***/ "core-js/library/fn/object/get-own-property-symbols":
+/*!*********************************************************************!*\
+  !*** external "core-js/library/fn/object/get-own-property-symbols" ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/library/fn/object/get-own-property-symbols");
+
+/***/ }),
+
 /***/ "core-js/library/fn/object/get-prototype-of":
 /*!*************************************************************!*\
   !*** external "core-js/library/fn/object/get-prototype-of" ***!
@@ -1895,6 +2721,17 @@ module.exports = require("core-js/library/fn/object/define-property");
 /***/ (function(module, exports) {
 
 module.exports = require("core-js/library/fn/object/get-prototype-of");
+
+/***/ }),
+
+/***/ "core-js/library/fn/object/keys":
+/*!*************************************************!*\
+  !*** external "core-js/library/fn/object/keys" ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/library/fn/object/keys");
 
 /***/ }),
 
@@ -1931,6 +2768,50 @@ module.exports = require("core-js/library/fn/symbol/iterator");
 
 /***/ }),
 
+/***/ "firebase/app":
+/*!*******************************!*\
+  !*** external "firebase/app" ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("firebase/app");
+
+/***/ }),
+
+/***/ "firebase/auth":
+/*!********************************!*\
+  !*** external "firebase/auth" ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("firebase/auth");
+
+/***/ }),
+
+/***/ "firebase/firestore":
+/*!*************************************!*\
+  !*** external "firebase/firestore" ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("firebase/firestore");
+
+/***/ }),
+
+/***/ "next-server/dist/lib/utils":
+/*!*********************************************!*\
+  !*** external "next-server/dist/lib/utils" ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next-server/dist/lib/utils");
+
+/***/ }),
+
 /***/ "next/router":
 /*!******************************!*\
   !*** external "next/router" ***!
@@ -1939,6 +2820,28 @@ module.exports = require("core-js/library/fn/symbol/iterator");
 /***/ (function(module, exports) {
 
 module.exports = require("next/router");
+
+/***/ }),
+
+/***/ "prop-types":
+/*!*****************************!*\
+  !*** external "prop-types" ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("prop-types");
+
+/***/ }),
+
+/***/ "prop-types-exact":
+/*!***********************************!*\
+  !*** external "prop-types-exact" ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("prop-types-exact");
 
 /***/ }),
 
@@ -1961,6 +2864,17 @@ module.exports = require("react");
 /***/ (function(module, exports) {
 
 module.exports = require("redux-zero/react");
+
+/***/ }),
+
+/***/ "url":
+/*!**********************!*\
+  !*** external "url" ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("url");
 
 /***/ })
 
