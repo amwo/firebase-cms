@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -698,6 +698,7 @@ function (_Component) {
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("main", {
+        class: _style_css__WEBPACK_IMPORTED_MODULE_7___default.a.r,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 20
@@ -722,6 +723,7 @@ function (_Component) {
 /***/ (function(module, exports) {
 
 module.exports = {
+	"r": "_1WUXR3m6J34Ib6Vw0ZpEzu",
 	"container": "_1-fvxZCkP7w4EyFFsCNc0x",
 	"in": "wcdVsCXpNrzZN4Bggl-ED"
 };
@@ -2749,7 +2751,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 6:
+/***/ 5:
 /*!***********************************!*\
   !*** multi ./pages/news/index.js ***!
   \***********************************/

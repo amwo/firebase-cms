@@ -1,0 +1,15 @@
+.listL {
+    position: relative;
+}
+.listL .value {
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+}
+.listL .value i {
+    margin-left: 7px;
+}
+.listL .list {
+    display: none;
+    position: absolute;
+}

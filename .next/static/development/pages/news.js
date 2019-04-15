@@ -542,6 +542,7 @@ function (_Component) {
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("main", {
+        class: _style_css__WEBPACK_IMPORTED_MODULE_7___default.a.r,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 20
@@ -40934,7 +40935,7 @@ function (_Component) {
 
 /***/ }),
 
-/***/ 13:
+/***/ 11:
 /*!**************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fnews&absolutePagePath=%2FUsers%2Fam%2FProjects%2Ffirebase-cms%2Fpages%2Fnews%2Findex.js ***!
   \**************************************************************************************************************************************/
@@ -40957,5 +40958,5 @@ module.exports = dll_6dc2816e14fab51b8269;
 
 /***/ })
 
-},[[13,"static/runtime/webpack.js","styles"]]]));;
+},[[11,"static/runtime/webpack.js","styles"]]]));;
 //# sourceMappingURL=news.js.map

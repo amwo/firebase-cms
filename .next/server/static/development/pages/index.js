@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -450,6 +450,252 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./components/select/index.js":
+/*!************************************!*\
+  !*** ./components/select/index.js ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./style.css */ "./components/select/style.css");
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_style_css__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _assets_icons_icon_down_arrow_svg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../assets/icons/icon-down-arrow.svg */ "./assets/icons/icon-down-arrow.svg");
+/* harmony import */ var _assets_icons_icon_down_arrow_svg__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_assets_icons_icon_down_arrow_svg__WEBPACK_IMPORTED_MODULE_7__);
+
+
+
+
+
+var _jsxFileName = "/Users/am/Projects/firebase-cms/components/select/index.js";
+
+
+
+
+
+var Select =
+/*#__PURE__*/
+function (_Component) {
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(Select, _Component);
+
+  function Select(props) {
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, Select);
+
+    return Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(Select).call(this, props));
+  }
+
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Select, [{
+    key: "render",
+    value: function render() {
+      switch (this.props.type) {
+        case 'list':
+          switch (this.props.size) {
+            case 'l':
+              return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+                className: _style_css__WEBPACK_IMPORTED_MODULE_6___default.a.listL,
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 16
+                },
+                __self: this
+              }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
+                className: _style_css__WEBPACK_IMPORTED_MODULE_6___default.a.value,
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 17
+                },
+                __self: this
+              }, this.props.value, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("i", {
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 17
+                },
+                __self: this
+              }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("img", {
+                src: _assets_icons_icon_down_arrow_svg__WEBPACK_IMPORTED_MODULE_7___default.a,
+                width: "11",
+                height: "auto",
+                alt: "icon",
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 17
+                },
+                __self: this
+              }))), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+                className: _style_css__WEBPACK_IMPORTED_MODULE_6___default.a.list,
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 18
+                },
+                __self: this
+              }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("ul", {
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 19
+                },
+                __self: this
+              }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("li", {
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 20
+                },
+                __self: this
+              }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("li", {
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 21
+                },
+                __self: this
+              }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("li", {
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 22
+                },
+                __self: this
+              }))));
+
+            case 'm':
+              return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 29
+                },
+                __self: this
+              }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 30
+                },
+                __self: this
+              }, this.props.value), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 31
+                },
+                __self: this
+              }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("ul", {
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 32
+                },
+                __self: this
+              }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("li", {
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 33
+                },
+                __self: this
+              }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("li", {
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 34
+                },
+                __self: this
+              }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("li", {
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 35
+                },
+                __self: this
+              }))));
+
+            case 's':
+              return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 42
+                },
+                __self: this
+              }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 43
+                },
+                __self: this
+              }, this.props.value), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 44
+                },
+                __self: this
+              }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("ul", {
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 45
+                },
+                __self: this
+              }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("li", {
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 46
+                },
+                __self: this
+              }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("li", {
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 47
+                },
+                __self: this
+              }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("li", {
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 48
+                },
+                __self: this
+              }))));
+
+            default:
+              return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 55
+                },
+                __self: this
+              }, "default");
+          }
+
+        default:
+          return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 59
+            },
+            __self: this
+          }, "default");
+      }
+    }
+  }]);
+
+  return Select;
+}(react__WEBPACK_IMPORTED_MODULE_5__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (Select);
+
+/***/ }),
+
+/***/ "./components/select/style.css":
+/*!*************************************!*\
+  !*** ./components/select/style.css ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = {
+	"listL": "ZJ6xtRIyw6fnlvqKXyDnP",
+	"value": "_3oEgqe0kPLlm-iUVBIJXZD",
+	"list": "_2DZsZ10xlyBtLahKRTdWJz"
+};
+
+/***/ }),
+
 /***/ "./layouts/default/index.js":
 /*!**********************************!*\
   !*** ./layouts/default/index.js ***!
@@ -535,6 +781,7 @@ function (_Component) {
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("main", {
+        class: _style_css__WEBPACK_IMPORTED_MODULE_7___default.a.r,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 20
@@ -559,6 +806,7 @@ function (_Component) {
 /***/ (function(module, exports) {
 
 module.exports = {
+	"r": "_1WUXR3m6J34Ib6Vw0ZpEzu",
 	"container": "_1-fvxZCkP7w4EyFFsCNc0x",
 	"in": "wcdVsCXpNrzZN4Bggl-ED"
 };
@@ -1457,18 +1705,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! next/router */ "next/router");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var _layouts_default__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../layouts/default */ "./layouts/default/index.js");
-/* harmony import */ var _widgets_loading__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../widgets/loading */ "./widgets/loading/index.js");
-/* harmony import */ var _components_h1__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../components/h1 */ "./components/h1/index.js");
-/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! firebase/app */ "firebase/app");
-/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var firebase_auth__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! firebase/auth */ "firebase/auth");
-/* harmony import */ var firebase_auth__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(firebase_auth__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var _widgets_postEditor__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../widgets/postEditor */ "./widgets/postEditor/index.js");
+/* harmony import */ var _widgets_loading__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../widgets/loading */ "./widgets/loading/index.js");
+/* harmony import */ var _components_h1__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../components/h1 */ "./components/h1/index.js");
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! firebase/app */ "firebase/app");
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var firebase_auth__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! firebase/auth */ "firebase/auth");
+/* harmony import */ var firebase_auth__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(firebase_auth__WEBPACK_IMPORTED_MODULE_14__);
 
 
 
 
 
 var _jsxFileName = "/Users/am/Projects/firebase-cms/pages/index/index.js";
+
 
 
 
@@ -1506,7 +1756,7 @@ function (_Component) {
     value: function componentDidMount() {
       var _this = this;
 
-      firebase_app__WEBPACK_IMPORTED_MODULE_12___default.a.auth().onAuthStateChanged(function (user) {
+      firebase_app__WEBPACK_IMPORTED_MODULE_13___default.a.auth().onAuthStateChanged(function (user) {
         if (user) {
           _this.props.login();
         } else {
@@ -1521,22 +1771,21 @@ function (_Component) {
         return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_layouts_default__WEBPACK_IMPORTED_MODULE_9__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 33
+            lineNumber: 34
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_components_h1__WEBPACK_IMPORTED_MODULE_11__["default"], {
-          title: "Dashboard",
+        }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_widgets_postEditor__WEBPACK_IMPORTED_MODULE_10__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 34
+            lineNumber: 35
           },
           __self: this
         }));
       } else {
-        return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_widgets_loading__WEBPACK_IMPORTED_MODULE_10__["default"], {
+        return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_widgets_loading__WEBPACK_IMPORTED_MODULE_11__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 38
+            lineNumber: 39
           },
           __self: this
         });
@@ -2646,7 +2895,286 @@ module.exports = {
 
 /***/ }),
 
-/***/ 4:
+/***/ "./widgets/postEditor/index.js":
+/*!*************************************!*\
+  !*** ./widgets/postEditor/index.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var redux_zero_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! redux-zero/react */ "redux-zero/react");
+/* harmony import */ var redux_zero_react__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(redux_zero_react__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _states_fn__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../states/fn */ "./states/fn.js");
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./style.css */ "./widgets/postEditor/style.css");
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_style_css__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var draft_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! draft-js */ "draft-js");
+/* harmony import */ var draft_js__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(draft_js__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var draft_js_export_html__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! draft-js-export-html */ "draft-js-export-html");
+/* harmony import */ var draft_js_export_html__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(draft_js_export_html__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _components_h1__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../components/h1 */ "./components/h1/index.js");
+/* harmony import */ var _components_select__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../components/select */ "./components/select/index.js");
+/* harmony import */ var immutable__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! immutable */ "immutable");
+/* harmony import */ var immutable__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(immutable__WEBPACK_IMPORTED_MODULE_15__);
+
+
+
+
+
+
+
+var _jsxFileName = "/Users/am/Projects/firebase-cms/widgets/postEditor/index.js";
+
+
+
+
+
+
+
+
+
+
+
+var mapToProps = function mapToProps(_ref) {
+  var s = _ref.s,
+      d = _ref.d;
+  return {
+    s: s,
+    d: d
+  };
+};
+
+var hasCommandModifier = draft_js__WEBPACK_IMPORTED_MODULE_11__["KeyBindingUtil"].hasCommandModifier;
+
+var PostEditor =
+/*#__PURE__*/
+function (_Component) {
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__["default"])(PostEditor, _Component);
+
+  function PostEditor(props) {
+    var _this;
+
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, PostEditor);
+
+    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(PostEditor).call(this, props));
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "convertFromRaw", function () {
+      var contentState = _this.state.editorState.getCurrentContent();
+
+      var raw = Object(draft_js__WEBPACK_IMPORTED_MODULE_11__["convertToRaw"])(contentState);
+      var html = Object(draft_js_export_html__WEBPACK_IMPORTED_MODULE_12__["stateToHTML"])(contentState);
+      console.log(contentState);
+      console.log(raw);
+      console.log(html); //this.setState({
+      //    raw: this.state.editorState.getCurrentContent()
+      //})
+    });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "styling", function (content) {
+      var type = content.getType();
+
+      switch (type) {
+        case 'blockquote':
+          return 'superFancyBlockquote';
+
+        case 'bold':
+          return 'superFancyBlockquote';
+
+        default:
+          return null;
+      }
+    });
+
+    _this.styling = _this.styling.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
+
+    _this.onChange = function (editorState) {
+      return _this.setState({
+        editorState: editorState
+      });
+    };
+
+    _this.handleKeyCommand = _this.handleKeyCommand.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
+    _this._onBoldClick = _this._onBoldClick.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
+    _this.convertFromRaw = _this.convertFromRaw.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
+    _this.blockRenderMap = immutable__WEBPACK_IMPORTED_MODULE_15___default.a.Map({
+      'header-two': {
+        element: 'h2'
+      },
+      'unstyled': {
+        element: 'h2'
+      }
+    });
+    _this.state = {
+      editorState: draft_js__WEBPACK_IMPORTED_MODULE_11__["EditorState"].createEmpty(),
+      raw: ''
+    };
+    return _this;
+  }
+
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(PostEditor, [{
+    key: "handleKeyCommand",
+    value: function handleKeyCommand(command, editorState) {
+      var newState = draft_js__WEBPACK_IMPORTED_MODULE_11__["RichUtils"].handleKeyCommand(editorState, command);
+
+      if (newState) {
+        this.onChange(newState);
+        return 'handled';
+      }
+
+      return 'not-handled';
+    }
+  }, {
+    key: "_onBoldClick",
+    value: function _onBoldClick() {
+      this.onChange(draft_js__WEBPACK_IMPORTED_MODULE_11__["RichUtils"].toggleInlineStyle(this.state.editorState, 'BOLD'));
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("section", {
+        className: _style_css__WEBPACK_IMPORTED_MODULE_10___default.a.r,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 74
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("section", {
+        className: _style_css__WEBPACK_IMPORTED_MODULE_10___default.a.left,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 75
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+        className: _style_css__WEBPACK_IMPORTED_MODULE_10___default.a.default,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 76
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+        className: _style_css__WEBPACK_IMPORTED_MODULE_10___default.a.typeWrap,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 77
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_select__WEBPACK_IMPORTED_MODULE_14__["default"], {
+        type: "list",
+        size: "l",
+        value: "News",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 78
+        },
+        __self: this
+      })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("ul", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 80
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("li", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 81
+        },
+        __self: this
+      }, "Content"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("li", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 82
+        },
+        __self: this
+      }, "Items")))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("section", {
+        className: _style_css__WEBPACK_IMPORTED_MODULE_10___default.a.center,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 86
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("button", {
+        onClick: this._onBoldClick.bind(this),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 87
+        },
+        __self: this
+      }, "Bold"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+        className: _style_css__WEBPACK_IMPORTED_MODULE_10___default.a.editor,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 88
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(draft_js__WEBPACK_IMPORTED_MODULE_11__["Editor"], {
+        editorState: this.state.editorState,
+        handleKeyCommand: this.handleKeyCommand,
+        onChange: this.onChange,
+        placeholder: "Edit",
+        blockRenderMap: this.blockRenderMap,
+        blockStyleFn: this.styling,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 89
+        },
+        __self: this
+      })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("button", {
+        onClick: this.convertFromRaw,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 98
+        },
+        __self: this
+      }, "Convert from Raw")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("section", {
+        className: _style_css__WEBPACK_IMPORTED_MODULE_10___default.a.right,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 100
+        },
+        __self: this
+      }));
+    }
+  }]);
+
+  return PostEditor;
+}(react__WEBPACK_IMPORTED_MODULE_7__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(redux_zero_react__WEBPACK_IMPORTED_MODULE_8__["connect"])(mapToProps, _states_fn__WEBPACK_IMPORTED_MODULE_9__["default"])(PostEditor));
+
+/***/ }),
+
+/***/ "./widgets/postEditor/style.css":
+/*!**************************************!*\
+  !*** ./widgets/postEditor/style.css ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = {
+	"r": "_12k0_tOACRHfePevuuKwt8",
+	"editor": "_1zN6QslMF_35cn6zr0wVRt",
+	"left": "_1tCRNqOkQu018i5wOYz4e6",
+	"components": "_2Rkd-xDv_rtTYYYU4TYVvg",
+	"center": "_2PoVmP5_uxnQJ8S8OX4NsY",
+	"right": "_1EiFMitZ2qqL40yUOTmIzv",
+	"default": "_1hGTfy0_AzpXpHYHuSRoHT",
+	"typeWrap": "_1kOBB3NKSc-DkxRk17puL3"
+};
+
+/***/ }),
+
+/***/ 3:
 /*!************************************!*\
   !*** multi ./pages/index/index.js ***!
   \************************************/
@@ -2768,6 +3296,28 @@ module.exports = require("core-js/library/fn/symbol/iterator");
 
 /***/ }),
 
+/***/ "draft-js":
+/*!***************************!*\
+  !*** external "draft-js" ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("draft-js");
+
+/***/ }),
+
+/***/ "draft-js-export-html":
+/*!***************************************!*\
+  !*** external "draft-js-export-html" ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("draft-js-export-html");
+
+/***/ }),
+
 /***/ "firebase/app":
 /*!*******************************!*\
   !*** external "firebase/app" ***!
@@ -2798,6 +3348,17 @@ module.exports = require("firebase/auth");
 /***/ (function(module, exports) {
 
 module.exports = require("firebase/firestore");
+
+/***/ }),
+
+/***/ "immutable":
+/*!****************************!*\
+  !*** external "immutable" ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("immutable");
 
 /***/ }),
 

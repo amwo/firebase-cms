@@ -4,6 +4,7 @@ import fn from '../../states/fn';
 import Router from 'next/router'
 
 import Default from '../../layouts/default'
+import PostEditor from '../../widgets/postEditor'
 import Loading from '../../widgets/loading'
 import H1 from '../../components/h1'
 
@@ -31,7 +32,7 @@ class Home extends Component {
         if(this.props.s.login) {
             return (
                 <Default>
-                    <H1 title="Dashboard" />
+                    <PostEditor />
                 </Default>
             )
         } else {
