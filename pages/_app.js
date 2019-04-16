@@ -4,9 +4,15 @@ import './main.css'
 import { Provider } from 'redux-zero/react'
 import store from '../states/store'
 
+import Router from 'next/router';
 import firebase from 'firebase/app'
 import 'firebase/auth'
 import firebaseConf from '../conf/firebase'
+import AddNavigation from '../widgets/addNavigation'
+import Button from '../components/button'
+import Loading from '../widgets/loading'
+
+import fn from '../states/fn';
 
 export default class Default extends App {
     constructor(props) {
@@ -21,15 +27,34 @@ export default class Default extends App {
         return { pageProps }
     }
 
+    componentDidMount() {
+        firebase.auth().onAuthStateChanged((user) => {
+            if (user) {
+                fn().login(store)
+            }else{
+                Router.push('/login')
+            }
+        })
+    }
 
     render () {
         const { Component, pageProps } = this.props
-        return (
-            <Provider store={store}>
-                <Container>
-                    <Component {...pageProps} />
-                </Container>
-            </Provider>
-        )
+        if(store.getState().s.login) {
+            return (
+                <Provider store={store}>
+                    <Container>
+                        <Component {...pageProps} />
+                        <AddNavigation />
+                        <Button type="add" />
+                    </Container>
+                </Provider>
+            )
+        } else {
+            return (
+                <Provider store={store}>
+                    <Loading {...pageProps}/>
+                </Provider>
+            )
+        }
     }
 }
