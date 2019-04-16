@@ -3,9 +3,7 @@
     width: 100%;
     height: 100%;
 }
-.editor {
-    border: 1px solid gray;
-}
+
 .left {
     overflow: hidden;
     width: 220px;
@@ -31,4 +29,22 @@
 .left .default {}
 .typeWrap {
     padding: 30px 22px;
+}
+.center .content {
+    padding: 30px 60px;
+}
+.center .content .title {
+    outline: 0;
+    line-height: 1.3;
+    font-size: 36px;
+}
+.editor {
+    margin: 30px 0 0 0;
+    border: 1px solid gray;
+}
+
+.center .content .title[contenteditable=true]:empty:before{
+    color: #ccc;
+  content: attr(placeholder);
+  display: block; /* For Firefox */
 }

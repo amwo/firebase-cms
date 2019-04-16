@@ -90,7 +90,7 @@ class PostEditor extends Component {
                 </section>
                 <section className={style.center}>
                     <div className={style.content}>
-                    <h1 ref="title" className={style.title} placeholder="Title" onKeyDown={this.titleKeyDown} contentEditable></h1>
+                    <h1 ref="title" className={style.title} placeholder="Title" onKeyDown={this.titleKeyDown} contentEditable suppressContentEditableWarning>Oshima Island’s Perfect Guide -Must-see spots, Activities, Accommodation and Access</h1>
                     <div className={style.editor}>
                         <Editor
                             ref="content"

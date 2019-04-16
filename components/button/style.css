@@ -1,3 +1,4 @@
+/* Icon */
 .icon {
     background: #fafafa;
     border: 2px solid #fff;
@@ -17,4 +18,19 @@
 
 .icon:hover {
     border: 2px solid #000;
+}
+
+/* Add */
+.add {
+    background: #e6142c;
+    width: 50px;
+    height:50px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    box-shadow: 0 0 15px rgba(0,0,0,.3);
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 999
 }

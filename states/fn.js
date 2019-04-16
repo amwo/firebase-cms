@@ -43,7 +43,7 @@ const fn = store => ({
             console.log(err)
         })
     },
-    login: () => {
+    login: store => {
         store.setState(states => ({
             ...states,
             s: {

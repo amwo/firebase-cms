@@ -17,7 +17,7 @@ class Default extends Component {
                         <aside>
                             <Navigations />
                         </aside>
-                        <main class={style.r}>
+                        <main className={style.r}>
                             {this.props.children}
                         </main>
                     </div>
