@@ -22,15 +22,95 @@
 
 /* Add */
 .add {
+    border: 0;
+    outline: 0;
+    cursor: pointer;
     background: #e6142c;
-    width: 50px;
-    height:50px;
+    width: 56px;
+    height:56px;
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     box-shadow: 0 0 15px rgba(0,0,0,.3);
     position: fixed;
-    right: 0;
-    bottom: 0;
-    z-index: 999
+    right: 36px;
+    bottom: 36px;
+    z-index: 999;
+    transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+    -webkit-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+}
+.add img {
+    filter: brightness(0) invert(1);
+}
+/* Section */
+.section {
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    background: #fff;
+    width:220px;
+    height:56px;
+    border-radius: 40px;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    box-shadow: 0 0 15px rgba(0,0,0,.24);
+    position: fixed;
+    right: 106px;
+    bottom: 36px;
+    z-index: 999;
+    transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+    -webkit-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+}
+.section ul{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.section ul li {
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
+    list-style-type: none;
+    position: relative;
+    z-index:1;
+    transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+    -webkit-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+}
+.section ul li:hover{
+    color: #888;
+}
+.section ul li:first-child {
+    padding: 20px 0;
+    margin-left: 20px;
+}
+.section ul li:nth-child(2) {
+    padding: 20px 0;
+    margin-right: 20px;
+}
+.section .line {
+    position: absolute;
+    left: 10px;
+    top: 8px;
+    background: #e6142c;
+    box-shadow: 0 0 15px rgba(0,0,0,.3);
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    height: 40px;
+    width: 110px;
+    z-index:0;
+}
+.section .current {
+    color: #fff;
+}
+.section .current:hover {
+    color: #fff;
 }

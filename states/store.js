@@ -4,9 +4,12 @@ const i = {
     s: {
         login: false,
         page: {},
+        visibilities: {
+            nav: false
+        },
         current: {
             project: '',
-            user: ''
+            user: '',
         }
     },
     d: []

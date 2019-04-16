@@ -1,8 +1,6 @@
 import {Component} from 'react'
 import {connect} from 'redux-zero/react';
 import fn from '../../states/fn';
-import Default from '../../layouts/default'
-import PostEditor from '../../widgets/postEditor'
 
 const mapToProps = ({ s , d}) => ({ s, d });
 
@@ -11,12 +9,12 @@ class Home extends Component {
         super(props)
     }
 
+    componentWillMount() {
+        this.props.visibilityNav(false)
+    }
+
     render() {
-        return (
-            <Default>
-                <PostEditor />
-            </Default>
-        )
+        return <h1>Home</h1>
     }
 }
 

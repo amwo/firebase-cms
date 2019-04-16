@@ -14,7 +14,7 @@ class Loading extends Component {
     }
 
     componentDidUpdate() {
-        this.props.s.login ? Router.push('/') : Router.push('/login')
+        this.props.s.login ? Router.push(Router.route) : Router.push('/login')
     }
 
     render() {

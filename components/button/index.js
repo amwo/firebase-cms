@@ -13,7 +13,17 @@ class Button extends Component {
             case 'icon':
                 return <button className={style.icon}>{this.props.src ? <img src={this.props.src} width="" height="" alt="" /> : 'T'}</button>
             case 'add':
-                return <button className={style.add}><img src={ICON_ADD} width="" height="" alt="" /></button>
+                return <button className={style.add}><img src={ICON_ADD} width="20" height="" alt="" /></button>
+            case 'section':
+                return (
+                    <div className={style.section}>
+                        <ul>
+                            <li className={style.current}>Content</li>
+                            <li>List</li>
+                            <li className={style.line}></li>
+                        </ul>
+                    </div>
+                )
             default:
                 return <button className={style.r}>{this.props.title}</button>
         }

@@ -26,9 +26,9 @@ class Select extends Component {
                         )
                     case 'm':
                         return (
-                            <div>
-                                <p>{this.props.value}</p>
-                                <div>
+                            <div className={style.listM}>
+                                <p className={style.value}>{this.props.value}<i><img src={ICON_DOWN_ARROW} width="9" height="auto" alt="icon" /></i></p>
+                                <div className={style.list}>
                                     <ul>
                                         <li></li>
                                         <li></li>

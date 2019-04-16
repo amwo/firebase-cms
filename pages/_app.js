@@ -3,6 +3,7 @@ import App, { Container } from 'next/app'
 import './main.css'
 import { Provider } from 'redux-zero/react'
 import store from '../states/store'
+import Wrapper from '../layouts/default'
 
 import Router from 'next/router';
 import firebase from 'firebase/app'
@@ -43,9 +44,12 @@ export default class Default extends App {
             return (
                 <Provider store={store}>
                     <Container>
-                        <Component {...pageProps} />
+                        <Wrapper>
+                            <Component {...pageProps} />
+                        </Wrapper>
                         <AddNavigation />
                         <Button type="add" />
+                        <Button type="section" />
                     </Container>
                 </Provider>
             )

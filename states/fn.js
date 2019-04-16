@@ -5,6 +5,18 @@ import 'firebase/firestore'
 const fn = store => ({
     increment: state => ({ count: state.count + 1 }),
     decrement: state => ({ count: state.count - 1 }),
+    visibilityNav: (states, bool) => {
+        store.setState(states => ({
+            ...states,
+            s: {
+                ...states.s,
+                visibilities: {
+                    ...states.s.visibilities,
+                    nav: bool
+                }
+            },
+        }))
+    },
     isUserEmail: (states, email) => {
         let db = firebase.firestore()
         store.setState(states => ({

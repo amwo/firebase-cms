@@ -13,3 +13,20 @@
     display: none;
     position: absolute;
 }
+
+.listM {
+    position: relative;
+}
+.listM .value {
+    color: #e6142c;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+}
+.listM .value i {
+    margin-left: 5px;
+}
+.listM .list {
+    display: none;
+    position: absolute;
+}

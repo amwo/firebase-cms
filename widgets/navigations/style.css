@@ -10,10 +10,10 @@
     overflow: hidden;
     z-index: 100;
     background: #fff;
-    transition: all 0.25s ease;
-    -moz-transition: all 0.25s ease;
-    -webkit-transition: all 0.25s ease;
-    -o-transition: all 0.25s ease;
+    transition: all 1s ease;
+    -moz-transition: all 0.35s ease;
+    -webkit-transition: all 0.35s ease;
+    -o-transition: all 0.35s ease;
 }
 .header nav ul {
     margin: 30px 0 0 0;
@@ -143,20 +143,31 @@
     font-weight: 100
 
 }
+
 .cover {
     transition: all 0.25s ease;
     -moz-transition: all 0.25se;
     -webkit-transition: all 0.25se;
     -o-transition: all 0.25se;
-    display:none;
     background: rgba(0,0,0,.4);
     width: 240px;
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
-    z-index: 3;
+    display: none;
+    z-index: 2;
 }
+
+.cover.on {
+    display: block;
+    -webkit-animation: fadeIn .5s 1;
+    animation: fadeIn .5s 1;
+}
+
+@-webkit-keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
 .nav {
     position: absolute;
     height: 100%;

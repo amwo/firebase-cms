@@ -4,8 +4,11 @@ import fn from '../../states/fn';
 import style from './style.css'
 import {Editor, EditorState, RichUtils, getDefaultKeyBinding, KeyBindingUtil, convertToRaw} from 'draft-js';
 import {stateToHTML} from 'draft-js-export-html';
+import Div from '../../components/div'
 import H1 from '../../components/h1'
+import H3 from '../../components/h3'
 import Select from '../../components/select'
+import ThumbnailDnD from '../../widgets/thumbnailDnD'
 import Immutable from 'immutable'
 
 const mapToProps = ({ s , d}) => ({ s, d });
@@ -77,19 +80,11 @@ class PostEditor extends Component {
     render() {
         return (
             <section className={style.r}>
-                <section className={style.left}>
-                    <div className={style.default}>
-                        <div className={style.typeWrap}>
-                            <Select type="list" size="l" value="News" />
-                        </div>
-                        <ul>
-                            <li>Content</li>
-                            <li>Items</li>
-                        </ul>
-                    </div>
-                </section>
                 <section className={style.center}>
                     <div className={style.content}>
+                        <div className={style.type}>
+                            <Select type="list" size="m" value="News" />
+                        </div>
                     <h1 ref="title" className={style.title} placeholder="Title" onKeyDown={this.titleKeyDown} contentEditable suppressContentEditableWarning>Oshima Island’s Perfect Guide -Must-see spots, Activities, Accommodation and Access</h1>
                     <div className={style.editor}>
                         <Editor
@@ -107,6 +102,16 @@ class PostEditor extends Component {
                     </div>
                 </section>
                 <section className={style.right}>
+                        <ThumbnailDnD />
+                    <Div type="m">
+                        <H3 title="Category" />
+                    </Div>
+                    <Div type="m">
+                        <H3 title="Tags" />
+                    </Div>
+                    <Div type="m">
+                        <H3 title="State" />
+                    </Div>
                 </section>
             </section>
         );
