@@ -8,6 +8,8 @@ import Div from '../../components/div'
 import H1 from '../../components/h1'
 import H3 from '../../components/h3'
 import Select from '../../components/select'
+import Category from '../../widgets/category'
+import Tags from '../../widgets/tags'
 import ThumbnailDnD from '../../widgets/thumbnailDnD'
 import Immutable from 'immutable'
 
@@ -28,7 +30,7 @@ class PostEditor extends Component {
                 element: 'h2'
             },
             'unstyled': {
-                element: 'h2'
+                element: 'div'
             }
         })
         this.state = {
@@ -46,6 +48,7 @@ class PostEditor extends Component {
     }
 
     handleKeyCommand(command, editorState) {
+        console.log(command)
         const newState = RichUtils.handleKeyCommand(editorState, command);
         if (newState) {
             this.onChange(newState)
@@ -63,11 +66,14 @@ class PostEditor extends Component {
 
     styling = (content) => {
         const type = content.getType();
+        console.log(type)
         switch(type) {
-            case 'blockquote':
-                return 'superFancyBlockquote';
             case 'bold':
-                return 'superFancyBlockquote';
+                return 'editor-content-bold'
+                break;
+            case 'unstyled':
+                return 'editor-content-p'
+                break;
             default:
                 return null
         }
@@ -105,9 +111,11 @@ class PostEditor extends Component {
                         <ThumbnailDnD />
                     <Div type="m">
                         <H3 title="Category" />
+                        <Category />
                     </Div>
                     <Div type="m">
                         <H3 title="Tags" />
+                        <Tags />
                     </Div>
                     <Div type="m">
                         <H3 title="State" />
