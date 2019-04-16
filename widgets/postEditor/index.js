@@ -19,6 +19,7 @@ class PostEditor extends Component {
         this.handleKeyCommand = this.handleKeyCommand.bind(this)
         this._onBoldClick = this._onBoldClick.bind(this)
         this.convertFromRaw = this.convertFromRaw.bind(this)
+        this.titleKeyDown = this.titleKeyDown.bind(this)
         this.blockRenderMap = Immutable.Map({
             'header-two': {
                 element: 'h2'
@@ -39,9 +40,6 @@ class PostEditor extends Component {
         console.log(contentState)
         console.log(raw)
         console.log(html)
-        //this.setState({
-        //    raw: this.state.editorState.getCurrentContent()
-        //})
     }
 
     handleKeyCommand(command, editorState) {
@@ -51,6 +49,13 @@ class PostEditor extends Component {
             return 'handled';
         }
         return 'not-handled'
+    }
+
+    titleKeyDown = e => {
+        if(e.keyCode === 13) {
+            e.preventDefault()
+            this.refs['content'].focus()
+        }
     }
 
     styling = (content) => {
@@ -84,9 +89,11 @@ class PostEditor extends Component {
                     </div>
                 </section>
                 <section className={style.center}>
-                    <button onClick={this._onBoldClick.bind(this)}>Bold</button>
+                    <div className={style.content}>
+                    <h1 ref="title" className={style.title} placeholder="Title" onKeyDown={this.titleKeyDown} contentEditable></h1>
                     <div className={style.editor}>
                         <Editor
+                            ref="content"
                             editorState={this.state.editorState}
                             handleKeyCommand={this.handleKeyCommand}
                             onChange={this.onChange}
@@ -95,7 +102,9 @@ class PostEditor extends Component {
                             blockStyleFn={this.styling}
                         />
                     </div>
+                    <button onClick={this._onBoldClick.bind(this)}>Bold</button>
                     <button onClick={this.convertFromRaw}>Convert from Raw</button>
+                    </div>
                 </section>
                 <section className={style.right}>
                 </section>
