@@ -48,7 +48,7 @@ class PostEditor extends Component {
         let html = stateToHTML(contentState)
         //console.log(contentState)
         //console.log(raw)
-        //console.log(html)
+        console.log(html)
     }
 
     wrapper = contentBlock => {
@@ -96,13 +96,13 @@ class PostEditor extends Component {
     }
 
     insertBlocksFromHtml = (editorState, htmlString) => {
-        const newBlockMap = htmlToDraft(htmlString);
-        const contentState = editorState.getCurrentContent();
-        const blockMap = contentState.getBlocksAsArray();
-        newBlockMap.contentBlocks = blockMap.concat(newBlockMap.contentBlocks);
+        // const newBlockMap = htmlToDraft(htmlString);
+        //const contentState = editorState.getCurrentContent();
+        //const blockMap = contentState.getBlocksAsArray();
+        //newBlockMap.contentBlocks = blockMap.concat(newBlockMap.contentBlocks);
 
-        const newContentState = ContentState.createFromBlockArray(newBlockMap, contentState.getEntityMap());
-        return EditorState.moveSelectionToEnd(EditorState.createWithContent(newContentState));
+        //const newContentState = ContentState.createFromBlockArray(newBlockMap, contentState.getEntityMap());
+        //return EditorState.moveSelectionToEnd(EditorState.createWithContent(newContentState));
     }
 
     _onBoldClick() {
@@ -141,11 +141,11 @@ class PostEditor extends Component {
                                 blockStyleFn={this.styling}
                             />
                         </div>
+                        <button onClick={this._onBoldClick.bind(this)}>Bold</button>
+                        <button onClick={this.convertFromRaw}>Convert from Raw</button>
                     </div>
                 </section>
                 <section className={style.right}>
-                        <button onClick={this._onBoldClick.bind(this)}>Bold</button>
-                        <button onClick={this.convertFromRaw}>Convert from Raw</button>
                     <ThumbnailDnD />
                     <Div type="m">
                         <H3 title="Author" />
