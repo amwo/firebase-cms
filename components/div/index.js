@@ -9,9 +9,11 @@ class Div extends Component {
     render() {
         switch(this.props.type) {
             case 'm':
-            return <div className={style.m}>{this.props.children}</div>
-                default:
-            return <div className={style.d}>{this.props.children}</div>
+                return <div className={style.m}>{this.props.children}</div>
+            case 's':
+                return <div className={style.s}>{this.props.children}</div>
+            default:
+                return <div className={style.d}>{this.props.children}</div>
         }
     }
 }

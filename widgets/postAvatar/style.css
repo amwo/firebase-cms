@@ -1,0 +1,32 @@
+.r {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border: 1px solid #fff;
+    cursor: pointer;
+}
+.r:hover {
+    opacity: .8;
+}
+.thumb img {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    vertical-align: top;
+}
+
+.info {
+    padding: 0 0 0 7px;
+    flex: 1;
+}
+.info .nickname {
+    font-size: 14px;
+    font-weight: bold;
+}
+.info .title {
+    font-size: 11px;
+    color: #888;
+}

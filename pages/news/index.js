@@ -21,7 +21,7 @@ class News extends Component {
     }
 
     render() {
-        console.log(this.props.router.query)
+        //console.log(this.props.router.query)
         return <PostEditor />
     }
 }

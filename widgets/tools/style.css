@@ -1,0 +1,15 @@
+.r {
+    background: red;
+    position: relative;
+}
+.edit {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.toolbox {
+    width: 100px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
