@@ -1,9 +1,9 @@
 import {Component} from 'react'
-import {connect} from 'redux-zero/react';
-import fn from '../../states/fn';
+import {connect} from 'redux-zero/react'
+import fn from '../../states/fn'
 import style from './style.css'
-import {Editor, EditorState, ContentState, AtomicBlockUtils, RichUtils, getDefaultKeyBinding, KeyBindingUtil, convertToRaw, convertFromHTML} from 'draft-js';
-import {stateToHTML} from 'draft-js-export-html';
+import {Editor, EditorState, ContentState, ContentBlock, AtomicBlockUtils, RichUtils, getDefaultKeyBinding, KeyBindingUtil, convertToRaw, convertFromHTML} from 'draft-js'
+import {stateToHTML} from 'draft-js-export-html'
 import Div from '../../components/div'
 import H1 from '../../components/h1'
 import H3 from '../../components/h3'
@@ -23,9 +23,8 @@ class PostEditor extends Component {
         super(props)
         this.styling = this.styling.bind(this)
         this.onChange = (editorState) => this.setState({editorState})
-        this.insertBlocksFromHtml = this.insertBlocksFromHtml.bind(this)
+        this.focus = this.focus.bind(this)
         this.handleKeyCommand = this.handleKeyCommand.bind(this)
-        this._onBoldClick = this._onBoldClick.bind(this)
         this.convertFromRaw = this.convertFromRaw.bind(this)
         this.titleKeyDown = this.titleKeyDown.bind(this)
         this.wrapper =  this.wrapper.bind(this)
@@ -40,12 +39,14 @@ class PostEditor extends Component {
         this.state = {
             editorState: EditorState.createEmpty()
         }
+        this.editorState = this.state.editorState
+        this.contentState = this.editorState.getCurrentContent()
+        this.selectionState = this.editorState.getSelection()
     }
 
     convertFromRaw = () => {
-        let contentState = this.state.editorState.getCurrentContent()
-        let raw = convertToRaw(contentState)
-        let html = stateToHTML(contentState)
+        let raw = convertToRaw(this.contentState)
+        let html = stateToHTML(this.contentState)
         //console.log(contentState)
         //console.log(raw)
         console.log(html)
@@ -84,9 +85,6 @@ class PostEditor extends Component {
         const type = content.getType();
         //console.log(type)
         switch(type) {
-            case 'bold':
-                return 'editor-content-bold'
-                break;
             case 'unstyled':
                 return 'editor-content-p'
                 break;
@@ -95,30 +93,15 @@ class PostEditor extends Component {
         }
     }
 
-    insertBlocksFromHtml = (editorState, htmlString) => {
-        // const newBlockMap = htmlToDraft(htmlString);
-        //const contentState = editorState.getCurrentContent();
-        //const blockMap = contentState.getBlocksAsArray();
-        //newBlockMap.contentBlocks = blockMap.concat(newBlockMap.contentBlocks);
-
-        //const newContentState = ContentState.createFromBlockArray(newBlockMap, contentState.getEntityMap());
-        //return EditorState.moveSelectionToEnd(EditorState.createWithContent(newContentState));
-    }
-
-    _onBoldClick() {
-        this.insertBlocksFromHtml(this.state.editorState, '<h1>Hogehoge</h1>')
-        this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, 'BOLD'));
+    focus = e => {
     }
 
     render() {
-        const e =this.state.editorState
-        const c = e.getCurrentContent()
-        const m = c.getBlocksAsArray()
-        const s = e.getSelection()
-        const k = s.getAnchorKey()
-        //console.log(m)
-        //console.log(s)
-        //console.log(k)
+        //console.log(this.contentState.getBlockMap().length)
+        //console.log(this.contentState.getFirstBlock().getText())
+        //console.log(this.contentState.getLastBlock().getText())
+        //console.log(this.contentState.createFromBlockArray)
+
         return (
             <section className={style.r}>
                 <section className={style.center}>
@@ -139,9 +122,9 @@ class PostEditor extends Component {
                                 blockRenderMap={this.blockRenderMap}
                                 blockRendererFn={this.wrapper}
                                 blockStyleFn={this.styling}
+                                onFocus={this.focus}
                             />
                         </div>
-                        <button onClick={this._onBoldClick.bind(this)}>Bold</button>
                         <button onClick={this.convertFromRaw}>Convert from Raw</button>
                     </div>
                 </section>

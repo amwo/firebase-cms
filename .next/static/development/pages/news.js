@@ -69982,10 +69982,8 @@ function (_Component) {
     _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(PostEditor).call(this, props));
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "convertFromRaw", function () {
-      var contentState = _this.state.editorState.getCurrentContent();
-
-      var raw = Object(draft_js__WEBPACK_IMPORTED_MODULE_11__["convertToRaw"])(contentState);
-      var html = Object(draft_js_export_html__WEBPACK_IMPORTED_MODULE_12__["stateToHTML"])(contentState); //console.log(contentState)
+      var raw = Object(draft_js__WEBPACK_IMPORTED_MODULE_11__["convertToRaw"])(_this.contentState);
+      var html = Object(draft_js_export_html__WEBPACK_IMPORTED_MODULE_12__["stateToHTML"])(_this.contentState); //console.log(contentState)
       //console.log(raw)
 
       console.log(html);
@@ -70017,10 +70015,6 @@ function (_Component) {
       var type = content.getType(); //console.log(type)
 
       switch (type) {
-        case 'bold':
-          return 'editor-content-bold';
-          break;
-
         case 'unstyled':
           return 'editor-content-p';
           break;
@@ -70030,13 +70024,7 @@ function (_Component) {
       }
     });
 
-    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "insertBlocksFromHtml", function (editorState, htmlString) {// const newBlockMap = htmlToDraft(htmlString);
-      //const contentState = editorState.getCurrentContent();
-      //const blockMap = contentState.getBlocksAsArray();
-      //newBlockMap.contentBlocks = blockMap.concat(newBlockMap.contentBlocks);
-      //const newContentState = ContentState.createFromBlockArray(newBlockMap, contentState.getEntityMap());
-      //return EditorState.moveSelectionToEnd(EditorState.createWithContent(newContentState));
-    });
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "focus", function (e) {});
 
     _this.styling = _this.styling.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
 
@@ -70046,9 +70034,8 @@ function (_Component) {
       });
     };
 
-    _this.insertBlocksFromHtml = _this.insertBlocksFromHtml.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
+    _this.focus = _this.focus.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
     _this.handleKeyCommand = _this.handleKeyCommand.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
-    _this._onBoldClick = _this._onBoldClick.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
     _this.convertFromRaw = _this.convertFromRaw.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
     _this.titleKeyDown = _this.titleKeyDown.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
     _this.wrapper = _this.wrapper.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this));
@@ -70063,6 +70050,9 @@ function (_Component) {
     _this.state = {
       editorState: draft_js__WEBPACK_IMPORTED_MODULE_11__["EditorState"].createEmpty()
     };
+    _this.editorState = _this.state.editorState;
+    _this.contentState = _this.editorState.getCurrentContent();
+    _this.selectionState = _this.editorState.getSelection();
     return _this;
   }
 
@@ -70079,48 +70069,38 @@ function (_Component) {
       return 'not-handled';
     }
   }, {
-    key: "_onBoldClick",
-    value: function _onBoldClick() {
-      this.insertBlocksFromHtml(this.state.editorState, '<h1>Hogehoge</h1>');
-      this.onChange(draft_js__WEBPACK_IMPORTED_MODULE_11__["RichUtils"].toggleInlineStyle(this.state.editorState, 'BOLD'));
-    }
-  }, {
     key: "render",
     value: function render() {
-      var e = this.state.editorState;
-      var c = e.getCurrentContent();
-      var m = c.getBlocksAsArray();
-      var s = e.getSelection();
-      var k = s.getAnchorKey(); //console.log(m)
-      //console.log(s)
-      //console.log(k)
-
+      //console.log(this.contentState.getBlockMap().length)
+      //console.log(this.contentState.getFirstBlock().getText())
+      //console.log(this.contentState.getLastBlock().getText())
+      //console.log(this.contentState.createFromBlockArray)
       return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("section", {
         className: _style_css__WEBPACK_IMPORTED_MODULE_10___default.a.r,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 123
+          lineNumber: 106
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("section", {
         className: _style_css__WEBPACK_IMPORTED_MODULE_10___default.a.center,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 124
+          lineNumber: 107
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: _style_css__WEBPACK_IMPORTED_MODULE_10___default.a.content,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 125
+          lineNumber: 108
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: _style_css__WEBPACK_IMPORTED_MODULE_10___default.a.type,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 126
+          lineNumber: 109
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_select__WEBPACK_IMPORTED_MODULE_16__["default"], {
@@ -70129,7 +70109,7 @@ function (_Component) {
         value: "News",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 127
+          lineNumber: 110
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("h1", {
@@ -70141,21 +70121,21 @@ function (_Component) {
         suppressContentEditableWarning: true,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 129
+          lineNumber: 112
         },
         __self: this
       }, "Oshima Island\u2019s Perfect Guide -Must-see spots, Activities, Accommodation and Access"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: _style_css__WEBPACK_IMPORTED_MODULE_10___default.a.avatarWrap,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 130
+          lineNumber: 113
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: _style_css__WEBPACK_IMPORTED_MODULE_10___default.a.editor,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 132
+          lineNumber: 115
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(draft_js__WEBPACK_IMPORTED_MODULE_11__["Editor"], {
@@ -70167,138 +70147,132 @@ function (_Component) {
         blockRenderMap: this.blockRenderMap,
         blockRendererFn: this.wrapper,
         blockStyleFn: this.styling,
+        onFocus: this.focus,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 133
+          lineNumber: 116
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("button", {
-        onClick: this._onBoldClick.bind(this),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 144
-        },
-        __self: this
-      }, "Bold"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("button", {
         onClick: this.convertFromRaw,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 145
+          lineNumber: 128
         },
         __self: this
       }, "Convert from Raw"))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("section", {
         className: _style_css__WEBPACK_IMPORTED_MODULE_10___default.a.right,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 148
+          lineNumber: 131
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_widgets_thumbnailDnD__WEBPACK_IMPORTED_MODULE_19__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 149
+          lineNumber: 132
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_div__WEBPACK_IMPORTED_MODULE_13__["default"], {
         type: "m",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 150
+          lineNumber: 133
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_h3__WEBPACK_IMPORTED_MODULE_15__["default"], {
         title: "Author",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 151
+          lineNumber: 134
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_div__WEBPACK_IMPORTED_MODULE_13__["default"], {
         type: "s",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 152
+          lineNumber: 135
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_widgets_postAvatar__WEBPACK_IMPORTED_MODULE_20__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 153
+          lineNumber: 136
         },
         __self: this
       }))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_div__WEBPACK_IMPORTED_MODULE_13__["default"], {
         type: "m",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 156
+          lineNumber: 139
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_h3__WEBPACK_IMPORTED_MODULE_15__["default"], {
         title: "Category",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 157
+          lineNumber: 140
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_div__WEBPACK_IMPORTED_MODULE_13__["default"], {
         type: "s",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 158
+          lineNumber: 141
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_widgets_category__WEBPACK_IMPORTED_MODULE_17__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 159
+          lineNumber: 142
         },
         __self: this
       }))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_div__WEBPACK_IMPORTED_MODULE_13__["default"], {
         type: "m",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 162
+          lineNumber: 145
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_h3__WEBPACK_IMPORTED_MODULE_15__["default"], {
         title: "Tags",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 163
+          lineNumber: 146
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_div__WEBPACK_IMPORTED_MODULE_13__["default"], {
         type: "s",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 164
+          lineNumber: 147
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_widgets_tags__WEBPACK_IMPORTED_MODULE_18__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 165
+          lineNumber: 148
         },
         __self: this
       }))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_div__WEBPACK_IMPORTED_MODULE_13__["default"], {
         type: "m",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 168
+          lineNumber: 151
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_h3__WEBPACK_IMPORTED_MODULE_15__["default"], {
         title: "State",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 169
+          lineNumber: 152
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_div__WEBPACK_IMPORTED_MODULE_13__["default"], {
         type: "s",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 170
+          lineNumber: 153
         },
         __self: this
       }))));
@@ -70738,7 +70712,7 @@ function (_Component) {
 
 /***/ }),
 
-/***/ 8:
+/***/ 9:
 /*!**************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fnews&absolutePagePath=%2FUsers%2Fam%2FProjects%2Ffirebase-cms%2Fpages%2Fnews%2Findex.js ***!
   \**************************************************************************************************************************************/
@@ -70761,5 +70735,5 @@ module.exports = dll_6dc2816e14fab51b8269;
 
 /***/ })
 
-},[[8,"static/runtime/webpack.js","styles"]]]));;
+},[[9,"static/runtime/webpack.js","styles"]]]));;
 //# sourceMappingURL=news.js.map
