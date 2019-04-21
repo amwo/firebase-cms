@@ -5,15 +5,13 @@ import { Provider } from 'redux-zero/react'
 import store from '../states/store'
 import Wrapper from '../layouts/default'
 
-import Router from 'next/router';
+import Router from 'next/router'
 import firebase from 'firebase/app'
 import 'firebase/auth'
-import firebaseConf from '../conf/firebase'
+import fn from '../states/fn'
 import AddNavigation from '../widgets/addNavigation'
 import Button from '../components/button'
 import Loading from '../widgets/loading'
-
-import fn from '../states/fn';
 
 export default class Default extends App {
     constructor(props) {
@@ -29,13 +27,7 @@ export default class Default extends App {
     }
 
     componentDidMount() {
-        firebase.auth().onAuthStateChanged((user) => {
-            if (user) {
-                fn().login(store)
-            }else{
-                Router.push('/login')
-            }
-        })
+        fn().init(store)
     }
 
     render () {

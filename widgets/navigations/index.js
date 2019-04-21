@@ -84,10 +84,87 @@ class Navigations extends Component {
                         </div>
                         <div className={style.nav} style={this.props.s.visibilities.nav ? {left: 0} : {left: '240px'}}>
                             <nav className={style.secondNav}>
-                                <section>
-                                    <Link href="/"><a><i><img src={ICON_BACK} width="" height="15" alt="" /></i>Back</a></Link>
+                                <section className={style.secondNavHeader}>
+                                    <Link href="/"><a className={style.back}><i><img src={ICON_BACK} width="" height="15" alt="" /></i></a></Link>
                                 </section>
                                 <div className={style.articleItems}>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
+                                    <Article href={'/post'} id="124"/>
                                     <Article href={'/post'} id="124"/>
                                 </div>
                             </nav>

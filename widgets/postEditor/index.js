@@ -49,7 +49,7 @@ class PostEditor extends Component {
         let html = stateToHTML(this.contentState)
         //console.log(contentState)
         //console.log(raw)
-        console.log(html)
+        //console.log(html)
     }
 
     wrapper = contentBlock => {
@@ -58,9 +58,6 @@ class PostEditor extends Component {
             return {
                 component: Tools,
                 editable: true,
-                props: {
-                    foo: 'bar',
-                },
             }
         }
     }
@@ -101,7 +98,7 @@ class PostEditor extends Component {
         //console.log(this.contentState.getFirstBlock().getText())
         //console.log(this.contentState.getLastBlock().getText())
         //console.log(this.contentState.createFromBlockArray)
-
+        //console.log(this.editorState.currentContent)
         return (
             <section className={style.r}>
                 <section className={style.center}>

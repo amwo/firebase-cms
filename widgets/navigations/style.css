@@ -176,4 +176,37 @@
     -moz-transition: all 0.25s ease;
     -webkit-transition: all 0.25s ease;
     -o-transition: all 0.25s ease;
+    background: #fff;
+}
+.nav nav {
+    position: relative;
+    height: 100%;
+}
+.articleItems {
+    height: 100%;
+    overflow: scroll;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.secondNavHeader {
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 100%;
+    height: 40px;
+    background: #fff;
+    z-index: 1;
+    border-bottom: 1px solid #ebebeb;
+    box-shadow: 0 0 8px rgba(0,0,0,.17);
+}
+
+.back {
+    margin: 4px 0 0 10px;
+    display: inline-block;
+    background:#ebebeb;
+    padding: 5px 30px;
+    border-radius: 21px;
+    -webkit-border-radius: 21px;
+    -moz-border-radius: 21px;
 }

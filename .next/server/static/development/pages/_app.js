@@ -1931,11 +1931,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_15__);
 /* harmony import */ var firebase_auth__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! firebase/auth */ "firebase/auth");
 /* harmony import */ var firebase_auth__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(firebase_auth__WEBPACK_IMPORTED_MODULE_16__);
-/* harmony import */ var _conf_firebase__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../conf/firebase */ "./conf/firebase.js");
+/* harmony import */ var _states_fn__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../states/fn */ "./states/fn.js");
 /* harmony import */ var _widgets_addNavigation__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../widgets/addNavigation */ "./widgets/addNavigation/index.js");
 /* harmony import */ var _components_button__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../components/button */ "./components/button/index.js");
 /* harmony import */ var _widgets_loading__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../widgets/loading */ "./widgets/loading/index.js");
-/* harmony import */ var _states_fn__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../states/fn */ "./states/fn.js");
 
 
 
@@ -1945,7 +1944,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _jsxFileName = "/Users/am/Projects/firebase-cms/pages/_app.js";
-
 
 
 
@@ -1974,13 +1972,7 @@ function (_App) {
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_4__["default"])(Default, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      firebase_app__WEBPACK_IMPORTED_MODULE_15___default.a.auth().onAuthStateChanged(function (user) {
-        if (user) {
-          Object(_states_fn__WEBPACK_IMPORTED_MODULE_21__["default"])().login(_states_store__WEBPACK_IMPORTED_MODULE_12__["default"]);
-        } else {
-          next_router__WEBPACK_IMPORTED_MODULE_14___default.a.push('/login');
-        }
-      });
+      Object(_states_fn__WEBPACK_IMPORTED_MODULE_17__["default"])().init(_states_store__WEBPACK_IMPORTED_MODULE_12__["default"]);
     }
   }, {
     key: "render",
@@ -1994,45 +1986,45 @@ function (_App) {
           store: _states_store__WEBPACK_IMPORTED_MODULE_12__["default"],
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 45
+            lineNumber: 37
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(next_app__WEBPACK_IMPORTED_MODULE_9__["Container"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 46
+            lineNumber: 38
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_layouts_default__WEBPACK_IMPORTED_MODULE_13__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 47
+            lineNumber: 39
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, pageProps, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 48
+            lineNumber: 40
           },
           __self: this
         }))), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_widgets_addNavigation__WEBPACK_IMPORTED_MODULE_18__["default"], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 50
+            lineNumber: 42
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_components_button__WEBPACK_IMPORTED_MODULE_19__["default"], {
           type: "add",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 51
+            lineNumber: 43
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_components_button__WEBPACK_IMPORTED_MODULE_19__["default"], {
           type: "section",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 52
+            lineNumber: 44
           },
           __self: this
         })));
@@ -2041,13 +2033,13 @@ function (_App) {
           store: _states_store__WEBPACK_IMPORTED_MODULE_12__["default"],
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 58
+            lineNumber: 50
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_widgets_loading__WEBPACK_IMPORTED_MODULE_20__["default"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, pageProps, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 59
+            lineNumber: 51
           },
           __self: this
         })));
@@ -2135,13 +2127,51 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var firebase_auth__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(firebase_auth__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var firebase_firestore__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! firebase/firestore */ "firebase/firestore");
 /* harmony import */ var firebase_firestore__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(firebase_firestore__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _conf_firebase__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../conf/firebase */ "./conf/firebase.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_5__);
 
 
 
+
+
+var db = firebase_app__WEBPACK_IMPORTED_MODULE_1___default.a.firestore();
 
 
 var fn = function fn(store) {
   return {
+    init: function init(store) {
+      firebase_app__WEBPACK_IMPORTED_MODULE_1___default.a.auth().onAuthStateChanged(function (user) {
+        if (user) {
+          var loginUserId = "";
+          var usersData = {};
+          db.collection('tokyoislands').doc('people').collection('users').where("admin", "==", true).get().then(function (querySnapshot) {
+            querySnapshot.forEach(function (doc) {
+              if (doc.id === user.uid) {
+                loginUserId = doc.id;
+              }
+
+              usersData[doc.id] = doc.data();
+            });
+            store.setState(function (states) {
+              return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states, {
+                s: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states.s, {
+                  login: true,
+                  current: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states.s.current, {
+                    user: loginUserId
+                  })
+                }),
+                d: usersData
+              });
+            });
+          }).catch(function (error) {
+            console.log("Error getting documents: ", error);
+          });
+        } else {
+          next_router__WEBPACK_IMPORTED_MODULE_5___default.a.push('/login');
+        }
+      });
+    },
     increment: function increment(state) {
       return {
         count: state.count + 1
@@ -2198,15 +2228,6 @@ var fn = function fn(store) {
           });
         });
         console.log(err);
-      });
-    },
-    login: function login(store) {
-      store.setState(function (states) {
-        return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states, {
-          s: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states.s, {
-            login: true
-          })
-        });
       });
     },
     auth: function auth(states, email, password) {
@@ -2276,10 +2297,108 @@ var i = {
       user: ''
     }
   },
-  d: []
+  d: {}
 };
 var store = redux_zero__WEBPACK_IMPORTED_MODULE_0___default()(i);
 /* harmony default export */ __webpack_exports__["default"] = (store);
+
+/***/ }),
+
+/***/ "./widgets/account/index.js":
+/*!**********************************!*\
+  !*** ./widgets/account/index.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./style.css */ "./widgets/account/style.css");
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_style_css__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var redux_zero_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! redux-zero/react */ "redux-zero/react");
+/* harmony import */ var redux_zero_react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(redux_zero_react__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _states_fn__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../states/fn */ "./states/fn.js");
+
+
+
+
+
+var _jsxFileName = "/Users/am/Projects/firebase-cms/widgets/account/index.js";
+
+
+
+
+
+
+var mapToProps = function mapToProps(_ref) {
+  var s = _ref.s,
+      d = _ref.d;
+  return {
+    s: s,
+    d: d
+  };
+};
+
+var Account =
+/*#__PURE__*/
+function (_Component) {
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(Account, _Component);
+
+  function Account(props) {
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, Account);
+
+    return Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(Account).call(this, props));
+  }
+
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Account, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        className: _style_css__WEBPACK_IMPORTED_MODULE_6___default.a.r,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 15
+        },
+        __self: this
+      }, this.props.s.current.user ? react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("img", {
+        className: _style_css__WEBPACK_IMPORTED_MODULE_6___default.a.thumbnail,
+        src: this.props.d[this.props.s.current.user].thumbnail,
+        width: "33",
+        height: "33",
+        alt: "",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 16
+        },
+        __self: this
+      }) : null);
+    }
+  }]);
+
+  return Account;
+}(react__WEBPACK_IMPORTED_MODULE_5__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(redux_zero_react__WEBPACK_IMPORTED_MODULE_7__["connect"])(mapToProps, _states_fn__WEBPACK_IMPORTED_MODULE_8__["default"])(Account));
+
+/***/ }),
+
+/***/ "./widgets/account/style.css":
+/*!***********************************!*\
+  !*** ./widgets/account/style.css ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = {
+	"thumbnail": "xoVgL-5qlEZQ5EJwukVwE"
+};
 
 /***/ }),
 
@@ -2407,12 +2526,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./style.css */ "./widgets/header/style.css");
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_style_css__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _components_button__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../components/button */ "./components/button/index.js");
+/* harmony import */ var _widgets_account__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../widgets/account */ "./widgets/account/index.js");
 
 
 
 
 
 var _jsxFileName = "/Users/am/Projects/firebase-cms/widgets/header/index.js";
+
 
 
 
@@ -2436,17 +2557,36 @@ function (_Component) {
         className: _style_css__WEBPACK_IMPORTED_MODULE_6___default.a.r,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 12
+          lineNumber: 14
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 15
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_components_button__WEBPACK_IMPORTED_MODULE_7__["default"], {
         type: "icon",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 13
+          lineNumber: 16
         },
         __self: this
-      }));
+      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        className: _style_css__WEBPACK_IMPORTED_MODULE_6___default.a.account,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 17
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_widgets_account__WEBPACK_IMPORTED_MODULE_8__["default"], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 18
+        },
+        __self: this
+      }))));
     }
   }]);
 
@@ -2465,7 +2605,9 @@ function (_Component) {
 /***/ (function(module, exports) {
 
 module.exports = {
-	"r": "_1LgiD2nXic45SPrGOSSdE"
+	"r": "_1LgiD2nXic45SPrGOSSdE",
+	"wrap": "_3GeAj4Xkb1QCpbV5MQrddQ",
+	"account": "_1N_gYToUWnVe_gOR2WQLxV"
 };
 
 /***/ }),
@@ -3303,6 +3445,7 @@ function (_Component) {
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("section", {
+        className: _style_css__WEBPACK_IMPORTED_MODULE_9___default.a.secondNavHeader,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 87
@@ -3316,6 +3459,7 @@ function (_Component) {
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
+        className: _style_css__WEBPACK_IMPORTED_MODULE_9___default.a.back,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 88
@@ -3337,7 +3481,7 @@ function (_Component) {
           lineNumber: 88
         },
         __self: this
-      })), "Back"))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+      }))))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: _style_css__WEBPACK_IMPORTED_MODULE_9___default.a.articleItems,
         __source: {
           fileName: _jsxFileName,
@@ -3350,6 +3494,622 @@ function (_Component) {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 91
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 92
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 93
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 94
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 95
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 96
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 97
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 98
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 99
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 100
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 101
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 102
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 103
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 104
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 105
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 106
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 107
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 108
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 109
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 110
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 111
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 112
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 113
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 114
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 115
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 116
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 117
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 118
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 119
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 120
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 121
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 122
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 123
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 124
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 125
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 126
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 127
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 128
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 129
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 130
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 131
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 132
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 133
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 134
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 135
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 136
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 137
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 138
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 139
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 140
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 141
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 142
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 143
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 144
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 145
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 146
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 147
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 148
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 149
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 150
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 151
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 152
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 153
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 154
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 155
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 156
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 157
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 158
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 159
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 160
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 161
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 162
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 163
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 164
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 165
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 166
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 167
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_article__WEBPACK_IMPORTED_MODULE_19__["default"], {
+        href: '/post',
+        id: "124",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 168
         },
         __self: this
       })))))));
@@ -3381,7 +4141,10 @@ module.exports = {
 	"hr": "_1E3ZoqUc4JzNNT0br4RsUt",
 	"cover": "_2pqCbi5zE-z6pj97UfvPJV",
 	"on": "_3vRp6kDQrWIsqTs433Ewph",
-	"fadeIn": "_3ctygxGSuJf79N1f-OAcV7"
+	"fadeIn": "_3ctygxGSuJf79N1f-OAcV7",
+	"articleItems": "_3yV2NcDY9KqNbDTgypM9c8",
+	"secondNavHeader": "_2O-DWl5_jaGTmJtaVgMZU",
+	"back": "_2znBXLzPYXyA3GtbnjD1n3"
 };
 
 /***/ }),

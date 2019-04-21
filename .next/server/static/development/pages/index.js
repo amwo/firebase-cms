@@ -88,10 +88,34 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
+
+/***/ "./conf/firebase.js":
+/*!**************************!*\
+  !*** ./conf/firebase.js ***!
+  \**************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! firebase/app */ "firebase/app");
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_0__);
+
+var conf = {
+  apiKey: "AIzaSyAyQI-VFBf2kO9cI53Z-AMt9K_p3Q5keqw",
+  authDomain: "tokyoislands-2f2e6.firebaseapp.com",
+  databaseURL: "https://tokyoislands-2f2e6.firebaseio.com",
+  projectId: "tokyoislands-2f2e6",
+  storageBucket: "tokyoislands-2f2e6.appspot.com",
+  messagingSenderId: "720287797198"
+};
+/* harmony default export */ __webpack_exports__["default"] = (!firebase_app__WEBPACK_IMPORTED_MODULE_0___default.a.apps.length ? firebase_app__WEBPACK_IMPORTED_MODULE_0___default.a.initializeApp(conf) : firebase_app__WEBPACK_IMPORTED_MODULE_0___default.a.app());
+
+/***/ }),
 
 /***/ "./node_modules/@babel/runtime-corejs2/core-js/object/create.js":
 /*!**********************************************************************!*\
@@ -534,10 +558,11 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
+      console.log(this.props);
       return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("h1", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 17
+          lineNumber: 18
         },
         __self: this
       }, "Home");
@@ -567,13 +592,51 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var firebase_auth__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(firebase_auth__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var firebase_firestore__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! firebase/firestore */ "firebase/firestore");
 /* harmony import */ var firebase_firestore__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(firebase_firestore__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _conf_firebase__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../conf/firebase */ "./conf/firebase.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_5__);
 
 
 
+
+
+var db = firebase_app__WEBPACK_IMPORTED_MODULE_1___default.a.firestore();
 
 
 var fn = function fn(store) {
   return {
+    init: function init(store) {
+      firebase_app__WEBPACK_IMPORTED_MODULE_1___default.a.auth().onAuthStateChanged(function (user) {
+        if (user) {
+          var loginUserId = "";
+          var usersData = {};
+          db.collection('tokyoislands').doc('people').collection('users').where("admin", "==", true).get().then(function (querySnapshot) {
+            querySnapshot.forEach(function (doc) {
+              if (doc.id === user.uid) {
+                loginUserId = doc.id;
+              }
+
+              usersData[doc.id] = doc.data();
+            });
+            store.setState(function (states) {
+              return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states, {
+                s: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states.s, {
+                  login: true,
+                  current: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states.s.current, {
+                    user: loginUserId
+                  })
+                }),
+                d: usersData
+              });
+            });
+          }).catch(function (error) {
+            console.log("Error getting documents: ", error);
+          });
+        } else {
+          next_router__WEBPACK_IMPORTED_MODULE_5___default.a.push('/login');
+        }
+      });
+    },
     increment: function increment(state) {
       return {
         count: state.count + 1
@@ -632,15 +695,6 @@ var fn = function fn(store) {
         console.log(err);
       });
     },
-    login: function login(store) {
-      store.setState(function (states) {
-        return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states, {
-          s: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states.s, {
-            login: true
-          })
-        });
-      });
-    },
     auth: function auth(states, email, password) {
       store.setState(function (states) {
         return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states, {
@@ -684,7 +738,7 @@ var fn = function fn(store) {
 
 /***/ }),
 
-/***/ 3:
+/***/ 5:
 /*!************************************!*\
   !*** multi ./pages/index/index.js ***!
   \************************************/
@@ -825,6 +879,17 @@ module.exports = require("firebase/auth");
 /***/ (function(module, exports) {
 
 module.exports = require("firebase/firestore");
+
+/***/ }),
+
+/***/ "next/router":
+/*!******************************!*\
+  !*** external "next/router" ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next/router");
 
 /***/ }),
 

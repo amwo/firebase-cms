@@ -12,7 +12,7 @@ const i = {
             user: '',
         }
     },
-    d: []
+    d: {}
 }
 
 const store = createStore(i)

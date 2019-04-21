@@ -1,8 +1,45 @@
 import firebase from 'firebase/app'
 import 'firebase/auth'
 import 'firebase/firestore'
+import firebaseConf from '../conf/firebase'
 
+const db = firebase.firestore()
+
+import Router from 'next/router'
 const fn = store => ({
+    init: store => {
+        firebase.auth().onAuthStateChanged((user) => {
+            if (user) {
+
+                let loginUserId = ""
+                let usersData = {}
+                db.collection('tokyoislands').doc('people').collection('users').where("admin", "==", true).get().then(function(querySnapshot) {
+                    querySnapshot.forEach(function(doc) {
+                        if(doc.id === user.uid) {
+                            loginUserId = doc.id
+                        }
+                        usersData[doc.id] = doc.data()
+                    })
+                    store.setState(states => ({
+                        ...states,
+                        s: {
+                            ...states.s,
+                            login: true,
+                            current: {
+                                ...states.s.current,
+                                user: loginUserId
+                            },
+                        },
+                        d: usersData
+                    }))
+                }).catch(function(error) {
+                    console.log("Error getting documents: ", error)
+                })
+            } else {
+                Router.push('/login')
+            }
+        })
+    },
     increment: state => ({ count: state.count + 1 }),
     decrement: state => ({ count: state.count - 1 }),
     visibilityNav: (states, bool) => {
@@ -54,15 +91,6 @@ const fn = store => ({
             }))
             console.log(err)
         })
-    },
-    login: store => {
-        store.setState(states => ({
-            ...states,
-            s: {
-                ...states.s,
-                login: true
-            },
-        }))
     },
     auth: (states, email, password) => {
         store.setState(states => ({
