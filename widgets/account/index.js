@@ -14,6 +14,13 @@ class Account extends Component {
         return(
             <div className={style.r}>
                 {this.props.s.current.user ? <img className={style.thumbnail} src={this.props.d[this.props.s.current.user].thumbnail} width="33" height="33" alt="" /> : null}
+                <div className={style.list}>
+                    <ul>
+                        <li>Profile</li>
+                        <li></li>
+                        <li className={style.logout}>Logout</li>
+                    </ul>
+                </div>
             </div>
         )
     }

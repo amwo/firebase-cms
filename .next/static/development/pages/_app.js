@@ -40610,7 +40610,39 @@ function (_Component) {
           lineNumber: 16
         },
         __self: this
-      }) : null);
+      }) : null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        className: _style_css__WEBPACK_IMPORTED_MODULE_6___default.a.list,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 17
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("ul", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 18
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("li", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 19
+        },
+        __self: this
+      }, "Profile"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("li", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 20
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("li", {
+        className: _style_css__WEBPACK_IMPORTED_MODULE_6___default.a.logout,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 21
+        },
+        __self: this
+      }, "Logout"))));
     }
   }]);
 
