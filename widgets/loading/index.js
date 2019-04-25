@@ -5,7 +5,7 @@ import {connect} from 'redux-zero/react';
 import fn from '../../states/fn';
 import firebase from 'firebase/app'
 import 'firebase/auth'
-import Router from 'next/router';
+import Router from 'next/router'
 
 const mapToProps = ({ s , d}) => ({ s, d });
 class Loading extends Component {
