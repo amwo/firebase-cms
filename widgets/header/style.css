@@ -2,10 +2,12 @@
     position: fixed;
     left: 0;
     top: 0;
-    width: 64px;
+    width: 42px;
     height: calc(100% - 25px);
     background: #f8f8f8;
     padding: 25px 11px 0;
+    z-index: 1;
+    box-shadow: 0 0 15px rgba(0,0,0,.2);
 }
 .wrap {
     width: 100%;

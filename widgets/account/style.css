@@ -1,7 +1,9 @@
 .r {
     position: relative;
+    z-index: 999;
 }
 .thumbnail {
+    cursor: pointer;
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -9,8 +11,39 @@
 }
 .list {
     position: absolute;
-    left: 30px;
-    top: 0;
+    left: 50px;
+    bottom: 0;
     background: #fff;
     z-index: 999;
+    box-shadow: 0 0 15px rgba(0,0,0,.2);
+    border-radius: 7px;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+}
+.list ul {
+    padding: 7px;
+}
+.list ul li {
+    cursor: pointer;
+    display: block;
+    padding: 8px 26px;
+    border-bottom: 1px solid #ebebeb;
+    list-style-type: none;
+    font-size: 12px;
+}
+.list ul li:last-child {
+    border: 0;
+}
+.list:before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-left: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+    position: absolute;
+    border-radius: 2px;
+    transform: rotate(45deg);
+    bottom: 15px;
+    left: -6px;
+    background: #fff;
 }

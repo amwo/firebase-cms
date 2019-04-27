@@ -28,6 +28,7 @@ class PostEditor extends Component {
         this.convertFromRaw = this.convertFromRaw.bind(this)
         this.titleKeyDown = this.titleKeyDown.bind(this)
         this.wrapper =  this.wrapper.bind(this)
+        this.getMouseSelection =  this.getMouseSelection.bind(this)
         this.blockRenderMap = Immutable.Map({
             'header-two': {
                 element: 'h2'
@@ -42,6 +43,7 @@ class PostEditor extends Component {
         this.editorState = this.state.editorState
         this.contentState = this.editorState.getCurrentContent()
         this.selectionState = this.editorState.getSelection()
+        this.currentContentBlock = this.contentState.getBlockForKey(this.selectionState.getAnchorKey())
     }
 
     convertFromRaw = () => {
@@ -50,6 +52,10 @@ class PostEditor extends Component {
         //console.log(contentState)
         //console.log(raw)
         //console.log(html)
+    }
+
+    getMouseSelection = e => {
+        console.log('hell')
     }
 
     wrapper = contentBlock => {
@@ -94,6 +100,8 @@ class PostEditor extends Component {
     }
 
     render() {
+        console.log(this.selectionState)
+        //console.log(this.currentContentBlock.text)
         //console.log(this.contentState.getBlockMap().length)
         //console.log(this.contentState.getFirstBlock().getText())
         //console.log(this.contentState.getLastBlock().getText())
@@ -114,12 +122,13 @@ class PostEditor extends Component {
                                 ref="content"
                                 editorState={this.state.editorState}
                                 handleKeyCommand={this.handleKeyCommand}
-                                onChange={this.onChange}
                                 placeholder="Edit"
                                 blockRenderMap={this.blockRenderMap}
                                 blockRendererFn={this.wrapper}
                                 blockStyleFn={this.styling}
                                 onFocus={this.focus}
+                                onChange={this.onChange}
+                                onBlur={this.getMouseSelection}
                             />
                         </div>
                         <button onClick={this.convertFromRaw}>Convert from Raw</button>
