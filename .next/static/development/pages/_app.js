@@ -40228,65 +40228,79 @@ function (_App) {
           Component = _this$props.Component,
           pageProps = _this$props.pageProps;
 
-      if (_states_store__WEBPACK_IMPORTED_MODULE_12__["default"].getState().s.login) {
-        return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(redux_zero_react__WEBPACK_IMPORTED_MODULE_11__["Provider"], {
-          store: _states_store__WEBPACK_IMPORTED_MODULE_12__["default"],
+      if (_states_store__WEBPACK_IMPORTED_MODULE_12__["default"].getState().s.visibilities.loading) {
+        return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_widgets_loading__WEBPACK_IMPORTED_MODULE_20__["default"], {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 37
           },
           __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(next_app__WEBPACK_IMPORTED_MODULE_9__["Container"], {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 38
-          },
-          __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_layouts_default__WEBPACK_IMPORTED_MODULE_13__["default"], {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 39
-          },
-          __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, pageProps, {
+        });
+      } else if (!_states_store__WEBPACK_IMPORTED_MODULE_12__["default"].getState().s.login) {
+        return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(redux_zero_react__WEBPACK_IMPORTED_MODULE_11__["Provider"], {
+          store: _states_store__WEBPACK_IMPORTED_MODULE_12__["default"],
           __source: {
             fileName: _jsxFileName,
             lineNumber: 40
           },
           __self: this
-        }))), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_widgets_addNavigation__WEBPACK_IMPORTED_MODULE_18__["default"], {
+        }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(next_app__WEBPACK_IMPORTED_MODULE_9__["Container"], {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 41
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, pageProps, {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 42
+          },
+          __self: this
+        }))));
+      } else {
+        return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(redux_zero_react__WEBPACK_IMPORTED_MODULE_11__["Provider"], {
+          store: _states_store__WEBPACK_IMPORTED_MODULE_12__["default"],
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 48
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(next_app__WEBPACK_IMPORTED_MODULE_9__["Container"], {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 49
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_layouts_default__WEBPACK_IMPORTED_MODULE_13__["default"], {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 50
+          },
+          __self: this
+        }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, pageProps, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 51
+          },
+          __self: this
+        }))), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_widgets_addNavigation__WEBPACK_IMPORTED_MODULE_18__["default"], {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 53
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_components_button__WEBPACK_IMPORTED_MODULE_19__["default"], {
           type: "add",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 43
+            lineNumber: 54
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_components_button__WEBPACK_IMPORTED_MODULE_19__["default"], {
           type: "section",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 44
-          },
-          __self: this
-        })));
-      } else {
-        return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(redux_zero_react__WEBPACK_IMPORTED_MODULE_11__["Provider"], {
-          store: _states_store__WEBPACK_IMPORTED_MODULE_12__["default"],
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 50
-          },
-          __self: this
-        }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_widgets_loading__WEBPACK_IMPORTED_MODULE_20__["default"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_2__["default"])({}, pageProps, {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 51
+            lineNumber: 55
           },
           __self: this
         })));
@@ -40372,6 +40386,22 @@ var db = firebase_app__WEBPACK_IMPORTED_MODULE_1___default.a.firestore();
 
 var fn = function fn(store) {
   return {
+    signOut: function signOut(store) {
+      firebase_app__WEBPACK_IMPORTED_MODULE_1___default.a.auth().signOut().then(function () {
+        store.setState(function (states) {
+          return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states, {
+            s: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states.s, {
+              login: false,
+              current: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states.s.current, {
+                user: ''
+              })
+            })
+          });
+        });
+      }).catch(function (err) {
+        console.log(err);
+      });
+    },
     init: function init(store) {
       firebase_app__WEBPACK_IMPORTED_MODULE_1___default.a.auth().onAuthStateChanged(function (user) {
         if (user) {
@@ -40389,6 +40419,9 @@ var fn = function fn(store) {
               return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states, {
                 s: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states.s, {
                   login: true,
+                  visibilities: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states.s.visibilities, {
+                    loading: false
+                  }),
                   current: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states.s.current, {
                     user: loginUserId
                   })
@@ -40399,7 +40432,17 @@ var fn = function fn(store) {
           }).catch(function (error) {
             console.log("Error getting documents: ", error);
           });
+          next_router__WEBPACK_IMPORTED_MODULE_5___default.a.push(next_router__WEBPACK_IMPORTED_MODULE_5___default.a.route);
         } else {
+          store.setState(function (states) {
+            return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states, {
+              s: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states.s, {
+                visibilities: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states.s.visibilities, {
+                  loading: false
+                })
+              })
+            });
+          });
           next_router__WEBPACK_IMPORTED_MODULE_5___default.a.push('/login');
         }
       });
@@ -40466,6 +40509,9 @@ var fn = function fn(store) {
       store.setState(function (states) {
         return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states, {
           s: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states.s, {
+            visibilities: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states.s.visibilities, {
+              loading: false
+            }),
             page: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states.s.page, {
               passwordLoading: true
             })
@@ -40477,6 +40523,9 @@ var fn = function fn(store) {
           store.setState(function (states) {
             return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states, {
               s: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states.s, {
+                visibilities: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states.s.visibilities, {
+                  loading: false
+                }),
                 page: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states.s.page, {
                   PasswordLoading: false
                 })
@@ -40488,15 +40537,18 @@ var fn = function fn(store) {
           store.setState(function (states) {
             return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states, {
               s: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states.s, {
+                visibilities: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states.s.visibilities, {
+                  loading: false
+                }),
                 login: true,
                 page: {}
               })
             });
           });
+          next_router__WEBPACK_IMPORTED_MODULE_5___default.a.push('/');
         }
       });
       var user = firebase_app__WEBPACK_IMPORTED_MODULE_1___default.a.auth().currentUser;
-      console.log(user.uid);
     }
   };
 };
@@ -40522,7 +40574,8 @@ var i = {
     login: false,
     page: {},
     visibilities: {
-      nav: false
+      nav: false,
+      loading: true
     },
     current: {
       project: '',
@@ -40654,6 +40707,7 @@ function (_Component) {
         },
         __self: this
       }, "Profile"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("li", {
+        onClick: this.props.signOut,
         className: _style_css__WEBPACK_IMPORTED_MODULE_8___default.a.logout,
         __source: {
           fileName: _jsxFileName,
@@ -40873,14 +40927,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_style_css__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _assets_logo_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../assets/logo.png */ "./assets/logo.png");
 /* harmony import */ var _assets_logo_png__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_assets_logo_png__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var redux_zero_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! redux-zero/react */ "./node_modules/redux-zero/react/index.js");
-/* harmony import */ var redux_zero_react__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(redux_zero_react__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _states_fn__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../states/fn */ "./states/fn.js");
-/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! firebase/app */ "./node_modules/firebase/app/dist/index.cjs.js");
-/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var firebase_auth__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! firebase/auth */ "./node_modules/firebase/auth/dist/index.esm.js");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! next/router */ "./node_modules/next/dist/client/router.js");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_12__);
 
 
 
@@ -40891,20 +40937,6 @@ var _jsxFileName = "/Users/am/Projects/firebase-cms/widgets/loading/index.js";
 
 
 
-
-
-
-
-
-
-var mapToProps = function mapToProps(_ref) {
-  var s = _ref.s,
-      d = _ref.d;
-  return {
-    s: s,
-    d: d
-  };
-};
 
 var Loading =
 /*#__PURE__*/
@@ -40918,24 +40950,19 @@ function (_Component) {
   }
 
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Loading, [{
-    key: "componentDidUpdate",
-    value: function componentDidUpdate() {
-      this.props.s.login ? next_router__WEBPACK_IMPORTED_MODULE_12___default.a.push(next_router__WEBPACK_IMPORTED_MODULE_12___default.a.route) : next_router__WEBPACK_IMPORTED_MODULE_12___default.a.push('/login');
-    }
-  }, {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         className: _style_css__WEBPACK_IMPORTED_MODULE_6___default.a.r,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 22
+          lineNumber: 12
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 23
+          lineNumber: 13
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("img", {
@@ -40945,13 +40972,13 @@ function (_Component) {
         alt: "",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 24
+          lineNumber: 14
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 25
+          lineNumber: 15
         },
         __self: this
       }, "Loading ...")));
@@ -40961,7 +40988,7 @@ function (_Component) {
   return Loading;
 }(react__WEBPACK_IMPORTED_MODULE_5__["Component"]);
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(redux_zero_react__WEBPACK_IMPORTED_MODULE_8__["connect"])(mapToProps, _states_fn__WEBPACK_IMPORTED_MODULE_9__["default"])(Loading));
+/* harmony default export */ __webpack_exports__["default"] = (Loading);
 
 /***/ }),
 

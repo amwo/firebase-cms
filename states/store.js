@@ -5,7 +5,8 @@ const i = {
         login: false,
         page: {},
         visibilities: {
-            nav: false
+            nav: false,
+            loading: true
         },
         current: {
             project: '',

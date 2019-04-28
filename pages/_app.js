@@ -32,7 +32,18 @@ export default class Default extends App {
 
     render () {
         const { Component, pageProps } = this.props
-        if(store.getState().s.login) {
+
+        if(store.getState().s.visibilities.loading) {
+            return <Loading />
+        } else if(!store.getState().s.login) {
+            return (
+                <Provider store={store}>
+                    <Container>
+                        <Component {...pageProps} />
+                    </Container>
+                </Provider>
+            )
+        } else {
             return (
                 <Provider store={store}>
                     <Container>
@@ -43,12 +54,6 @@ export default class Default extends App {
                         <Button type="add" />
                         <Button type="section" />
                     </Container>
-                </Provider>
-            )
-        } else {
-            return (
-                <Provider store={store}>
-                    <Loading {...pageProps}/>
                 </Provider>
             )
         }

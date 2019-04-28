@@ -54,14 +54,10 @@ class Login extends Component {
         }
     }
 
-    componentWillMount() {
-    }
-
     render() {
-        console.log(this.props.s.login)
-        if(this.props.s.login) {
-            Router.push({ pathname: '/'})
-        }
+        //if(this.props.s.login) {
+        //    Router.push({ pathname: '/'})
+        //}
 
         return (
             <div className={style.i}>

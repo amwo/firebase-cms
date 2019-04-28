@@ -68748,6 +68748,22 @@ var db = firebase_app__WEBPACK_IMPORTED_MODULE_1___default.a.firestore();
 
 var fn = function fn(store) {
   return {
+    signOut: function signOut(store) {
+      firebase_app__WEBPACK_IMPORTED_MODULE_1___default.a.auth().signOut().then(function () {
+        store.setState(function (states) {
+          return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states, {
+            s: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states.s, {
+              login: false,
+              current: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states.s.current, {
+                user: ''
+              })
+            })
+          });
+        });
+      }).catch(function (err) {
+        console.log(err);
+      });
+    },
     init: function init(store) {
       firebase_app__WEBPACK_IMPORTED_MODULE_1___default.a.auth().onAuthStateChanged(function (user) {
         if (user) {
@@ -68765,6 +68781,9 @@ var fn = function fn(store) {
               return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states, {
                 s: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states.s, {
                   login: true,
+                  visibilities: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states.s.visibilities, {
+                    loading: false
+                  }),
                   current: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states.s.current, {
                     user: loginUserId
                   })
@@ -68775,7 +68794,17 @@ var fn = function fn(store) {
           }).catch(function (error) {
             console.log("Error getting documents: ", error);
           });
+          next_router__WEBPACK_IMPORTED_MODULE_5___default.a.push(next_router__WEBPACK_IMPORTED_MODULE_5___default.a.route);
         } else {
+          store.setState(function (states) {
+            return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states, {
+              s: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states.s, {
+                visibilities: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states.s.visibilities, {
+                  loading: false
+                })
+              })
+            });
+          });
           next_router__WEBPACK_IMPORTED_MODULE_5___default.a.push('/login');
         }
       });
@@ -68842,6 +68871,9 @@ var fn = function fn(store) {
       store.setState(function (states) {
         return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states, {
           s: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states.s, {
+            visibilities: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states.s.visibilities, {
+              loading: false
+            }),
             page: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states.s.page, {
               passwordLoading: true
             })
@@ -68853,6 +68885,9 @@ var fn = function fn(store) {
           store.setState(function (states) {
             return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states, {
               s: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states.s, {
+                visibilities: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states.s.visibilities, {
+                  loading: false
+                }),
                 page: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states.s.page, {
                   PasswordLoading: false
                 })
@@ -68864,15 +68899,18 @@ var fn = function fn(store) {
           store.setState(function (states) {
             return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states, {
               s: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states.s, {
+                visibilities: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states.s.visibilities, {
+                  loading: false
+                }),
                 login: true,
                 page: {}
               })
             });
           });
+          next_router__WEBPACK_IMPORTED_MODULE_5___default.a.push('/');
         }
       });
       var user = firebase_app__WEBPACK_IMPORTED_MODULE_1___default.a.auth().currentUser;
-      console.log(user.uid);
     }
   };
 };
@@ -68999,6 +69037,7 @@ function (_Component) {
         },
         __self: this
       }, "Profile"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("li", {
+        onClick: this.props.signOut,
         className: _style_css__WEBPACK_IMPORTED_MODULE_8___default.a.logout,
         __source: {
           fileName: _jsxFileName,

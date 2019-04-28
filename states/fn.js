@@ -7,10 +7,26 @@ const db = firebase.firestore()
 
 import Router from 'next/router'
 const fn = store => ({
+    signOut: store => {
+        firebase.auth().signOut().then(function() {
+            store.setState(states => ({
+                ...states,
+                s: {
+                    ...states.s,
+                    login: false,
+                    current: {
+                        ...states.s.current,
+                        user: ''
+                    },
+                }
+            }))
+        }).catch(function(err) {
+            console.log(err)
+        });
+    },
     init: store => {
         firebase.auth().onAuthStateChanged((user) => {
             if (user) {
-
                 let loginUserId = ""
                 let usersData = {}
                 db.collection('tokyoislands').doc('people').collection('users').where("admin", "==", true).get().then(function(querySnapshot) {
@@ -25,6 +41,10 @@ const fn = store => ({
                         s: {
                             ...states.s,
                             login: true,
+                            visibilities: {
+                                ...states.s.visibilities,
+                                loading: false
+                            },
                             current: {
                                 ...states.s.current,
                                 user: loginUserId
@@ -35,7 +55,18 @@ const fn = store => ({
                 }).catch(function(error) {
                     console.log("Error getting documents: ", error)
                 })
+                Router.push(Router.route)
             } else {
+                store.setState(states => ({
+                    ...states,
+                    s: {
+                        ...states.s,
+                        visibilities: {
+                            ...states.s.visibilities,
+                            loading: false
+                        }
+                    }
+                }))
                 Router.push('/login')
             }
         })
@@ -97,19 +128,26 @@ const fn = store => ({
             ...states,
             s: {
                 ...states.s,
+                visibilities: {
+                    ...states.s.visibilities,
+                    loading: false
+                },
                 page: {
                     ...states.s.page,
                     passwordLoading: true
                 }
             },
         }))
-
         firebase.auth().signInWithEmailAndPassword(email, password).catch(err => {
             if(err.code) {
                 store.setState(states => ({
                     ...states,
                     s: {
                         ...states.s,
+                        visibilities: {
+                            ...states.s.visibilities,
+                            loading: false
+                        },
                         page: {
                             ...states.s.page,
                             PasswordLoading: false
@@ -122,15 +160,18 @@ const fn = store => ({
                     ...states,
                     s: {
                         ...states.s,
+                        visibilities: {
+                            ...states.s.visibilities,
+                            loading: false
+                        },
                         login: true,
                         page: {}
                     },
                 }))
+                Router.push('/')
             }
         })
-
         let user = firebase.auth().currentUser;
-        console.log(user.uid)
     }
 });
 

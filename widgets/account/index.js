@@ -27,7 +27,7 @@ class Account extends Component {
                 <div className={style.list} style={this.state.visibility ? {display: 'block'} : {display: 'none'}}>
                     <ul>
                         <li>Profile</li>
-                        <li className={style.logout}>Logout</li>
+                        <li onClick={this.props.signOut} className={style.logout}>Logout</li>
                     </ul>
                 </div>
             </div>
