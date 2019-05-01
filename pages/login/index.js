@@ -54,10 +54,11 @@ class Login extends Component {
         }
     }
 
+
     render() {
-        //if(this.props.s.login) {
-        //    Router.push({ pathname: '/'})
-        //}
+        if(this.props.s.login) {
+            Router.push('/')
+        }
 
         return (
             <div className={style.i}>
@@ -70,6 +71,7 @@ class Login extends Component {
                             {this.props.s.page.email ? <Input type="password" placeholder="Password" onChange={this.handlePasswordInputChange} onKeyDown={this.handlePasswordInputKeyDown} value={this.state.password} form="cap" lastIcon={ICON_RIGHT_ARROW} loading={this.props.s.page.passwordLoading ? true : false} autoFocus/> : null }
                             <p style={{fontSize: 11}}>Did you forget your password? <span className={style.signup}>Reset password</span></p>
                         </div>
+                        {this.props.s.err.message ? this.props.s.err.message : null}
                     </div>
                 </section>
             </div>

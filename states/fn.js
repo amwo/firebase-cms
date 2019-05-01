@@ -52,10 +52,10 @@ const fn = store => ({
                         },
                         d: usersData
                     }))
+                    Router.push(Router.route)
                 }).catch(function(error) {
                     console.log("Error getting documents: ", error)
                 })
-                Router.push(Router.route)
             } else {
                 store.setState(states => ({
                     ...states,
@@ -144,6 +144,10 @@ const fn = store => ({
                     ...states,
                     s: {
                         ...states.s,
+                        err: {
+                            code: err.code,
+                            message: err.message
+                        },
                         visibilities: {
                             ...states.s.visibilities,
                             loading: false
@@ -160,6 +164,10 @@ const fn = store => ({
                     ...states,
                     s: {
                         ...states.s,
+                        err: {
+                            code: '',
+                            message: '',
+                        },
                         visibilities: {
                             ...states.s.visibilities,
                             loading: false
@@ -168,7 +176,6 @@ const fn = store => ({
                         page: {}
                     },
                 }))
-                Router.push('/')
             }
         })
         let user = firebase.auth().currentUser;

@@ -5,8 +5,8 @@ import Router from 'next/router'
 import style from './style.css'
 import LOGO from '../../assets/logo.png'
 
-import Default from '../../layouts/default'
 import H1 from '../../components/h1'
+import Default from '../../layouts/default'
 
 const mapToProps = ({ s , d}) => ({ s, d });
 

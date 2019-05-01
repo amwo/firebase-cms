@@ -1,8 +1,9 @@
 import {Component} from 'react'
 import Header from '../../widgets/header'
-import style from './style.css'
-import Navigations from '../../widgets/navigations'
 import H1 from '../../components/h1'
+import Navigations from '../../widgets/navigations'
+
+import style from './style.css'
 
 class Page extends Component {
     constructor(props) {

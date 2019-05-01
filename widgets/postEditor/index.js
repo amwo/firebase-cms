@@ -5,7 +5,6 @@ import style from './style.css'
 import {Editor, EditorState, ContentState, ContentBlock, AtomicBlockUtils, RichUtils, getDefaultKeyBinding, KeyBindingUtil, convertToRaw, convertFromHTML} from 'draft-js'
 import {stateToHTML} from 'draft-js-export-html'
 import Div from '../../components/div'
-import H1 from '../../components/h1'
 import H3 from '../../components/h3'
 import Select from '../../components/select'
 import Category from '../../widgets/category'
@@ -14,6 +13,7 @@ import ThumbnailDnD from '../../widgets/thumbnailDnD'
 import PostAvatar from '../../widgets/postAvatar'
 import Tools from '../../widgets/tools'
 import Immutable from 'immutable'
+import H1 from '../../components/h1'
 
 const mapToProps = ({ s , d}) => ({ s, d });
 const {hasCommandModifier} = KeyBindingUtil
@@ -55,7 +55,7 @@ class PostEditor extends Component {
     }
 
     getMouseSelection = e => {
-        console.log('hell')
+        console.log(e)
     }
 
     wrapper = contentBlock => {
@@ -100,7 +100,7 @@ class PostEditor extends Component {
     }
 
     render() {
-        console.log(this.selectionState)
+        //console.log(this.selectionState)
         //console.log(this.currentContentBlock.text)
         //console.log(this.contentState.getBlockMap().length)
         //console.log(this.contentState.getFirstBlock().getText())

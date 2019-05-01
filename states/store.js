@@ -4,6 +4,10 @@ const i = {
     s: {
         login: false,
         page: {},
+        err: {
+            code: '',
+            message: ''
+        },
         visibilities: {
             nav: false,
             loading: true

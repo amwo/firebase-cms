@@ -441,10 +441,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _widgets_header__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../widgets/header */ "./widgets/header/index.js");
-/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./style.css */ "./layouts/page/style.css");
-/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_style_css__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _components_h1__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../components/h1 */ "./components/h1/index.js");
 /* harmony import */ var _widgets_navigations__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../widgets/navigations */ "./widgets/navigations/index.js");
-/* harmony import */ var _components_h1__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../components/h1 */ "./components/h1/index.js");
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./style.css */ "./layouts/page/style.css");
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_style_css__WEBPACK_IMPORTED_MODULE_9__);
 
 
 
@@ -473,37 +473,37 @@ function (_Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("section", {
-        className: _style_css__WEBPACK_IMPORTED_MODULE_7___default.a.r,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 14
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("header", {
+        className: _style_css__WEBPACK_IMPORTED_MODULE_9___default.a.r,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 15
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
-        className: _style_css__WEBPACK_IMPORTED_MODULE_7___default.a.in,
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("header", {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 16
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
-        className: _style_css__WEBPACK_IMPORTED_MODULE_7___default.a.cat,
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
+        className: _style_css__WEBPACK_IMPORTED_MODULE_9___default.a.in,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 17
         },
         __self: this
-      }, "Hevanture for"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_components_h1__WEBPACK_IMPORTED_MODULE_9__["default"], {
-        title: this.props.title,
+      }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", {
+        className: _style_css__WEBPACK_IMPORTED_MODULE_9___default.a.cat,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 18
+        },
+        __self: this
+      }, "Hevanture for"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_components_h1__WEBPACK_IMPORTED_MODULE_7__["default"], {
+        title: this.props.title,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 19
         },
         __self: this
       }))), this.props.children);
@@ -56913,10 +56913,10 @@ var fn = function fn(store) {
                 d: usersData
               });
             });
+            next_router__WEBPACK_IMPORTED_MODULE_5___default.a.push(next_router__WEBPACK_IMPORTED_MODULE_5___default.a.route);
           }).catch(function (error) {
             console.log("Error getting documents: ", error);
           });
-          next_router__WEBPACK_IMPORTED_MODULE_5___default.a.push(next_router__WEBPACK_IMPORTED_MODULE_5___default.a.route);
         } else {
           store.setState(function (states) {
             return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states, {
@@ -57007,6 +57007,10 @@ var fn = function fn(store) {
           store.setState(function (states) {
             return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states, {
               s: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states.s, {
+                err: {
+                  code: err.code,
+                  message: err.message
+                },
                 visibilities: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states.s.visibilities, {
                   loading: false
                 }),
@@ -57021,6 +57025,10 @@ var fn = function fn(store) {
           store.setState(function (states) {
             return Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states, {
               s: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states.s, {
+                err: {
+                  code: '',
+                  message: ''
+                },
                 visibilities: Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, states.s.visibilities, {
                   loading: false
                 }),
@@ -57029,7 +57037,6 @@ var fn = function fn(store) {
               })
             });
           });
-          next_router__WEBPACK_IMPORTED_MODULE_5___default.a.push('/');
         }
       });
       var user = firebase_app__WEBPACK_IMPORTED_MODULE_1___default.a.auth().currentUser;
@@ -57059,11 +57066,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "./node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./style.css */ "./widgets/account/style.css");
-/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_style_css__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var redux_zero_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! redux-zero/react */ "./node_modules/redux-zero/react/index.js");
-/* harmony import */ var redux_zero_react__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(redux_zero_react__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _states_fn__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../states/fn */ "./states/fn.js");
+/* harmony import */ var redux_zero_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! redux-zero/react */ "./node_modules/redux-zero/react/index.js");
+/* harmony import */ var redux_zero_react__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(redux_zero_react__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _states_fn__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../states/fn */ "./states/fn.js");
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./style.css */ "./widgets/account/style.css");
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_style_css__WEBPACK_IMPORTED_MODULE_10__);
 
 
 
@@ -57116,7 +57123,7 @@ function (_Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: _style_css__WEBPACK_IMPORTED_MODULE_8___default.a.r,
+        className: _style_css__WEBPACK_IMPORTED_MODULE_10___default.a.r,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 25
@@ -57124,7 +57131,7 @@ function (_Component) {
         __self: this
       }, this.props.s.current.user ? react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("img", {
         onClick: this.on,
-        className: _style_css__WEBPACK_IMPORTED_MODULE_8___default.a.thumbnail,
+        className: _style_css__WEBPACK_IMPORTED_MODULE_10___default.a.thumbnail,
         src: this.props.d[this.props.s.current.user].thumbnail,
         width: "33",
         height: "33",
@@ -57135,7 +57142,7 @@ function (_Component) {
         },
         __self: this
       }) : null, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
-        className: _style_css__WEBPACK_IMPORTED_MODULE_8___default.a.list,
+        className: _style_css__WEBPACK_IMPORTED_MODULE_10___default.a.list,
         style: this.state.visibility ? {
           display: 'block'
         } : {
@@ -57160,7 +57167,7 @@ function (_Component) {
         __self: this
       }, "Profile"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("li", {
         onClick: this.props.signOut,
-        className: _style_css__WEBPACK_IMPORTED_MODULE_8___default.a.logout,
+        className: _style_css__WEBPACK_IMPORTED_MODULE_10___default.a.logout,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 30
@@ -57173,7 +57180,7 @@ function (_Component) {
   return Account;
 }(react__WEBPACK_IMPORTED_MODULE_7__["Component"]);
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(redux_zero_react__WEBPACK_IMPORTED_MODULE_9__["connect"])(mapToProps, _states_fn__WEBPACK_IMPORTED_MODULE_10__["default"])(Account));
+/* harmony default export */ __webpack_exports__["default"] = (Object(redux_zero_react__WEBPACK_IMPORTED_MODULE_8__["connect"])(mapToProps, _states_fn__WEBPACK_IMPORTED_MODULE_9__["default"])(Account));
 
 /***/ }),
 
@@ -57227,33 +57234,33 @@ function (_Component) {
         className: _style_css__WEBPACK_IMPORTED_MODULE_6___default.a.r,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 14
+          lineNumber: 13
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 15
+          lineNumber: 14
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_components_button__WEBPACK_IMPORTED_MODULE_7__["default"], {
         type: "icon",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 16
+          lineNumber: 15
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         className: _style_css__WEBPACK_IMPORTED_MODULE_6___default.a.account,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 17
+          lineNumber: 16
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_widgets_account__WEBPACK_IMPORTED_MODULE_8__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 18
+          lineNumber: 17
         },
         __self: this
       }))));
@@ -58651,7 +58658,7 @@ function (_Component) {
 
 /***/ }),
 
-/***/ 9:
+/***/ 13:
 /*!***********************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fam%2FProjects%2Ffirebase-cms%2Fpages%2Findex%2Findex.js ***!
   \***********************************************************************************************************************************/
@@ -58674,5 +58681,5 @@ module.exports = dll_6dc2816e14fab51b8269;
 
 /***/ })
 
-},[[9,"static/runtime/webpack.js","styles"]]]));;
+},[[13,"static/runtime/webpack.js","styles"]]]));;
 //# sourceMappingURL=index.js.map

@@ -1,6 +1,6 @@
 import {Component} from 'react'
-import style from './style.css'
 import Button from '../../components/button'
+import style from './style.css'
 
 class AddNavigation extends Component {
     constructor(props) {
