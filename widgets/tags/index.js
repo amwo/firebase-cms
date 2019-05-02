@@ -1,8 +1,7 @@
-import {Component} from 'react'
-import style from './style.css'
 import Button from '../../components/button'
+import {Component} from 'react'
 import ICON_ADD from '../../assets/icons/icon-add.svg'
-
+import style from './style.css'
 
 class Tags extends Component {
     constructor(props) {

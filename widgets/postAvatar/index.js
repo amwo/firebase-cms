@@ -1,7 +1,7 @@
-import {Component} from 'react'
-import style from './style.css'
 import Button from '../../components/button'
+import {Component} from 'react'
 import SAMPLE from '../../assets/avatar-sample.jpg'
+import style from './style.css'
 
 class PostAvatar extends Component {
     constructor(props) {

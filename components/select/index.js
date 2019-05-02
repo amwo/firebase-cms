@@ -1,6 +1,6 @@
 import {Component} from 'react'
-import style from './style.css'
 import ICON_DOWN_ARROW from '../../assets/icons/icon-down-arrow.svg'
+import style from './style.css'
 
 class Select extends Component {
     constructor(props) {

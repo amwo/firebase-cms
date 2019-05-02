@@ -1,5 +1,5 @@
-import {Component} from 'react'
 import Button from '../../components/button'
+import { Component } from 'react'
 import style from './style.css'
 
 class AddNavigation extends Component {
@@ -8,7 +8,7 @@ class AddNavigation extends Component {
     }
 
     render() {
-        return(
+        return (
             <section className={style.r}>
                 <nav>
                     <ul>

@@ -7,9 +7,30 @@
     top: 0;
 }
 .toolbox {
-    opacity: 0;
-    width: 100px;
+    position: absolute;
+    height: 32px;
+    right: 0;
+    top: -4px;
+    transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+    -webkit-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    opacity: 1
+}
+.toolbox button {
+    height: 27px;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+}
+.toolbox svg {
+    width: 32px;
+    height: 32px;
+    fill: #ccc;
+}
+.toolboxNone {
     position: absolute;
     right: 0;
     top: 0;
+    opacity: 0
 }

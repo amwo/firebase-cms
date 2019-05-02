@@ -1,6 +1,6 @@
+import Button from '../../components/button'
 import {Component} from 'react'
 import style from './style.css'
-import Button from '../../components/button'
 
 class Category extends Component {
     constructor(props) {

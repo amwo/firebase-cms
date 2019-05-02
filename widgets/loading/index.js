@@ -1,6 +1,6 @@
 import {Component} from 'react'
-import style from './style.css'
 import LOGO from '../../assets/logo.png'
+import style from './style.css'
 
 class Loading extends Component {
     constructor(props) {

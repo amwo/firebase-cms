@@ -37,8 +37,8 @@
 
 .center .content .title[contenteditable=true]:empty:before{
     color: #ccc;
-  content: attr(placeholder);
-  display: block; /* For Firefox */
+    content: attr(placeholder);
+    display: block; /* For Firefox */
 }
 .avatarWrap {
     max-width: 570px;

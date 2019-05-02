@@ -1,13 +1,13 @@
-import {Component} from 'react'
-import {connect} from 'redux-zero/react';
-import fn from '../../states/fn';
 import { Router, withRouter } from 'next/router'
-import style from './style.css'
-import LOGO from '../../assets/logo.png'
-import PostEditor from '../../widgets/postEditor'
 
+import {Component} from 'react'
 import Default from '../../layouts/default'
 import H1 from '../../components/h1'
+import LOGO from '../../assets/logo.png'
+import PostEditor from '../../widgets/postEditor'
+import {connect} from 'redux-zero/react';
+import fn from '../../states/fn';
+import style from './style.css'
 
 const mapToProps = ({ s , d}) => ({ s, d });
 

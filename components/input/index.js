@@ -1,10 +1,9 @@
 import {Component} from 'react'
+import Default from '../../layouts/default'
+import Router from 'next/router'
 import {connect} from 'redux-zero/react';
 import fn from '../../states/fn';
-import Router from 'next/router'
 import style from './style.css'
-
-import Default from '../../layouts/default'
 
 const mapToProps = ({ s , d}) => ({ s, d });
 

@@ -1,19 +1,18 @@
+import {AtomicBlockUtils, ContentBlock, ContentState, Editor, EditorState, KeyBindingUtil, RichUtils, convertFromHTML, convertToRaw, getDefaultKeyBinding} from 'draft-js'
+import Category from '../../widgets/category'
 import {Component} from 'react'
-import {connect} from 'redux-zero/react'
-import fn from '../../states/fn'
-import style from './style.css'
-import {Editor, EditorState, ContentState, ContentBlock, AtomicBlockUtils, RichUtils, getDefaultKeyBinding, KeyBindingUtil, convertToRaw, convertFromHTML} from 'draft-js'
-import {stateToHTML} from 'draft-js-export-html'
 import Div from '../../components/div'
 import H3 from '../../components/h3'
+import Immutable from 'immutable'
+import PostAvatar from '../../widgets/postAvatar'
 import Select from '../../components/select'
-import Category from '../../widgets/category'
 import Tags from '../../widgets/tags'
 import ThumbnailDnD from '../../widgets/thumbnailDnD'
-import PostAvatar from '../../widgets/postAvatar'
 import Tools from '../../widgets/tools'
-import Immutable from 'immutable'
-import H1 from '../../components/h1'
+import {connect} from 'redux-zero/react'
+import fn from '../../states/fn'
+import {stateToHTML} from 'draft-js-export-html'
+import style from './style.css'
 
 const mapToProps = ({ s , d}) => ({ s, d });
 const {hasCommandModifier} = KeyBindingUtil
@@ -22,13 +21,11 @@ class PostEditor extends Component {
     constructor(props) {
         super(props)
         this.styling = this.styling.bind(this)
-        this.onChange = (editorState) => this.setState({editorState})
-        this.focus = this.focus.bind(this)
+        this.onChange = this.onChange.bind(this)
         this.handleKeyCommand = this.handleKeyCommand.bind(this)
         this.convertFromRaw = this.convertFromRaw.bind(this)
         this.titleKeyDown = this.titleKeyDown.bind(this)
         this.wrapper =  this.wrapper.bind(this)
-        this.getMouseSelection =  this.getMouseSelection.bind(this)
         this.blockRenderMap = Immutable.Map({
             'header-two': {
                 element: 'h2'
@@ -38,24 +35,37 @@ class PostEditor extends Component {
             }
         })
         this.state = {
-            editorState: EditorState.createEmpty()
+            editorState: EditorState.createEmpty(),
+            currentKey: '',
+            focus: false
         }
-        this.editorState = this.state.editorState
-        this.contentState = this.editorState.getCurrentContent()
-        this.selectionState = this.editorState.getSelection()
-        this.currentContentBlock = this.contentState.getBlockForKey(this.selectionState.getAnchorKey())
+    }
+    onChange = (editorState) => {
+        this.setState({editorState})
+        let selectionState = editorState.getSelection();
+        let anchorKey = selectionState.getAnchorKey();
+        let currentContent = editorState.getCurrentContent();
+        let currentContentBlock = currentContent.getBlockForKey(anchorKey);
+        let start = selectionState.getStartOffset();
+        let end = selectionState.getEndOffset();
+        let focus = selectionState.getHasFocus();
+        let selectedText = currentContentBlock.getText().slice(start, end);
+        this.setState({
+            currentKey: anchorKey,
+            focus
+        })
+        //console.log(currentContent)
+        //console.log(currentContentBlock.getText())
+        //console.log(anchorKey)
+        //console.log(selectedText)
+        //console.log()
     }
 
     convertFromRaw = () => {
-        let raw = convertToRaw(this.contentState)
-        let html = stateToHTML(this.contentState)
-        //console.log(contentState)
+        let raw = convertToRaw(this.state.editorState.getCurrentContent())
+        let html = stateToHTML(this.state.editorState.getCurrentContent())
         //console.log(raw)
         //console.log(html)
-    }
-
-    getMouseSelection = e => {
-        console.log(e)
     }
 
     wrapper = contentBlock => {
@@ -63,6 +73,10 @@ class PostEditor extends Component {
         if (type === 'unstyled') {
             return {
                 component: Tools,
+                props: {
+                    currentKey: this.state.currentKey,
+                    focus: this.state.focus
+                },
                 editable: true,
             }
         }
@@ -96,9 +110,6 @@ class PostEditor extends Component {
         }
     }
 
-    focus = e => {
-    }
-
     render() {
         //console.log(this.selectionState)
         //console.log(this.currentContentBlock.text)
@@ -114,7 +125,7 @@ class PostEditor extends Component {
                         <div className={style.type}>
                             <Select type="list" size="m" value="News" />
                         </div>
-                        <h1 ref="title" className={style.title} placeholder="Title" onKeyDown={this.titleKeyDown} contentEditable suppressContentEditableWarning>Oshima Island’s Perfect Guide -Must-see spots, Activities, Accommodation and Access</h1>
+                        <h1 ref="title" className={style.title} placeholder="Title" onKeyDown={this.titleKeyDown} contentEditable suppressContentEditableWarning></h1>
                         <div className={style.avatarWrap}>
                         </div>
                         <div className={style.editor}>
@@ -122,13 +133,11 @@ class PostEditor extends Component {
                                 ref="content"
                                 editorState={this.state.editorState}
                                 handleKeyCommand={this.handleKeyCommand}
-                                placeholder="Edit"
+                                placeholder="Write your story..."
                                 blockRenderMap={this.blockRenderMap}
                                 blockRendererFn={this.wrapper}
                                 blockStyleFn={this.styling}
-                                onFocus={this.focus}
                                 onChange={this.onChange}
-                                onBlur={this.getMouseSelection}
                             />
                         </div>
                         <button onClick={this.convertFromRaw}>Convert from Raw</button>

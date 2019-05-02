@@ -1,6 +1,6 @@
 import {Component} from 'react'
-import Navigations from '../../widgets/navigations'
 import Header from '../../widgets/header'
+import Navigations from '../../widgets/navigations'
 import style from './style.css'
 
 class Default extends Component {

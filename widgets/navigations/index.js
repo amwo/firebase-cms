@@ -1,17 +1,16 @@
+import Article from '../../components/article'
 import {Component} from 'react'
+import ICON_BACK from '../../assets/icons/icon-back.svg'
+import ICON_BRANDS from '../../assets/icons/icon-brands.svg'
+import ICON_DASHBOARD from '../../assets/icons/icon-dashboard.svg'
+import ICON_DOWN_ARROW from '../../assets/icons/icon-down-arrow.svg'
+import ICON_MEMBERS from '../../assets/icons/icon-members.svg'
+import ICON_SETTINGS from '../../assets/icons/icon-settings.svg'
 import LOGO from '../../assets/logo.png'
-import style from './style.css'
 import Link from 'next/link'
 import {connect} from 'redux-zero/react';
 import fn from '../../states/fn';
-
-import ICON_DOWN_ARROW from '../../assets/icons/icon-down-arrow.svg'
-import ICON_SETTINGS from '../../assets/icons/icon-settings.svg'
-import ICON_MEMBERS from '../../assets/icons/icon-members.svg'
-import ICON_BRANDS from '../../assets/icons/icon-brands.svg'
-import ICON_DASHBOARD from '../../assets/icons/icon-dashboard.svg'
-import ICON_BACK from '../../assets/icons/icon-back.svg'
-import Article from '../../components/article'
+import style from './style.css'
 
 const mapToProps = ({ s , d}) => ({ s, d });
 

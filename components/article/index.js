@@ -1,6 +1,6 @@
 import {Component} from 'react'
-import style from './style.css'
 import Link from 'next/link'
+import style from './style.css'
 
 class Article extends Component {
     constructor(props) {

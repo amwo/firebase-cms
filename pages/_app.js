@@ -1,17 +1,18 @@
-import React from 'react'
-import App, { Container } from 'next/app'
 import './main.css'
-import { Provider } from 'redux-zero/react'
-import store from '../states/store'
-import Wrapper from '../layouts/default'
-
-import Router from 'next/router'
-import firebase from 'firebase/app'
 import 'firebase/auth'
-import fn from '../states/fn'
+
+import App, { Container } from 'next/app'
+
 import AddNavigation from '../widgets/addNavigation'
 import Button from '../components/button'
 import Loading from '../widgets/loading'
+import { Provider } from 'redux-zero/react'
+import React from 'react'
+import Router from 'next/router'
+import Wrapper from '../layouts/default'
+import firebase from 'firebase/app'
+import fn from '../states/fn'
+import store from '../states/store'
 
 export default class Default extends App {
     constructor(props) {

@@ -1,6 +1,5 @@
-import {Component} from 'react'
 import style from './style.css'
-
+import {Component} from 'react'
 import ICON_ADD from '../../assets/icons/icon-add.svg'
 
 class Button extends Component {
