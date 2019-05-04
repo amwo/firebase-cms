@@ -26,6 +26,13 @@ class PostEditor extends Component {
         this.convertFromRaw = this.convertFromRaw.bind(this)
         this.titleKeyDown = this.titleKeyDown.bind(this)
         this.wrapper =  this.wrapper.bind(this)
+        this.addImageBlock = this.addImageBlock.bind(this)
+        this.addCodeBlock = this.addCodeBlock.bind(this)
+        this.addTableBlock = this.addTableBlock.bind(this)
+        this.addUlBlock = this.addUlBlock.bind(this)
+        this.addOlBlock = this.addOlBlock.bind(this)
+        this.addMediaBlock = this.addMediaBlock.bind(this)
+        this.dndImages = this.dndImages.bind(this)
         this.blockRenderMap = Immutable.Map({
             'header-two': {
                 element: 'h2'
@@ -60,6 +67,14 @@ class PostEditor extends Component {
         //console.log(selectedText)
         //console.log()
     }
+
+    addImageBlock = () => {}
+    addCodeBlock = () => {}
+    addTableBlock = () => {}
+    addUlBlock = () => {}
+    addOlBlock = () => {}
+    addMediaBlock = () => {}
+    dndImages = () => {}
 
     convertFromRaw = () => {
         let raw = convertToRaw(this.state.editorState.getCurrentContent())
