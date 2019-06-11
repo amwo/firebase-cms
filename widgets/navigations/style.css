@@ -183,10 +183,10 @@
     height: 100%;
 }
 .articleItems {
-    height: 100%;
+    height: calc(100% - 41px);
     overflow: scroll;
     position: absolute;
-    top: 0;
+    top: 41px;
     left: 0;
 }
 .secondNavHeader {
