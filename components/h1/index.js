@@ -1,5 +1,4 @@
 import {Component} from 'react'
-import style from './style.css'
 
 class H1 extends Component {
     constructor(props) {
@@ -7,7 +6,19 @@ class H1 extends Component {
     }
 
     render() {
-        return <h1 className={style.r}>{this.props.title}</h1>
+        return (
+            <h1 className="r">
+                    {this.props.title}
+                <style jsx>
+                        {`
+                        .r {
+                               font-size: 33px;
+                               font-weight: bold
+                            }
+                        `}
+                </style>
+            </h1>
+        )
     }
 }
 

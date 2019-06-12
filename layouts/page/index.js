@@ -1,7 +1,7 @@
 import {Component} from 'react'
-import H1 from '../../components/h1'
 import Header from '../../widgets/header'
 import Navigations from '../../widgets/navigations'
+import H1 from '../../components/h1'
 import style from './style.css'
 
 class Page extends Component {
@@ -14,7 +14,6 @@ class Page extends Component {
             <section className={style.r}>
                 <header>
                     <div className={style.in}>
-                    <p className={style.cat}>Hevanture for</p>
                     <H1 title={this.props.title} />
                     </div>
                 </header>

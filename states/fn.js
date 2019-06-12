@@ -24,11 +24,15 @@ const fn = store => ({
             console.log(err)
         });
     },
+    fetchMembers: store => {
+        console.log('hoge')
+    },
     init: store => {
         firebase.auth().onAuthStateChanged((user) => {
             if (user) {
                 let loginUserId = ""
                 let usersData = {}
+                // User Request
                 db.collection('tokyoislands').doc('people').collection('users').where("admin", "==", true).get().then(function(querySnapshot) {
                     querySnapshot.forEach(function(doc) {
                         if(doc.id === user.uid) {
@@ -36,6 +40,7 @@ const fn = store => ({
                         }
                         usersData[doc.id] = doc.data()
                     })
+                    // Set store
                     store.setState(states => ({
                         ...states,
                         s: {
@@ -52,10 +57,27 @@ const fn = store => ({
                         },
                         d: usersData
                     }))
-                    Router.push(Router.route)
+
+                    db.collection('tokyoislands').doc('settings').get().then(function(doc) {
+                        if (doc.exists) {
+                            store.setState(states => ({
+                                ...states,
+                                f: {
+                                    settings: doc.data()
+                                }
+                            }))
+                            Router.push(Router.route)
+                        } else {
+                            console.log("No such document on Settings!");
+                        }
+
+                    }).catch(function(error) {
+                        console.log("Error getting documents: ", error)
+                    })
                 }).catch(function(error) {
                     console.log("Error getting documents: ", error)
                 })
+
             } else {
                 store.setState(states => ({
                     ...states,

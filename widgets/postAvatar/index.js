@@ -1,5 +1,5 @@
-import Button from '../../components/button'
 import {Component} from 'react'
+import Button from '../../components/button'
 import SAMPLE from '../../assets/avatar-sample.jpg'
 import style from './style.css'
 

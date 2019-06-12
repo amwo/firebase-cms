@@ -1,0 +1,14 @@
+.r {
+    padding: 0 8%
+}
+.r table th {
+    padding: 12px 0;
+    text-align:left;
+    font-size: 14px;
+}
+.r table td {
+    padding-left: 20px;
+}
+.r p {
+    font-size: 14px;
+}

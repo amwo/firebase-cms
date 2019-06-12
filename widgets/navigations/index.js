@@ -12,7 +12,7 @@ import {connect} from 'redux-zero/react';
 import fn from '../../states/fn';
 import style from './style.css'
 
-const mapToProps = ({ s , d}) => ({ s, d });
+const mapToProps = ({ s , d, f}) => ({ s, d, f });
 
 class Navigations extends Component {
     constructor(props) {
@@ -38,13 +38,13 @@ class Navigations extends Component {
                         <img style={this.state.header ? {transform: 'rotate(180deg)'} : {transform: 'rotate(0)'}} src={ICON_DOWN_ARROW} width="10" height="" alt="Down Arrow" />
                     </button>
                     <img src={LOGO} width="90" height="auto" alt="" />
-                    <h2>Tokyo Islands</h2>
+                    <h2>{this.props.f.settings.title ? this.props.f.settings.title : null}</h2>
                     <p className={style.url}><a href="">https://www.tokyoislands.jp</a></p>
                     <nav>
                         <ul>
                             <li><Link href="/settings"><a><i><img src={ICON_SETTINGS} width="" height="15" alt="" /></i>Settings</a></Link></li>
-                            <li><a href="#"><i><img src={ICON_BRANDS} width="" height="15" alt="" /></i>Brand Assets</a></li>
-                            <li><a href="#"><i><img src={ICON_MEMBERS} width="" height="15" alt="" /></i>Members</a></li>
+                            <li><Link href="/brands"><a><i><img src={ICON_BRANDS} width="" height="15" alt="" /></i>Brands</a></Link></li>
+                            <li><Link href="/members"><a><i><img src={ICON_MEMBERS} width="" height="15" alt="" /></i>Members</a></Link></li>
                         </ul>
                     </nav>
                 </div>
@@ -77,7 +77,6 @@ class Navigations extends Component {
                                 </section>
                                 <ul>
                                     <li><a href="#"><i><img src={ICON_SETTINGS} width="" height="15" alt="" /></i>Contact</a></li>
-                                    <li><a href="#"><i><img src={ICON_SETTINGS} width="" height="15" alt="" /></i>Ship Booking</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -87,83 +86,6 @@ class Navigations extends Component {
                                     <Link href="/"><a className={style.back}><i><img src={ICON_BACK} width="" height="15" alt="" /></i></a></Link>
                                 </section>
                                 <div className={style.articleItems}>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
-                                    <Article href={'/post'} id="124"/>
                                     <Article href={'/post'} id="124"/>
                                 </div>
                             </nav>

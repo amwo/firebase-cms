@@ -1,7 +1,7 @@
-import Account from '../../widgets/account'
-import Button from '../../components/button'
-import {Component} from 'react'
 import style from './style.css'
+import Button from '../../components/button'
+import Account from '../../widgets/account'
+import {Component} from 'react'
 
 class Header extends Component {
     constructor(props) {

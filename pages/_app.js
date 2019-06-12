@@ -4,12 +4,12 @@ import 'firebase/auth'
 import App, { Container } from 'next/app'
 
 import AddNavigation from '../widgets/addNavigation'
-import Button from '../components/button'
 import Loading from '../widgets/loading'
 import { Provider } from 'redux-zero/react'
 import React from 'react'
 import Router from 'next/router'
 import Wrapper from '../layouts/default'
+import Button from '../components/button'
 import firebase from 'firebase/app'
 import fn from '../states/fn'
 import store from '../states/store'
@@ -33,6 +33,7 @@ export default class Default extends App {
     }
 
     render () {
+
         const { Component, pageProps } = this.props
 
         if(store.getState().s.visibilities.loading) {
@@ -54,7 +55,6 @@ export default class Default extends App {
                         </Wrapper>
                         <AddNavigation />
                         <Button type="add" />
-                        <Button type="section" />
                     </Container>
                 </Provider>
             )

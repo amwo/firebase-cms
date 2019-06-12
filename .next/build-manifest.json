@@ -3,15 +3,9 @@
     "static/development/dll/dll_599a58a60c43245180de.js"
   ],
   "pages": {
-    "/": [
-      "static/runtime/webpack.js",
-      "static/css/styles.chunk.css",
-      "static/chunks/styles.js",
-      "static/runtime/main.js"
-    ],
     "/_app": [
       "static/runtime/webpack.js",
-      "static/css/styles.chunk.css",
+      "static/chunks/styles.chunk.css",
       "static/chunks/styles.js",
       "static/runtime/main.js"
     ],
@@ -19,9 +13,15 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/index": [
+    "/news": [
       "static/runtime/webpack.js",
-      "static/css/styles.chunk.css",
+      "static/chunks/styles.chunk.css",
+      "static/chunks/styles.js",
+      "static/runtime/main.js"
+    ],
+    "/settings": [
+      "static/runtime/webpack.js",
+      "static/chunks/styles.chunk.css",
       "static/chunks/styles.js",
       "static/runtime/main.js"
     ]
