@@ -2,8 +2,9 @@ import {AtomicBlockUtils, ContentBlock, ContentState, Editor, EditorState, KeyBi
 import Category from '../../widgets/category'
 import {Component} from 'react'
 import Div from '../../components/div'
-import H3 from '../../components/h3'
+import Input from '../../components/input'
 import Immutable from 'immutable'
+import H3 from '../../components/h3'
 import PostAvatar from '../../widgets/postAvatar'
 import Select from '../../components/select'
 import Tags from '../../widgets/tags'
@@ -33,6 +34,7 @@ class PostEditor extends Component {
         this.addOlBlock = this.addOlBlock.bind(this)
         this.addMediaBlock = this.addMediaBlock.bind(this)
         this.dndImages = this.dndImages.bind(this)
+        this.toggleTab = this.toggleTab.bind(this)
         this.blockRenderMap = Immutable.Map({
             'header-two': {
                 element: 'h2'
@@ -44,7 +46,8 @@ class PostEditor extends Component {
         this.state = {
             editorState: EditorState.createEmpty(),
             currentKey: '',
-            focus: false
+            focus: false,
+            tab: 0
         }
     }
     onChange = (editorState) => {
@@ -68,6 +71,9 @@ class PostEditor extends Component {
         //console.log()
     }
 
+    toggleTab = () => {
+        this.state.tab === 0 ? this.setState({ tab: 1 }) : this.setState({ tab: 0 })
+    }
     addImageBlock = () => {}
     addCodeBlock = () => {}
     addTableBlock = () => {}
@@ -136,57 +142,72 @@ class PostEditor extends Component {
         return (
             <section className={style.r}>
                 <section className={style.center}>
-                    <div className={style.content}>
-                        <div className={style.type}>
-                            <Select type="list" size="m" value="News" />
+                    <div className={style.centerWrap}>
+                        <div className={style.tab} style={this.state.tab === 1 ? {left: '-100%'} : {left: 0} }>
+                            <div className={style.content}>
+                                <div className={style.type}>
+                                    <Select type="list" size="m" value="News" />
+                                </div>
+                                <h1 ref="title" className={style.title} placeholder="Title" onKeyDown={this.titleKeyDown} contentEditable suppressContentEditableWarning></h1>
+                                <div className={style.avatarWrap}>
+                                </div>
+                                <div className={style.editor}>
+                                    <Editor
+                                        ref="content"
+                                        editorState={this.state.editorState}
+                                        handleKeyCommand={this.handleKeyCommand}
+                                        placeholder="Write your story..."
+                                        blockRenderMap={this.blockRenderMap}
+                                        blockRendererFn={this.wrapper}
+                                        blockStyleFn={this.styling}
+                                        onChange={this.onChange}
+                                    />
+                                    </div>
+                                    <button onClick={this.convertFromRaw}>Convert from Raw</button>
+                                </div>
+                            </div>
+                            <div className={style.tab} style={this.state.tab === 0 ? {left: '100%'} : {left: 0} }>
+                                <div className={style.content}>
+                                    <p>hodsa</p>
+                                </div>
+                            </div>
                         </div>
-                        <h1 ref="title" className={style.title} placeholder="Title" onKeyDown={this.titleKeyDown} contentEditable suppressContentEditableWarning></h1>
-                        <div className={style.avatarWrap}>
+                        <div className={style.tabControll}>
+                                <ul>
+                                    <li onClick={this.toggleTab} style={this.state.tab === 1 ? {background: '#eee'} : {background: '#fff'} } >Content</li>
+                                    <li onClick={this.toggleTab} style={this.state.tab === 0 ? {background: '#eee', color: '#ccc'} : {background: '#fff'} } >Items</li>
+                                </ul>
                         </div>
-                        <div className={style.editor}>
-                            <Editor
-                                ref="content"
-                                editorState={this.state.editorState}
-                                handleKeyCommand={this.handleKeyCommand}
-                                placeholder="Write your story..."
-                                blockRenderMap={this.blockRenderMap}
-                                blockRendererFn={this.wrapper}
-                                blockStyleFn={this.styling}
-                                onChange={this.onChange}
-                            />
-                        </div>
-                        <button onClick={this.convertFromRaw}>Convert from Raw</button>
-                    </div>
+                    </section>
+                    <section className={style.right}>
+                        <Div type="m">
+                            <H3 title="Author" />
+                            <Div type="s">
+                                <PostAvatar />
+                            </Div>
+                        </Div>
+                        <Div type="m">
+                            <H3 title="Category" />
+                            <Div type="s">
+                                <Category />
+                            </Div>
+                        </Div>
+                        <Div type="m">
+                            <H3 title="Tags" />
+                            <Div type="s">
+                                <Tags />
+                            </Div>
+                        </Div>
+                        <Div type="m">
+                            <H3 title="State" />
+                            <Div type="s">
+                            </Div>
+                        </Div>
+                    </section>
                 </section>
-                <section className={style.right}>
-                    <ThumbnailDnD />
-                    <Div type="m">
-                        <H3 title="Author" />
-                        <Div type="s">
-                            <PostAvatar />
-                        </Div>
-                    </Div>
-                    <Div type="m">
-                        <H3 title="Category" />
-                        <Div type="s">
-                            <Category />
-                        </Div>
-                    </Div>
-                    <Div type="m">
-                        <H3 title="Tags" />
-                        <Div type="s">
-                            <Tags />
-                        </Div>
-                    </Div>
-                    <Div type="m">
-                        <H3 title="State" />
-                        <Div type="s">
-                        </Div>
-                    </Div>
-                </section>
-            </section>
         );
     }
 }
+//<ThumbnailDnD />
 
 export default connect(mapToProps, fn)(PostEditor)
