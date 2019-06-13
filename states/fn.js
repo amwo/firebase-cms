@@ -2,10 +2,10 @@ import firebase from 'firebase/app'
 import 'firebase/auth'
 import 'firebase/firestore'
 import firebaseConf from '../conf/firebase'
+import Router from 'next/router'
 
 const db = firebase.firestore()
 
-import Router from 'next/router'
 const fn = store => ({
     signOut: store => {
         firebase.auth().signOut().then(function() {
@@ -23,6 +23,30 @@ const fn = store => ({
         }).catch(function(err) {
             console.log(err)
         });
+    },
+    showComponents: states => {
+        store.setState(store => ({
+            ...states,
+            s: {
+                ...states.s,
+                visibilities: {
+                    ...states.s.visibilities,
+                    components: true
+                },
+            }
+        }))
+    },
+    hideComponents: states => {
+        store.setState(states => ({
+            ...states,
+            s: {
+                ...states.s,
+                visibilities: {
+                    ...states.s.visibilities,
+                    components: false
+                },
+            }
+        }))
     },
     fetchMembers: store => {
         console.log('hoge')

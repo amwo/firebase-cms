@@ -5,6 +5,7 @@ import App, { Container } from 'next/app'
 
 import AddNavigation from '../widgets/addNavigation'
 import Loading from '../widgets/loading'
+import ImageCropper from '../widgets/imageCropper'
 import { Provider } from 'redux-zero/react'
 import React from 'react'
 import Router from 'next/router'

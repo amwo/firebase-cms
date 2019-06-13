@@ -1,0 +1,20 @@
+.r {
+    background: #ebebeb;
+    border-bottom: 1px dashed #ebebeb;
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: all 0.25s ease;
+    -moz-transition: all 0.25se;
+    -webkit-transition: all 0.25se;
+    -o-transition: all 0.25se;
+}
+
+.r p {
+    letter-spacing: 1px;
+    line-height: 1.8;
+    color: #000;
+    font-size: 11px;
+}

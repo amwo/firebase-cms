@@ -107,6 +107,7 @@
     -moz-border-bottom-right-radius: 0!important;
 }
 .s {
+    width: calc(100% - 2rem);
     padding: .5rem 1rem;
     font-size: 14px;
     letter-spacing: .5px;

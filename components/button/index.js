@@ -53,7 +53,7 @@ class Button extends Component {
                                 box-shadow: 0 0 15px rgba(0,0,0,.3);
                                 position: fixed;
                                 right: 36px;
-                                bottom: 36px;
+                                bottom: 26px;
                                 z-index: 999;
                                 transition: all 0.25s ease;
                                 -moz-transition: all 0.25s ease;

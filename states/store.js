@@ -10,6 +10,8 @@ const i = {
         },
         visibilities: {
             nav: false,
+            components: false,
+            cropper: false,
             loading: true
         },
         current: {

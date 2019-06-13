@@ -9,13 +9,15 @@ import PostAvatar from '../../widgets/postAvatar'
 import Select from '../../components/select'
 import Tags from '../../widgets/tags'
 import ThumbnailDnD from '../../widgets/thumbnailDnD'
+import DragAndDrop from '../../widgets/dragAndDrop'
 import Tools from '../../widgets/tools'
 import {connect} from 'redux-zero/react'
 import fn from '../../states/fn'
 import {stateToHTML} from 'draft-js-export-html'
 import style from './style.css'
+import Cropper from 'cropperjs';
 
-const mapToProps = ({ s , d}) => ({ s, d });
+const mapToProps = ({ s , d, f}) => ({ s, d ,f});
 const {hasCommandModifier} = KeyBindingUtil
 
 class PostEditor extends Component {
@@ -35,6 +37,8 @@ class PostEditor extends Component {
         this.addMediaBlock = this.addMediaBlock.bind(this)
         this.dndImages = this.dndImages.bind(this)
         this.toggleTab = this.toggleTab.bind(this)
+        this.titleFocus = this.titleFocus.bind(this)
+        this.titleFocusOut = this.titleFocusOut.bind(this)
         this.blockRenderMap = Immutable.Map({
             'header-two': {
                 element: 'h2'
@@ -47,9 +51,29 @@ class PostEditor extends Component {
             editorState: EditorState.createEmpty(),
             currentKey: '',
             focus: false,
-            tab: 0
+            tab: 1,
+            post: {}
         }
     }
+
+    componentWillMount() {
+        this.setState({
+            post: {
+                title: '',
+                thumbnail: ''
+            }
+        })
+    }
+
+    titleFocus = () => {
+        this.props.showComponents()
+    }
+
+    titleFocusOut = () => {
+        this.props.hideComponents()
+    }
+
+
     onChange = (editorState) => {
         this.setState({editorState})
         let selectionState = editorState.getSelection();
@@ -86,7 +110,7 @@ class PostEditor extends Component {
         let raw = convertToRaw(this.state.editorState.getCurrentContent())
         let html = stateToHTML(this.state.editorState.getCurrentContent())
         //console.log(raw)
-        //console.log(html)
+        console.log(html)
     }
 
     wrapper = contentBlock => {
@@ -139,6 +163,7 @@ class PostEditor extends Component {
         //console.log(this.contentState.getLastBlock().getText())
         //console.log(this.contentState.createFromBlockArray)
         //console.log(this.editorState.currentContent)
+        //this.state.focus ? this.props.showComponents() : this.props.hideComponents()
         return (
             <section className={style.r}>
                 <section className={style.center}>
@@ -148,11 +173,13 @@ class PostEditor extends Component {
                                 <div className={style.type}>
                                     <Select type="list" size="m" value="News" />
                                 </div>
-                                <h1 ref="title" className={style.title} placeholder="Title" onKeyDown={this.titleKeyDown} contentEditable suppressContentEditableWarning></h1>
+                                <h1 ref="title" onBlur={this.titleFocusOut} onFocus={this.titleFocus} className={style.title} placeholder="Title" onKeyDown={this.titleKeyDown} contentEditable suppressContentEditableWarning></h1>
                                 <div className={style.avatarWrap}>
                                 </div>
                                 <div className={style.editor}>
                                     <Editor
+                                        onFocus={this.titleFocus}
+                                        onBlur={this.titleFocusOut}
                                         ref="content"
                                         editorState={this.state.editorState}
                                         handleKeyCommand={this.handleKeyCommand}
@@ -168,15 +195,47 @@ class PostEditor extends Component {
                             </div>
                             <div className={style.tab} style={this.state.tab === 0 ? {left: '100%'} : {left: 0} }>
                                 <div className={style.content}>
-                                    <p>hodsa</p>
+                                    <DragAndDrop />
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <th>Thumbnail</th>
+                                                <td><ThumbnailDnD /></td>
+                                            </tr>
+                                            <tr>
+                                                <th>Street No.</th>
+                                                <td><Input type="text" size="s" value="noen" /></td>
+                                            </tr>
+                                            <tr>
+                                                <th>Build. Name</th>
+                                                <td><Input type="text" size="s" value="noen" /></td>
+                                            </tr>
+                                            <tr>
+                                                <th>Address</th>
+                                                <td><Input type="text" size="s" value="noen" /></td>
+                                            </tr>
+                                            <tr>
+                                                <th>Postal Code</th>
+                                                <td><Input type="text" size="s" value="noen" /></td>
+                                            </tr>
+                                            <tr>
+                                                <th>Phone Number</th>
+                                                <td><Input type="text" size="s" value="noen" /></td>
+                                            </tr>
+                                            <tr>
+                                                <th>Website</th>
+                                                <td><Input type="text" size="s" value="noen" /></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
                         <div className={style.tabControll}>
-                                <ul>
-                                    <li onClick={this.toggleTab} style={this.state.tab === 1 ? {background: '#eee'} : {background: '#fff'} } >Content</li>
-                                    <li onClick={this.toggleTab} style={this.state.tab === 0 ? {background: '#eee', color: '#ccc'} : {background: '#fff'} } >Items</li>
-                                </ul>
+                            <ul>
+                                <li onClick={this.toggleTab} style={this.state.tab === 1 ? {background: '#eee', color: '#ccc'} : {background: '#fff'} } >Content</li>
+                                <li onClick={this.toggleTab} style={this.state.tab === 0 ? {background: '#eee', color: '#ccc'} : {background: '#fff'} } >Items</li>
+                            </ul>
                         </div>
                     </section>
                     <section className={style.right}>
@@ -208,6 +267,5 @@ class PostEditor extends Component {
         );
     }
 }
-//<ThumbnailDnD />
 
 export default connect(mapToProps, fn)(PostEditor)
