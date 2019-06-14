@@ -11,6 +11,7 @@ import Link from 'next/link'
 import {connect} from 'redux-zero/react';
 import fn from '../../states/fn';
 import style from './style.css'
+import ProjectNavigation from '../../widgets/projectNavigation'
 
 const mapToProps = ({ s , d, f}) => ({ s, d, f });
 
@@ -58,29 +59,7 @@ class Navigations extends Component {
                                     <ul>
                                         <li className={style.current}><Link href="/"><a><i><img src={ICON_DASHBOARD} width="" height="15" alt="" /></i>Dashboard</a></Link></li>
                                     </ul>
-                                    <section className={style.hr}>
-                                        <span>Posts</span>
-                                    </section>
-                                    <ul>
-                                        <li><Link href="/news"><a><i><img src={ICON_SETTINGS} width="" height="15" alt="" /></i>News</a></Link></li>
-                                        <li><a href="#"><i><img src={ICON_SETTINGS} width="" height="15" alt="" /></i>Blog</a></li>
-                                    </ul>
-                                    <section className={style.hr}>
-                                        <span>Statics</span>
-                                    </section>
-                                    <ul>
-                                        <li><a href="#"><i><img src={ICON_SETTINGS} width="" height="15" alt="" /></i>Islands</a></li>
-                                        <li><a href="#"><i><img src={ICON_SETTINGS} width="" height="15" alt="" /></i>Activities</a></li>
-                                        <li><a href="#"><i><img src={ICON_SETTINGS} width="" height="15" alt="" /></i>Accommodations</a></li>
-                                        <li><a href="#"><i><img src={ICON_SETTINGS} width="" height="15" alt="" /></i>Restaurants</a></li>
-                                        <li><a href="#"><i><img src={ICON_SETTINGS} width="" height="15" alt="" /></i>Pages</a></li>
-                                    </ul>
-                                    <section className={style.hr}>
-                                        <span>Management</span>
-                                    </section>
-                                    <ul>
-                                        <li><a href="#"><i><img src={ICON_SETTINGS} width="" height="15" alt="" /></i>Contact</a></li>
-                                    </ul>
+                                    <ProjectNavigation />
                                 </nav>
                             </div>
                             <div className={style.nav} style={this.props.s.visibilities.nav ? {left: 0} : {left: '240px'}}>

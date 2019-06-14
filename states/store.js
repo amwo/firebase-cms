@@ -4,6 +4,7 @@ const i = {
     s: {
         login: false,
         page: {},
+        post: {},
         err: {
             code: '',
             message: ''
@@ -12,9 +13,11 @@ const i = {
             nav: false,
             components: false,
             cropper: false,
-            loading: true
+            loading: true,
+            add: false
         },
         current: {
+            collection: '',
             project: '',
             user: '',
         }

@@ -1,11 +1,21 @@
 //import style from './style.css'
 import {Component} from 'react'
 import ICON_ADD from '../../assets/icons/icon-add.svg'
+import {connect} from 'redux-zero/react'
+import fn from '../../states/fn'
+
+const mapToProps = ({s}) => ({s})
 
 class Button extends Component {
     constructor(props) {
         super(props)
+        this.showAdd = this.showAdd.bind(this)
     }
+
+    showAdd = () => {
+        this.props.showAdd(this.props.s.visibilities.add)
+    }
+
     render() {
         switch(this.props.type) {
             case 'icon':
@@ -37,7 +47,7 @@ class Button extends Component {
                 )
             case 'add':
                 return (
-                    <button className="add">
+                    <button className="add" onClick={this.showAdd} style={this.props.s.visibilities.add ? {right: 115, transform: 'rotate(-45deg)'} : {right: 36, transform: ''} }>
                         <img src={ICON_ADD} width="20" height="" alt="" />
                         <style jsx>{`
                             .add {
@@ -52,8 +62,7 @@ class Button extends Component {
                                 -moz-border-radius: 50%;
                                 box-shadow: 0 0 15px rgba(0,0,0,.3);
                                 position: fixed;
-                                right: 36px;
-                                bottom: 26px;
+                                bottom: 28px;
                                 z-index: 999;
                                 transition: all 0.25s ease;
                                 -moz-transition: all 0.25s ease;
@@ -153,4 +162,4 @@ class Button extends Component {
     }
 }
 
-export default Button
+export default connect(mapToProps, fn)(Button)

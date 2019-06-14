@@ -51,17 +51,14 @@ class PostEditor extends Component {
             editorState: EditorState.createEmpty(),
             currentKey: '',
             focus: false,
-            tab: 1,
-            post: {}
+            tab: 0,
         }
     }
 
     componentWillMount() {
-        this.setState({
-            post: {
-                title: '',
-                thumbnail: ''
-            }
+        this.props.initPost({
+            title: '',
+            thumbnail: '',
         })
     }
 

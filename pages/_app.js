@@ -6,6 +6,7 @@ import App, { Container } from 'next/app'
 import AddNavigation from '../widgets/addNavigation'
 import Loading from '../widgets/loading'
 import ImageCropper from '../widgets/imageCropper'
+import AddList from '../widgets/addList'
 import { Provider } from 'redux-zero/react'
 import React from 'react'
 import Router from 'next/router'
@@ -56,6 +57,7 @@ export default class Default extends App {
                         </Wrapper>
                         <AddNavigation />
                         <Button type="add" />
+                        <AddList />
                     </Container>
                 </Provider>
             )

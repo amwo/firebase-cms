@@ -7,6 +7,27 @@ import Router from 'next/router'
 const db = firebase.firestore()
 
 const fn = store => ({
+    showAdd: (states, prev) => {
+        store.setState(states => ({
+            ...states,
+            s: {
+                ...states.s,
+                visibilities: {
+                    ...states.s.visibilities,
+                    add: !prev
+                },
+            }
+        }))
+    },
+    initPost: (states, post) => {
+        store.setState(states => ({
+            ...states,
+            s: {
+                ...states.s,
+                post
+            }
+        }))
+    },
     signOut: store => {
         firebase.auth().signOut().then(function() {
             store.setState(states => ({
@@ -56,7 +77,7 @@ const fn = store => ({
             if (user) {
                 let loginUserId = ""
                 let usersData = {}
-                // User Request
+                // Fetch users data
                 db.collection('tokyoislands').doc('people').collection('users').where("admin", "==", true).get().then(function(querySnapshot) {
                     querySnapshot.forEach(function(doc) {
                         if(doc.id === user.uid) {
@@ -82,6 +103,7 @@ const fn = store => ({
                         d: usersData
                     }))
 
+                    // Fetch settings data
                     db.collection('tokyoislands').doc('settings').get().then(function(doc) {
                         if (doc.exists) {
                             store.setState(states => ({
@@ -94,10 +116,29 @@ const fn = store => ({
                         } else {
                             console.log("No such document on Settings!");
                         }
-
                     }).catch(function(error) {
                         console.log("Error getting documents: ", error)
                     })
+
+                    // Fetch settings collections data
+                    db.collection('tokyoislands').doc('settings').collection('collections').get().then(qs => {
+                        let d = {}
+                        qs.forEach(doc => {
+                            d[doc.id] = doc.data()
+                        })
+                        store.setState(states => ({
+                            ...states,
+                            f: {
+                                settings: {
+                                    ...states.f.settings,
+                                    collections: d
+                                }
+                            }
+                        }))
+                    }).catch(function(error) {
+                        console.log("Error getting documents: ", error)
+                    })
+
                 }).catch(function(error) {
                     console.log("Error getting documents: ", error)
                 })
