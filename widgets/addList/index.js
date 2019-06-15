@@ -22,12 +22,18 @@ class AddList extends Component {
     }
 
     render() {
+        let List
+        if(this.props.f.settings.collections) {
+            List = Object.keys(this.props.f.settings.collections).map((k, i) => {
+                return <li onClick={this.toggleAddList} key={i}><Link href={{pathname: '/new', query: {title: 'post'}}} as={`/new/post`}><a>{this.props.f.settings.collections[k].title}</a></Link></li>
+            })
+        }
+
         return(
-            <div class={style.r} style={this.props.s.visibilities.add ? { right: 65 } : { right: '-100%' }}>
+            <div className={style.r} style={this.props.s.visibilities.add ? { right: 65 } : { right: '-100%' }}>
                 <nav>
                     <ul>
-                        <li><Link href={`/new?title=post}`} as={`/new/post`}><a>Blog</a></Link></li>
-                        <li>News</li>
+                            { this.props.f.settings.collections ? List : <li>Loading</li>}
                     </ul>
                 </nav>
             </div>

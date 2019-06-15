@@ -14,14 +14,14 @@ const mapToProps = ({ s , d}) => ({ s, d });
 class New extends Component {
     constructor(props) {
         super(props)
+        console.log(this.props.router)
     }
 
     componentWillMount() {
-        //     this.props.visibilityNav(true)
+        this.props.initPostView()
     }
 
     render() {
-        //console.log(this.props.router.query)
         return <PostEditor />
     }
 }

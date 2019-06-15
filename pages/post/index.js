@@ -17,11 +17,11 @@ class Post extends Component {
     }
 
     componentWillMount() {
-        this.props.visibilityNav(true)
+        //this.props.visibilityNav(true)
+        this.props.initPostView()
     }
 
     render() {
-        //console.log(this.props.router.query)
         return <PostEditor />
     }
 }

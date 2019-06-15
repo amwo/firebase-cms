@@ -1,3 +1,6 @@
+.r p {
+    padding: 4px 0;
+}
 .r [type="radio"]:checked,
 .r [type="radio"]:not(:checked) {
     position: absolute;
@@ -6,12 +9,14 @@
 .r [type="radio"]:checked + label,
 .r [type="radio"]:not(:checked) + label
 {
+    font-size: 13px;
+    letter-spacing: .5px;
     position: relative;
     padding-left: 28px;
     cursor: pointer;
     line-height: 20px;
     display: inline-block;
-    color: #666;
+    color: #333;
 }
 .r [type="radio"]:checked + label:before,
 .r [type="radio"]:not(:checked) + label:before {

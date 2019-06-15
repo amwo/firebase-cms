@@ -6,7 +6,6 @@ import Input from '../../components/input'
 import Immutable from 'immutable'
 import H3 from '../../components/h3'
 import PostAvatar from '../../widgets/postAvatar'
-import Select from '../../components/select'
 import Tags from '../../widgets/tags'
 import ThumbnailDnD from '../../widgets/thumbnailDnD'
 import DragAndDrop from '../../widgets/dragAndDrop'
@@ -37,8 +36,8 @@ class PostEditor extends Component {
         this.addMediaBlock = this.addMediaBlock.bind(this)
         this.dndImages = this.dndImages.bind(this)
         this.toggleTab = this.toggleTab.bind(this)
-        this.titleFocus = this.titleFocus.bind(this)
-        this.titleFocusOut = this.titleFocusOut.bind(this)
+        //this.titleFocus = this.titleFocus.bind(this)
+        //this.titleFocusOut = this.titleFocusOut.bind(this)
         this.blockRenderMap = Immutable.Map({
             'header-two': {
                 element: 'h2'
@@ -62,13 +61,13 @@ class PostEditor extends Component {
         })
     }
 
-    titleFocus = () => {
-        this.props.showComponents()
-    }
+    //titleFocus = () => {
+    //    this.props.showComponents()
+    //}
 
-    titleFocusOut = () => {
-        this.props.hideComponents()
-    }
+    //titleFocusOut = () => {
+    //    this.props.hideComponents()
+    //}
 
 
     onChange = (editorState) => {
@@ -161,16 +160,14 @@ class PostEditor extends Component {
         //console.log(this.contentState.createFromBlockArray)
         //console.log(this.editorState.currentContent)
         //this.state.focus ? this.props.showComponents() : this.props.hideComponents()
+        //onBlur={this.titleFocusOut} onFocus={this.titleFocus} 
         return (
             <section className={style.r}>
                 <section className={style.center}>
                     <div className={style.centerWrap}>
                         <div className={style.tab} style={this.state.tab === 1 ? {left: '-100%'} : {left: 0} }>
                             <div className={style.content}>
-                                <div className={style.type}>
-                                    <Select type="list" size="m" value="News" />
-                                </div>
-                                <h1 ref="title" onBlur={this.titleFocusOut} onFocus={this.titleFocus} className={style.title} placeholder="Title" onKeyDown={this.titleKeyDown} contentEditable suppressContentEditableWarning></h1>
+                                <h1 ref="title" className={style.title} placeholder="Title" onKeyDown={this.titleKeyDown} contentEditable suppressContentEditableWarning></h1>
                                 <div className={style.avatarWrap}>
                                 </div>
                                 <div className={style.editor}>
@@ -255,8 +252,15 @@ class PostEditor extends Component {
                             </Div>
                         </Div>
                         <Div type="m">
-                            <H3 title="State" />
+                            <H3 title="Created" />
                             <Div type="s">
+                                    <p className={style.editordate}>Jun 16, 2019</p>
+                            </Div>
+                        </Div>
+                        <Div type="m">
+                            <H3 title="Last Modified" />
+                            <Div type="s">
+                                <p className={style.editordate}>Jun 22, 2019</p>
                             </Div>
                         </Div>
                     </section>

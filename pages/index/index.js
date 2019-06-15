@@ -18,7 +18,7 @@ class Home extends Component {
 
     render() {
         return (
-            <Page title="Home">
+            <Page title="Dashboard">
                 <p>title</p>
             </Page>
         )

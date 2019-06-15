@@ -7,6 +7,42 @@ import Router from 'next/router'
 const db = firebase.firestore()
 
 const fn = store => ({
+    toggleAddList: states => {
+        store.setState(states => ({
+            ...states,
+            s: {
+                ...states.s,
+                visibilities: {
+                    ...states.s.visibilities,
+                    add: !states.s.visibilities.add
+                },
+            }
+        }))
+    },
+    closePostView: states => {
+        store.setState(states => ({
+            ...states,
+            s: {
+                ...states.s,
+                visibilities: {
+                    ...states.s.visibilities,
+                    props: false
+                },
+            }
+        }))
+    },
+    initPostView: states => {
+        store.setState(states => ({
+            ...states,
+            s: {
+                ...states.s,
+                visibilities: {
+                    ...states.s.visibilities,
+                    props: true
+                },
+            }
+        }))
+    },
     showAdd: (states, prev) => {
         store.setState(states => ({
             ...states,
@@ -44,18 +80,6 @@ const fn = store => ({
         }).catch(function(err) {
             console.log(err)
         });
-    },
-    showComponents: states => {
-        store.setState(store => ({
-            ...states,
-            s: {
-                ...states.s,
-                visibilities: {
-                    ...states.s.visibilities,
-                    components: true
-                },
-            }
-        }))
     },
     hideComponents: states => {
         store.setState(states => ({

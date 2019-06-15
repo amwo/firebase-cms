@@ -10,7 +10,7 @@ class Article extends Component {
     render() {
         return (
             <article className={style.s}>
-                <Link href={`/news?id=${this.props.id}`} as={`/news/${this.props.id}`}>
+                <Link href={`/post?id=${this.props.id}`} as={`/news/${this.props.id}`}>
                     <a>
                         <div className={style.wrap}>
                             <div className={style.thumb}>

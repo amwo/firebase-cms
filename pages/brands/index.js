@@ -34,6 +34,10 @@ class Brands extends Component {
                                     <td><Input size="s" type="text" placeholder="Website Title"/></td>
                                 </tr>
                                 <tr>
+                                    <th>Favicon</th>
+                                    <td><Input size="s" type="text" placeholder="Website Title"/></td>
+                                </tr>
+                                <tr>
                                     <th>Tagline</th>
                                     <td><Input size="s" type="text" placeholder="Website Title"/></td>
                                 </tr>

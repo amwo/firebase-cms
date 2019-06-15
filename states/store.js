@@ -11,7 +11,7 @@ const i = {
         },
         visibilities: {
             nav: false,
-            components: false,
+            props: false,
             cropper: false,
             loading: true,
             add: false
