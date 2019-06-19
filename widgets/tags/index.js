@@ -19,6 +19,14 @@ class Tags extends Component {
     }
 
     render() {
+        if(this.props.s.post) {
+            const Items = this.props.s.post.tags.map((s,i)=>{
+                return <li>{s}<span><img src={ICON_ADD} width="10" height="" alt="" /></span></li>
+            })
+        } else {
+            const Items = null
+        }
+
         return(
             <section className={style.r}>
                 <div className={style.input}>
@@ -26,12 +34,7 @@ class Tags extends Component {
                 </div>
                 <div className={style.result}>
                     <ul>
-                        <li>Funny<span><img src={ICON_ADD} width="10" height="" alt="" /></span></li>
-                        <li>Thinking<span><img src={ICON_ADD} width="10" height="" alt="" /></span></li>
-                        <li>Goods<span><img src={ICON_ADD} width="10" height="" alt="" /></span></li>
-                        <li>Interesting<span><img src={ICON_ADD} width="10" height="" alt="" /></span></li>
-                        <li>Javascript<span><img src={ICON_ADD} width="10" height="" alt="" /></span></li>
-                        <li>Rust<span><img src={ICON_ADD} width="10" height="" alt="" /></span></li>
+                            {Items}
                     </ul>
                 </div>
             </section>

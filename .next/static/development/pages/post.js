@@ -76473,18 +76473,48 @@ function (_Component) {
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Tags, [{
     key: "render",
     value: function render() {
+      if (this.props.s.post) {
+        var _Items = this.props.s.post.tags.map(function (s, i) {
+          return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("li", {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 24
+            },
+            __self: this
+          }, s, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("span", {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 24
+            },
+            __self: this
+          }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("img", {
+            src: _assets_icons_icon_add_svg__WEBPACK_IMPORTED_MODULE_9___default.a,
+            width: "10",
+            height: "",
+            alt: "",
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 24
+            },
+            __self: this
+          })));
+        });
+      } else {
+        var _Items2 = null;
+      }
+
       return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("section", {
         className: _style_css__WEBPACK_IMPORTED_MODULE_10___default.a.r,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 23
+          lineNumber: 31
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: _style_css__WEBPACK_IMPORTED_MODULE_10___default.a.input,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 24
+          lineNumber: 32
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
@@ -76494,155 +76524,23 @@ function (_Component) {
         placeholder: "Add tags",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 25
+          lineNumber: 33
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
         className: _style_css__WEBPACK_IMPORTED_MODULE_10___default.a.result,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 27
+          lineNumber: 35
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("ul", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 28
+          lineNumber: 36
         },
         __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("li", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 29
-        },
-        __self: this
-      }, "Funny", react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("span", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 29
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("img", {
-        src: _assets_icons_icon_add_svg__WEBPACK_IMPORTED_MODULE_9___default.a,
-        width: "10",
-        height: "",
-        alt: "",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 29
-        },
-        __self: this
-      }))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("li", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 30
-        },
-        __self: this
-      }, "Thinking", react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("span", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 30
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("img", {
-        src: _assets_icons_icon_add_svg__WEBPACK_IMPORTED_MODULE_9___default.a,
-        width: "10",
-        height: "",
-        alt: "",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 30
-        },
-        __self: this
-      }))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("li", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 31
-        },
-        __self: this
-      }, "Goods", react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("span", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 31
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("img", {
-        src: _assets_icons_icon_add_svg__WEBPACK_IMPORTED_MODULE_9___default.a,
-        width: "10",
-        height: "",
-        alt: "",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 31
-        },
-        __self: this
-      }))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("li", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 32
-        },
-        __self: this
-      }, "Interesting", react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("span", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 32
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("img", {
-        src: _assets_icons_icon_add_svg__WEBPACK_IMPORTED_MODULE_9___default.a,
-        width: "10",
-        height: "",
-        alt: "",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 32
-        },
-        __self: this
-      }))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("li", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 33
-        },
-        __self: this
-      }, "Javascript", react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("span", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 33
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("img", {
-        src: _assets_icons_icon_add_svg__WEBPACK_IMPORTED_MODULE_9___default.a,
-        width: "10",
-        height: "",
-        alt: "",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 33
-        },
-        __self: this
-      }))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("li", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 34
-        },
-        __self: this
-      }, "Rust", react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("span", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 34
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("img", {
-        src: _assets_icons_icon_add_svg__WEBPACK_IMPORTED_MODULE_9___default.a,
-        width: "10",
-        height: "",
-        alt: "",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 34
-        },
-        __self: this
-      }))))));
+      }, Items)));
     }
   }]);
 
